@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deep The Spire Project"
+  short_description: "Follow the authoritative project agent_readme.md"
+  default_prompt: "Use $deep-the-spire-project to follow this repository's authoritative agent_readme.md instructions."
