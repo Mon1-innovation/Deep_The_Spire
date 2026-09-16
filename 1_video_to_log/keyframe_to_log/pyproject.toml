@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sts2-keyframe-to-log"
+version = "0.1.0"
+description = "将预先提取的《杀戮尖塔 2》关键帧转换为经过校验的事件日志。"
+requires-python = ">=3.8"
+dependencies = ["Pillow>=9.0"]
+
+[project.scripts]
+keyframe-to-log = "keyframe_to_log.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+

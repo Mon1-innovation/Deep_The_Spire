@@ -1,0 +1,366 @@
+{
+    "page_type": "map",
+    "confidence": 0.95,
+    "state": {
+        "floor": null,
+        "map": {
+            "nodes": [
+                {
+                    "id": "r01n01",
+                    "row": 1,
+                    "type": "rest",
+                    "x": 0.405,
+                    "y": 0.185,
+                    "current": false,
+                    "visited": false
+                },
+                {
+                    "id": "r01n02",
+                    "row": 1,
+                    "type": "rest",
+                    "x": 0.655,
+                    "y": 0.185,
+                    "current": false,
+                    "visited": false
+                },
+                {
+                    "id": "r02n01",
+                    "row": 2,
+                    "type": "enemy",
+                    "x": 0.335,
+                    "y": 0.365,
+                    "current": false,
+                    "visited": false
+                },
+                {
+                    "id": "r02n02",
+                    "row": 2,
+                    "type": "enemy",
+                    "x": 0.575,
+                    "y": 0.365,
+                    "current": false,
+                    "visited": false
+                },
+                {
+                    "id": "r02n03",
+                    "row": 2,
+                    "type": "unknown",
+                    "x": 0.735,
+                    "y": 0.335,
+                    "current": false,
+                    "visited": false
+                },
+                {
+                    "id": "r03n01",
+                    "row": 3,
+                    "type": "unknown",
+                    "x": 0.345,
+                    "y": 0.485,
+                    "current": false,
+                    "visited": false
+                },
+                {
+                    "id": "r03n02",
+                    "row": 3,
+                    "type": "enemy",
+                    "x": 0.415,
+                    "y": 0.485,
+                    "current": false,
+                    "visited": false
+                },
+                {
+                    "id": "r03n03",
+                    "row": 3,
+                    "type": "enemy",
+                    "x": 0.555,
+                    "y": 0.485,
+                    "current": false,
+                    "visited": false
+                },
+                {
+                    "id": "r03n04",
+                    "row": 3,
+                    "type": "enemy",
+                    "x": 0.635,
+                    "y": 0.485,
+                    "current": false,
+                    "visited": false
+                },
+                {
+                    "id": "r03n05",
+                    "row": 3,
+                    "type": "unknown",
+                    "x": 0.725,
+                    "y": 0.485,
+                    "current": false,
+                    "visited": false
+                },
+                {
+                    "id": "r04n01",
+                    "row": 4,
+                    "type": "enemy",
+                    "x": 0.325,
+                    "y": 0.655,
+                    "current": false,
+                    "visited": false
+                },
+                {
+                    "id": "r04n02",
+                    "row": 4,
+                    "type": "enemy",
+                    "x": 0.495,
+                    "y": 0.655,
+                    "current": false,
+                    "visited": false
+                },
+                {
+                    "id": "r04n03",
+                    "row": 4,
+                    "type": "enemy",
+                    "x": 0.635,
+                    "y": 0.655,
+                    "current": false,
+                    "visited": false
+                },
+                {
+                    "id": "r04n04",
+                    "row": 4,
+                    "type": "enemy",
+                    "x": 0.715,
+                    "y": 0.655,
+                    "current": false,
+                    "visited": false
+                },
+                {
+                    "id": "r05n01",
+                    "row": 5,
+                    "type": "enemy",
+                    "x": 0.245,
+                    "y": 0.805,
+                    "current": false,
+                    "visited": false
+                },
+                {
+                    "id": "r05n02",
+                    "row": 5,
+                    "type": "enemy",
+                    "x": 0.335,
+                    "y": 0.805,
+                    "current": false,
+                    "visited": false
+                },
+                {
+                    "id": "r05n03",
+                    "row": 5,
+                    "type": "enemy",
+                    "x": 0.495,
+                    "y": 0.805,
+                    "current": false,
+                    "visited": false
+                },
+                {
+                    "id": "r05n04",
+                    "row": 5,
+                    "type": "enemy",
+                    "x": 0.575,
+                    "y": 0.805,
+                    "current": false,
+                    "visited": false
+                },
+                {
+                    "id": "r05n05",
+                    "row": 5,
+                    "type": "enemy",
+                    "x": 0.715,
+                    "y": 0.805,
+                    "current": false,
+                    "visited": false
+                },
+                {
+                    "id": "r06n01",
+                    "row": 6,
+                    "type": "rest",
+                    "x": 0.245,
+                    "y": 0.955,
+                    "current": false,
+                    "visited": false
+                },
+                {
+                    "id": "r06n02",
+                    "row": 6,
+                    "type": "unknown",
+                    "x": 0.415,
+                    "y": 0.955,
+                    "current": false,
+                    "visited": false
+                },
+                {
+                    "id": "r06n03",
+                    "row": 6,
+                    "type": "enemy",
+                    "x": 0.655,
+                    "y": 0.955,
+                    "current": false,
+                    "visited": false
+                }
+            ],
+            "edges": [
+                {
+                    "from": "r01n01",
+                    "to": "r02n01"
+                },
+                {
+                    "from": "r01n01",
+                    "to": "r02n02"
+                },
+                {
+                    "from": "r01n02",
+                    "to": "r02n02"
+                },
+                {
+                    "from": "r01n02",
+                    "to": "r02n03"
+                },
+                {
+                    "from": "r02n01",
+                    "to": "r03n01"
+                },
+                {
+                    "from": "r02n01",
+                    "to": "r03n02"
+                },
+                {
+                    "from": "r02n02",
+                    "to": "r03n02"
+                },
+                {
+                    "from": "r02n02",
+                    "to": "r03n03"
+                },
+                {
+                    "from": "r02n03",
+                    "to": "r03n04"
+                },
+                {
+                    "from": "r02n03",
+                    "to": "r03n05"
+                },
+                {
+                    "from": "r03n01",
+                    "to": "r04n01"
+                },
+                {
+                    "from": "r03n02",
+                    "to": "r04n01"
+                },
+                {
+                    "from": "r03n02",
+                    "to": "r04n02"
+                },
+                {
+                    "from": "r03n03",
+                    "to": "r04n02"
+                },
+                {
+                    "from": "r03n03",
+                    "to": "r04n03"
+                },
+                {
+                    "from": "r03n04",
+                    "to": "r04n03"
+                },
+                {
+                    "from": "r03n04",
+                    "to": "r04n04"
+                },
+                {
+                    "from": "r03n05",
+                    "to": "r04n04"
+                },
+                {
+                    "from": "r04n01",
+                    "to": "r05n01"
+                },
+                {
+                    "from": "r04n01",
+                    "to": "r05n02"
+                },
+                {
+                    "from": "r04n02",
+                    "to": "r05n02"
+                },
+                {
+                    "from": "r04n02",
+                    "to": "r05n03"
+                },
+                {
+                    "from": "r04n03",
+                    "to": "r05n03"
+                },
+                {
+                    "from": "r04n03",
+                    "to": "r05n04"
+                },
+                {
+                    "from": "r04n04",
+                    "to": "r05n04"
+                },
+                {
+                    "from": "r04n04",
+                    "to": "r05n05"
+                },
+                {
+                    "from": "r05n01",
+                    "to": "r06n01"
+                },
+                {
+                    "from": "r05n02",
+                    "to": "r06n01"
+                },
+                {
+                    "from": "r05n02",
+                    "to": "r06n02"
+                },
+                {
+                    "from": "r05n03",
+                    "to": "r06n02"
+                },
+                {
+                    "from": "r05n03",
+                    "to": "r06n03"
+                },
+                {
+                    "from": "r05n04",
+                    "to": "r06n03"
+                },
+                {
+                    "from": "r05n05",
+                    "to": "r06n03"
+                }
+            ],
+            "current_node_id": null
+        },
+        "visible_text": [
+            "图例",
+            "未知",
+            "商人",
+            "宝箱",
+            "休息",
+            "敌人",
+            "精英",
+            "休息处",
+            "在这些房间可以回复一些生命",
+            "或是升级一张卡牌。",
+            "64/80",
+            "99",
+            "00:15",
+            "1"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Map nodes and dashed connections are visible on the parchment-style map.",
+        "Legend labels identify room types: unknown, merchant, chest, rest, enemy, elite.",
+        "No current node is highlighted on the visible map."
+    ]
+}

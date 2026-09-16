@@ -1,0 +1,564 @@
+{
+    "page_type": "map",
+    "confidence": 0.95,
+    "state": {
+        "floor": null,
+        "map": {
+            "current_node_id": "r01n03",
+            "nodes": [
+                {
+                    "id": "r01n03",
+                    "level": 1,
+                    "type": "rest",
+                    "status": "current",
+                    "position": {
+                        "x": 0.41,
+                        "y": 0.88
+                    },
+                    "next_nodes": [
+                        "r02n03"
+                    ],
+                    "previous_nodes": []
+                },
+                {
+                    "id": "r02n03",
+                    "level": 2,
+                    "type": "elite",
+                    "status": "available",
+                    "position": {
+                        "x": 0.41,
+                        "y": 0.74
+                    },
+                    "next_nodes": [
+                        "r03n03"
+                    ],
+                    "previous_nodes": [
+                        "r01n03"
+                    ]
+                },
+                {
+                    "id": "r03n03",
+                    "level": 3,
+                    "type": "unknown",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.26,
+                        "y": 0.73
+                    },
+                    "next_nodes": [
+                        "r04n02"
+                    ],
+                    "previous_nodes": [
+                        "r02n03"
+                    ]
+                },
+                {
+                    "id": "r04n02",
+                    "level": 4,
+                    "type": "elite",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.25,
+                        "y": 0.59
+                    },
+                    "next_nodes": [
+                        "r05n02"
+                    ],
+                    "previous_nodes": [
+                        "r03n03"
+                    ]
+                },
+                {
+                    "id": "r05n02",
+                    "level": 5,
+                    "type": "elite",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.25,
+                        "y": 0.45
+                    },
+                    "next_nodes": [
+                        "r06n02"
+                    ],
+                    "previous_nodes": [
+                        "r04n02"
+                    ]
+                },
+                {
+                    "id": "r06n02",
+                    "level": 6,
+                    "type": "chest",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.26,
+                        "y": 0.29
+                    },
+                    "next_nodes": [
+                        "r07n02"
+                    ],
+                    "previous_nodes": [
+                        "r05n02"
+                    ]
+                },
+                {
+                    "id": "r07n02",
+                    "level": 7,
+                    "type": "unknown",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.26,
+                        "y": 0.16
+                    },
+                    "next_nodes": [],
+                    "previous_nodes": [
+                        "r06n02"
+                    ]
+                },
+                {
+                    "id": "r03n04",
+                    "level": 3,
+                    "type": "elite",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.49,
+                        "y": 0.59
+                    },
+                    "next_nodes": [
+                        "r04n04"
+                    ],
+                    "previous_nodes": []
+                },
+                {
+                    "id": "r04n04",
+                    "level": 4,
+                    "type": "rest",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.49,
+                        "y": 0.45
+                    },
+                    "next_nodes": [
+                        "r05n04"
+                    ],
+                    "previous_nodes": [
+                        "r03n04"
+                    ]
+                },
+                {
+                    "id": "r05n04",
+                    "level": 5,
+                    "type": "elite",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.49,
+                        "y": 0.31
+                    },
+                    "next_nodes": [
+                        "r06n04"
+                    ],
+                    "previous_nodes": [
+                        "r04n04"
+                    ]
+                },
+                {
+                    "id": "r06n04",
+                    "level": 6,
+                    "type": "chest",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.49,
+                        "y": 0.16
+                    },
+                    "next_nodes": [],
+                    "previous_nodes": [
+                        "r05n04"
+                    ]
+                },
+                {
+                    "id": "r03n05",
+                    "level": 3,
+                    "type": "elite",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.56,
+                        "y": 0.59
+                    },
+                    "next_nodes": [
+                        "r04n05"
+                    ],
+                    "previous_nodes": []
+                },
+                {
+                    "id": "r04n05",
+                    "level": 4,
+                    "type": "elite",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.56,
+                        "y": 0.45
+                    },
+                    "next_nodes": [
+                        "r05n05"
+                    ],
+                    "previous_nodes": [
+                        "r03n05"
+                    ]
+                },
+                {
+                    "id": "r05n05",
+                    "level": 5,
+                    "type": "elite",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.56,
+                        "y": 0.31
+                    },
+                    "next_nodes": [
+                        "r06n05"
+                    ],
+                    "previous_nodes": [
+                        "r04n05"
+                    ]
+                },
+                {
+                    "id": "r06n05",
+                    "level": 6,
+                    "type": "chest",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.56,
+                        "y": 0.16
+                    },
+                    "next_nodes": [],
+                    "previous_nodes": [
+                        "r05n05"
+                    ]
+                },
+                {
+                    "id": "r03n06",
+                    "level": 3,
+                    "type": "elite",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.65,
+                        "y": 0.59
+                    },
+                    "next_nodes": [
+                        "r04n06"
+                    ],
+                    "previous_nodes": []
+                },
+                {
+                    "id": "r04n06",
+                    "level": 4,
+                    "type": "elite",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.65,
+                        "y": 0.45
+                    },
+                    "next_nodes": [
+                        "r05n06"
+                    ],
+                    "previous_nodes": [
+                        "r03n06"
+                    ]
+                },
+                {
+                    "id": "r05n06",
+                    "level": 5,
+                    "type": "elite",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.65,
+                        "y": 0.31
+                    },
+                    "next_nodes": [
+                        "r06n06"
+                    ],
+                    "previous_nodes": [
+                        "r04n06"
+                    ]
+                },
+                {
+                    "id": "r06n06",
+                    "level": 6,
+                    "type": "chest",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.65,
+                        "y": 0.16
+                    },
+                    "next_nodes": [],
+                    "previous_nodes": [
+                        "r05n06"
+                    ]
+                },
+                {
+                    "id": "r03n07",
+                    "level": 3,
+                    "type": "unknown",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.73,
+                        "y": 0.59
+                    },
+                    "next_nodes": [
+                        "r04n07"
+                    ],
+                    "previous_nodes": []
+                },
+                {
+                    "id": "r04n07",
+                    "level": 4,
+                    "type": "unknown",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.73,
+                        "y": 0.45
+                    },
+                    "next_nodes": [
+                        "r05n07"
+                    ],
+                    "previous_nodes": [
+                        "r03n07"
+                    ]
+                },
+                {
+                    "id": "r05n07",
+                    "level": 5,
+                    "type": "merchant",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.73,
+                        "y": 0.31
+                    },
+                    "next_nodes": [
+                        "r06n07"
+                    ],
+                    "previous_nodes": [
+                        "r04n07"
+                    ]
+                },
+                {
+                    "id": "r06n07",
+                    "level": 6,
+                    "type": "elite",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.73,
+                        "y": 0.16
+                    },
+                    "next_nodes": [],
+                    "previous_nodes": [
+                        "r05n07"
+                    ]
+                },
+                {
+                    "id": "r03n08",
+                    "level": 3,
+                    "type": "elite",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.71,
+                        "y": 0.73
+                    },
+                    "next_nodes": [
+                        "r04n08"
+                    ],
+                    "previous_nodes": []
+                },
+                {
+                    "id": "r04n08",
+                    "level": 4,
+                    "type": "elite",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.71,
+                        "y": 0.59
+                    },
+                    "next_nodes": [
+                        "r05n08"
+                    ],
+                    "previous_nodes": [
+                        "r03n08"
+                    ]
+                },
+                {
+                    "id": "r05n08",
+                    "level": 5,
+                    "type": "elite",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.71,
+                        "y": 0.45
+                    },
+                    "next_nodes": [
+                        "r06n08"
+                    ],
+                    "previous_nodes": [
+                        "r04n08"
+                    ]
+                },
+                {
+                    "id": "r06n08",
+                    "level": 6,
+                    "type": "elite",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.71,
+                        "y": 0.31
+                    },
+                    "next_nodes": [
+                        "r07n08"
+                    ],
+                    "previous_nodes": [
+                        "r05n08"
+                    ]
+                },
+                {
+                    "id": "r07n08",
+                    "level": 7,
+                    "type": "elite",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.71,
+                        "y": 0.16
+                    },
+                    "next_nodes": [],
+                    "previous_nodes": [
+                        "r06n08"
+                    ]
+                }
+            ],
+            "paths": [
+                {
+                    "from": "r01n03",
+                    "to": "r02n03",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r02n03",
+                    "to": "r03n03",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r03n03",
+                    "to": "r04n02",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r04n02",
+                    "to": "r05n02",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r05n02",
+                    "to": "r06n02",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r06n02",
+                    "to": "r07n02",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r03n04",
+                    "to": "r04n04",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r04n04",
+                    "to": "r05n04",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r05n04",
+                    "to": "r06n04",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r03n05",
+                    "to": "r04n05",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r04n05",
+                    "to": "r05n05",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r05n05",
+                    "to": "r06n05",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r03n06",
+                    "to": "r04n06",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r04n06",
+                    "to": "r05n06",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r05n06",
+                    "to": "r06n06",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r03n07",
+                    "to": "r04n07",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r04n07",
+                    "to": "r05n07",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r05n07",
+                    "to": "r06n07",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r03n08",
+                    "to": "r04n08",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r04n08",
+                    "to": "r05n08",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r05n08",
+                    "to": "r06n08",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r06n08",
+                    "to": "r07n08",
+                    "relation": "next_room"
+                }
+            ]
+        },
+        "visible_text": [
+            "图例",
+            "未知",
+            "商人",
+            "宝箱",
+            "休息",
+            "敌人",
+            "精英",
+            "前进"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Red arrow points to the rest node at the bottom center, marking it as current.",
+        "Legend confirms room types: unknown, merchant, chest, rest, enemy, elite.",
+        "Visible dashed lines connect nodes across the map."
+    ]
+}
