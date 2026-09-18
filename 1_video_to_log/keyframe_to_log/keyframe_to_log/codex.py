@@ -4,12 +4,14 @@ import difflib
 import json
 import re
 import unicodedata
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
 from typing import Any
 
 DEFAULT_BASE_URL = "https://spire-codex.com"
+DEFAULT_USER_AGENT = "sts2-keyframe-to-log/0.1 (+https://github.com/ptrlrd/spire-codex)"
 
 
 def normalize_name(value: str | None) -> str:
@@ -65,9 +67,23 @@ class CodexCatalog:
         if version:
             query_values["version"] = version
         source = base_url.rstrip("/") + "/api/cards?" + urllib.parse.urlencode(query_values)
-        request = urllib.request.Request(source, headers={"Accept": "application/json"})
-        with urllib.request.urlopen(request, timeout=timeout) as response:
-            payload = json.loads(response.read().decode("utf-8"))
+        headers = {
+            "Accept": "application/json",
+            "Accept-Encoding": "identity",
+            "User-Agent": DEFAULT_USER_AGENT,
+        }
+        request = urllib.request.Request(source, headers=headers)
+        try:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                payload = json.loads(response.read().decode("utf-8"))
+        except (urllib.error.HTTPError, urllib.error.URLError):
+            if channel != "stable" or version is not None or base_url.rstrip("/") != DEFAULT_BASE_URL:
+                raise
+            fallback_source = f"https://raw.githubusercontent.com/ptrlrd/spire-codex/main/data/{lang}/cards.json"
+            fallback_request = urllib.request.Request(fallback_source, headers=headers)
+            with urllib.request.urlopen(fallback_request, timeout=timeout) as response:
+                payload = json.loads(response.read().decode("utf-8"))
+            source = fallback_source
         items = _items(payload)
         if not items:
             raise RuntimeError("Spire Codex returned no card records")
