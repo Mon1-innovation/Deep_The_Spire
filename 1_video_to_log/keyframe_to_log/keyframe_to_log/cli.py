@@ -2,6 +2,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 from .pipeline import convert_keyframes
+from .codex import CodexCatalog, DEFAULT_BASE_URL
 from .provider import provider_from_environment
 
 def main() -> None:
@@ -11,13 +12,26 @@ def main() -> None:
     parser.add_argument("--run-id", help="对局 ID；默认使用输入目录名称")
     parser.add_argument("--patch")
     parser.add_argument("--output-folder", default="logs", help="在对局目录内创建的输出文件夹名称，默认 logs")
+    parser.add_argument("--no-codex", action="store_true", help="禁用 Spire Codex 卡牌名称归一化")
+    parser.add_argument("--codex-base-url", default=DEFAULT_BASE_URL)
+    parser.add_argument("--codex-lang", default="zhs", help="Spire Codex 语言，默认 zhs")
+    parser.add_argument("--codex-channel", choices=["stable", "beta"], default="stable")
+    parser.add_argument("--codex-version", help="请求 Spire Codex 的指定数据版本；接口不提供时会标记为未验证")
     args = parser.parse_args()
     input_path = Path(args.input)
     run_id = args.run_id or input_path.name
     output_dir = input_path / args.output_folder
     output_path = output_dir / f"{run_id}.json"
     cache_dir = output_dir / "cache"
-    result = convert_keyframes(input_path, output_path, provider_from_environment(args.provider), run_id, args.patch, cache_dir)
+    catalog = None
+    if not args.no_codex and args.provider != "mock":
+        catalog_cache = output_dir / "codex_cache" / f"cards_{args.codex_lang}_{args.codex_channel}_{args.codex_version or 'latest'}.json"
+        try:
+            catalog = CodexCatalog.load(catalog_cache, base_url=args.codex_base_url, lang=args.codex_lang, channel=args.codex_channel, version=args.codex_version)
+            print(f"codex: {catalog.source}")
+        except Exception as error:
+            print(f"warning: Spire Codex unavailable; OCR names will be kept: {error}")
+    result = convert_keyframes(input_path, output_path, provider_from_environment(args.provider), run_id, args.patch, cache_dir, catalog)
     print(f"wrote {len(result['observations'])} observations and {len(result['events'])} events")
     print(f"json: {output_path}")
     print(f"jsonl: {output_path.with_suffix('.jsonl')}")
