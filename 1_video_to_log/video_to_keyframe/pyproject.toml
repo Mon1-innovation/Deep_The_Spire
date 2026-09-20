@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sts2-keyframe-extractor"
+version = "0.1.0"
+description = "Extract evidence keyframes from Slay the Spire 2 recordings"
+requires-python = ">=3.10"
+dependencies = ["opencv-python>=4.8", "numpy>=1.24"]
+
+[project.scripts]
+keyframe-extractor = "keyframe_extractor.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+

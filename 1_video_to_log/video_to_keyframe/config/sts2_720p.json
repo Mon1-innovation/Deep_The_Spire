@@ -1,0 +1,28 @@
+{
+  "coarse_fps": 8,
+  "change_threshold": 0.08,
+  "page_threshold": 0.18,
+  "roi_change_threshold": 0.025,
+  "combat_change_threshold": 0.018,
+  "event_change_threshold": 0.018,
+  "stable_frames": 5,
+  "stable_threshold": 0.025,
+  "anchor_interval": 5,
+  "phash_distance": 6,
+  "ssim_threshold": 0.985,
+  "pre_roll": 0.5,
+  "settle_timeout": 2,
+  "black_mean_threshold": 8,
+  "black_std_threshold": 12,
+  "black_dark_ratio": 0.995,
+  "jpeg_quality": 95,
+  "rois": [
+    {"name": "top_hud", "x": 0.0, "y": 0.0, "w": 0.42, "h": 0.18, "weight": 0.7},
+    {"name": "combat_center", "x": 0.20, "y": 0.18, "w": 0.60, "h": 0.58, "weight": 1.5},
+    {"name": "hand", "x": 0.12, "y": 0.72, "w": 0.76, "h": 0.28, "weight": 1.5},
+    {"name": "combat_hand", "x": 0.18, "y": 0.64, "w": 0.64, "h": 0.30, "weight": 2.2},
+    {"name": "event_options", "x": 0.22, "y": 0.22, "w": 0.56, "h": 0.56, "weight": 2.0},
+    {"name": "player_status", "x": 0.68, "y": 0.0, "w": 0.32, "h": 0.28, "weight": 1.2},
+    {"name": "full_frame", "x": 0.0, "y": 0.0, "w": 1.0, "h": 1.0, "weight": 0.9}
+  ]
+}
