@@ -48,3 +48,22 @@ video_keyframe/run_000/
 程序对 DeepSeek 默认关闭 thinking，因为思考 token 也会占用 `max_tokens`，可能导致还没有输出 JSON 就触发 `finish_reason=length`。如果模型仍返回被截断或无效的 JSON，程序会自动重试最多 3 次，并要求模型缩短回答。仍然失败时，`run_000.json` 和 `run_000.md` 会以 `failed` 状态保存已处理内容以及出错关键帧。可以通过 `STS_VLM_MAX_TOKENS` 调整输出上限，默认值为 `8192`。
 
 识别策略：非地图页面将左上角约 34% 宽、14% 高区域作为独立 HUD ROI，专门读取血量、金币、能量、楼层等数值；地图页面保留整张截图，要求输出所有可见节点、节点类型、层级、当前位置和连接路径。
+
+## Spire Codex 卡牌归一化
+
+使用 OpenAI-compatible VLM 时，程序默认从 `https://spire-codex.com` 读取卡牌目录，将手牌和卡牌选项中的 OCR/VLM 名称匹配到规范 `entity_id`。原始识别文本保留在 `raw_name`，不会被覆盖。
+
+可选参数：
+
+```powershell
+python -m keyframe_to_log `
+    ..\video_keyframe\run_001 `
+    --provider openai-compatible `
+    --run-id run_001 `
+    --patch 0.111.0 `
+    --codex-channel beta `
+    --codex-version v0.111.0 `
+    --codex-lang zhs
+```
+
+版本规则：`stable`/`beta` 选择 Codex 数据频道；`--codex-version` 请求指定版本；如果游戏补丁未知或目录版本无法确认，匹配仍会保留，但 `version_status` 会是 `unknown` 或 `unverified`，不会伪装成已验证历史数据。目录缓存在每局的 `logs/codex_cache/`。使用 `--no-codex` 可禁用归一化。

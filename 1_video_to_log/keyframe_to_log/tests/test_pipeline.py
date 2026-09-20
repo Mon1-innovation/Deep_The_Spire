@@ -17,7 +17,7 @@ def test_mock_pipeline_is_repeatable_and_cached(tmp_path: Path):
     result = convert_keyframes(tmp_path, output, MockProvider(), run_id="test")
     assert result["run_id"] == "test"
     assert result["provenance"]["schema_version"] == "2.0"
-    assert result["provenance"]["observation_schema_version"] == "4"
+    assert result["provenance"]["observation_schema_version"] == "5"
     assert result["provenance"]["map_schema_version"] == "2"
     assert result["provenance"]["game_patch"] == "unknown"
     assert len(result["observations"]) == 1
