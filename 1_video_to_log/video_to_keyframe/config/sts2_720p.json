@@ -5,6 +5,14 @@
   "roi_change_threshold": 0.025,
   "combat_change_threshold": 0.018,
   "event_change_threshold": 0.018,
+  "shop_change_threshold": 0.018,
+  "pseudo_keyframe_fallback": false,
+  "pseudo_keyframe_rois": ["combat_hand", "hand"],
+  "battle_start_ocr": {
+    "enabled": false,
+    "interval": 1.0,
+    "keywords": ["battle start", "combat start", "战斗开始"]
+  },
   "stable_frames": 5,
   "stable_threshold": 0.025,
   "anchor_interval": 5,
@@ -21,7 +29,8 @@
     {"name": "combat_center", "x": 0.20, "y": 0.18, "w": 0.60, "h": 0.58, "weight": 1.5},
     {"name": "hand", "x": 0.12, "y": 0.72, "w": 0.76, "h": 0.28, "weight": 1.5},
     {"name": "combat_hand", "x": 0.18, "y": 0.64, "w": 0.64, "h": 0.30, "weight": 2.2},
-    {"name": "event_options", "x": 0.22, "y": 0.22, "w": 0.56, "h": 0.56, "weight": 2.0},
+    {"name": "event_options", "x": 0.18, "y": 0.24, "w": 0.64, "h": 0.54, "weight": 2.4},
+    {"name": "shop_decision", "x": 0.10, "y": 0.16, "w": 0.80, "h": 0.70, "weight": 1.8},
     {"name": "player_status", "x": 0.68, "y": 0.0, "w": 0.32, "h": 0.28, "weight": 1.2},
     {"name": "full_frame", "x": 0.0, "y": 0.0, "w": 1.0, "h": 1.0, "weight": 0.9}
   ]

@@ -4,7 +4,9 @@ import cv2
 import numpy as np
 
 from keyframe_extractor.config import Settings
+from keyframe_extractor.config import Roi
 from keyframe_extractor.pipeline import extract_video
+from keyframe_extractor.selector import Selector
 from keyframe_extractor.scores import is_black_frame
 
 
@@ -72,3 +74,26 @@ def test_sensitive_roi_change_is_retained_in_order(tmp_path: Path) -> None:
     assert indices == sorted(indices)
     assert any(25 <= index <= 60 for index in indices)
     assert any(70 <= index <= 105 for index in indices)
+
+
+def test_beta_pre_coarse_fallback_uses_previous_sample() -> None:
+    settings = Settings(
+        coarse_fps=10,
+        anchor_interval=100,
+        stable_frames=1,
+        pseudo_keyframe_fallback=True,
+        rois=[Roi("combat_hand", 0.0, 0.0, 1.0, 1.0, 1.0)],
+    )
+    selector = Selector(settings, 30)
+    base = np.full((20, 20, 3), 30, dtype=np.uint8)
+    changed = base.copy()
+    changed[5:15, 5:15] = 240
+    assert selector.consider(0, 0.0, base) is not None
+    selector.last_output = None
+    selector.last_output_hash = None
+    selector.consider(3, 0.1, base)
+    selector.consider(6, 0.2, changed)
+    selected = selector.finish()
+    assert selected is not None
+    assert selected.trigger.endswith("_pre_coarse")
+    assert selected.frame_index == 3
