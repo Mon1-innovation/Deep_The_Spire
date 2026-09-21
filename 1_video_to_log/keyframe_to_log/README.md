@@ -49,6 +49,21 @@ video_keyframe/run_000/
 
 识别策略：非地图页面将左上角约 34% 宽、14% 高区域作为独立 HUD ROI，专门读取血量、金币、能量、楼层等数值；地图页面保留整张截图，要求输出所有可见节点、节点类型、层级、当前位置和连接路径。
 
+
+## 对接上游关键帧抽取器
+
+上游 `video_to_keyframe` 的输出目录可以直接作为输入，例如：
+
+```powershell
+python -m keyframe_to_log `
+  ..\video_to_keyframe\segmentation\run_001 `
+  --provider openai-compatible `
+  --run-id run_001 `
+  --patch 0.111.0
+```
+
+程序会读取该目录下的 `keyframes/*.jpg` 和 `keyframes.jsonl`，保留原视频帧号、时间戳、抽帧触发原因等元数据。也可以直接传入 `keyframes` 子目录，程序会尝试读取其父目录中的 `keyframes.jsonl`。
+
 ## Spire Codex 卡牌归一化
 
 使用 OpenAI-compatible VLM 时，程序默认从 `https://spire-codex.com` 读取卡牌目录，将手牌和卡牌选项中的 OCR/VLM 名称匹配到规范 `entity_id`。原始识别文本保留在 `raw_name`，不会被覆盖。

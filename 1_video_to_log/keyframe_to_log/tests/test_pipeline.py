@@ -17,7 +17,7 @@ def test_mock_pipeline_is_repeatable_and_cached(tmp_path: Path):
     result = convert_keyframes(tmp_path, output, MockProvider(), run_id="test")
     assert result["run_id"] == "test"
     assert result["provenance"]["schema_version"] == "2.0"
-    assert result["provenance"]["observation_schema_version"] == "5"
+    assert result["provenance"]["observation_schema_version"] == "6"
     assert result["provenance"]["map_schema_version"] == "2"
     assert result["provenance"]["game_patch"] == "unknown"
     assert len(result["observations"]) == 1
@@ -33,3 +33,18 @@ def test_empty_input_is_rejected(tmp_path: Path):
     with pytest.raises(ValueError, match="no supported keyframe images"):
         convert_keyframes(tmp_path, tmp_path / "log.json", MockProvider())
 
+
+
+def test_discovers_upstream_keyframe_manifest_and_kf_names(tmp_path: Path):
+    keyframes = tmp_path / "keyframes"
+    keyframes.mkdir()
+    (keyframes / "kf_000002_t_000002.000.jpg").write_bytes(b"image")
+    (keyframes / "kf_000001_t_000001.000.jpg").write_bytes(b"image")
+    (tmp_path / "keyframes.jsonl").write_text(
+        json.dumps({"keyframe_id": "run-kf-000002", "frame_index": 60, "timestamp_sec": 2.0, "path": "keyframes/kf_000002_t_000002.000.jpg", "trigger": "roi_change"}) + "\n"
+        + json.dumps({"keyframe_id": "run-kf-000001", "frame_index": 30, "timestamp_sec": 1.0, "path": "keyframes/kf_000001_t_000001.000.jpg", "trigger": "periodic_anchor"}) + "\n",
+        encoding="utf-8",
+    )
+    frames = discover_keyframes(tmp_path)
+    assert [frame.frame_index for frame in frames] == [60, 30]
+    assert frames[0].metadata["trigger"] == "roi_change"

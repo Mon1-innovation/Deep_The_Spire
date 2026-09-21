@@ -9,6 +9,7 @@ class Keyframe:
     path: str
     timestamp: float
     frame_index: int | None = None
+    metadata: dict[str, Any] = field(default_factory=dict)
 
 @dataclass
 class Observation:
@@ -21,5 +22,5 @@ class Observation:
     extractor: str = "unknown"
 
     def as_dict(self) -> dict[str, Any]:
-        return {"path": self.keyframe.path, "t": self.keyframe.timestamp, "frame_index": self.keyframe.frame_index, "page_type": self.page_type, "confidence": self.confidence, "state": self.state, "action": self.action, "evidence": self.evidence, "extractor": self.extractor}
+        return {"path": self.keyframe.path, "t": self.keyframe.timestamp, "frame_index": self.keyframe.frame_index, "keyframe_metadata": self.keyframe.metadata, "page_type": self.page_type, "confidence": self.confidence, "state": self.state, "action": self.action, "evidence": self.evidence, "extractor": self.extractor}
 

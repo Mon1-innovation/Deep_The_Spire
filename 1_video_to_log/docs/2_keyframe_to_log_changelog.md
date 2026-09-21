@@ -16,3 +16,11 @@
 
 - stable 当前接口未必携带精确历史补丁号；没有可验证目录版本时不会标记为 `verified`。
 - 训练数据应优先使用 `version_status=verified` 的实体字段；其他情况保留为候选或人工复核。
+
+
+## 2026-09-21 上游抽帧器适配
+
+- 兼容上游 video_to_keyframe 生成的 keyframes 目录和 keyframes.jsonl 清单。
+- 支持解析 kf_000001_t_000012.400.jpg 文件名中的帧号与时间戳。
+- 将抽帧触发原因、原视频帧号等元数据保留到日志观测的 keyframe_metadata。
+- 观测缓存和观测结构版本升级到 observation-v6 / 6。
