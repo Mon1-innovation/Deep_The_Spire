@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: sts2-keyframe-extractor
+Version: 0.1.0
+Summary: Extract evidence keyframes from Slay the Spire 2 recordings
+Requires-Python: >=3.10
+Requires-Dist: opencv-python>=4.8
+Requires-Dist: numpy>=1.24

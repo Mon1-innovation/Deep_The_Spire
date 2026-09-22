@@ -1,0 +1,2 @@
+[console_scripts]
+keyframe-extractor = keyframe_extractor.cli:main
