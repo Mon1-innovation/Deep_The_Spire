@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: sts2-keyframe-to-log
+Version: 0.1.0
+Summary: 将预先提取的《杀戮尖塔 2》关键帧转换为经过校验的事件日志。
+Requires-Python: >=3.8
+Requires-Dist: Pillow>=9.0

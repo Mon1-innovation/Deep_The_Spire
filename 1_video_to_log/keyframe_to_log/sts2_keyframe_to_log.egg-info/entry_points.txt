@@ -1,0 +1,2 @@
+[console_scripts]
+keyframe-to-log = keyframe_to_log.cli:main
