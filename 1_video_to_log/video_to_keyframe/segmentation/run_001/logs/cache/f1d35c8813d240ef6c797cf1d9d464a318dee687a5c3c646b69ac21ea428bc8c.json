@@ -1,0 +1,52 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": 2,
+        "player": {
+            "hp": 43,
+            "max_hp": 70,
+            "gold": 58,
+            "energy": null
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 20,
+                "max_hp": 54,
+                "block": 0,
+                "intent": null,
+                "buffs": [
+                    "力量"
+                ]
+            }
+        ],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": 12,
+        "discard_count": 11,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "玩家回合",
+            "第2回合",
+            "力量",
+            "43/70",
+            "20/54",
+            "0/3",
+            "12",
+            "11"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "玩家回合 text visible",
+        "第2回合 text visible",
+        "Player HP 43/70",
+        "Enemy HP 20/54",
+        "力量 buff on enemy",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

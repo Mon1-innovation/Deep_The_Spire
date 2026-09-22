@@ -1,0 +1,67 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": 10,
+        "turn": 5,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "gold": 14,
+            "energy": null
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 20,
+                "max_hp": 26
+            }
+        ],
+        "hand": [
+            {
+                "name": "防御",
+                "cost": 1
+            },
+            {
+                "name": "防御",
+                "cost": 1
+            },
+            {
+                "name": "打击",
+                "cost": 1
+            },
+            {
+                "name": null,
+                "cost": null
+            },
+            {
+                "name": null,
+                "cost": null
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "玩家回合",
+            "第5回合",
+            "防御",
+            "打击",
+            "49/70",
+            "20/26",
+            "3/3"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "玩家回合 / 第5回合",
+        "Player HP 49/70 with 2 Block",
+        "Enemy HP 20/26",
+        "Hand shows 防御 and 打击 cards",
+        "Energy 3/3",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

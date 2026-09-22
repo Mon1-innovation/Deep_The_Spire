@@ -1,0 +1,42 @@
+{
+    "page_type": "deck_view",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 38,
+            "max_hp": 70,
+            "gold": 65,
+            "energy": null
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "防御",
+            "获得5点格挡。",
+            "进阶之灾",
+            "不能被打出。",
+            "虚无。",
+            "永恒。",
+            "早有准备+",
+            "抽2张牌。",
+            "丢弃2张牌。",
+            "灵动步法"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Deck view grid of cards is visible",
+        "Top-left HP 38/70 and gold 65 shown",
+        "Card text includes 防御 and 进阶之灾",
+        "Bottom hint: 你在战斗中将会使用这里的所有卡牌。",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

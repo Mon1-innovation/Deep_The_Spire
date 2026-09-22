@@ -1,0 +1,74 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": 1,
+        "player": {
+            "hp": 52,
+            "max_hp": 70,
+            "gold": 14,
+            "energy": null
+        },
+        "enemies": [
+            {
+                "name": "钙化邪教徒",
+                "hp": 39,
+                "max_hp": 39,
+                "block": 0
+            },
+            {
+                "name": null,
+                "hp": 26,
+                "max_hp": 26,
+                "block": 0
+            }
+        ],
+        "hand": [
+            {
+                "name": "中和",
+                "cost": 0,
+                "type": "skill",
+                "description": "造成3点伤害。给予1层虚弱。"
+            },
+            {
+                "name": "打击",
+                "cost": 1,
+                "type": "attack",
+                "description": null
+            },
+            {
+                "name": "灵动步法",
+                "cost": 1,
+                "type": "skill",
+                "description": null
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": 4,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "结束第1回合"
+        ],
+        "visible_text": [
+            "中和",
+            "打击",
+            "灵动步法",
+            "造成3点伤害。给予1层虚弱。",
+            "钙化邪教徒",
+            "结束第1回合",
+            "0/3"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Turn counter shows 1",
+        "Player HP 52/70 with 8 block",
+        "Enemy 钙化邪教徒 has 39/39 HP",
+        "Second enemy has 26/26 HP",
+        "End turn button reads 结束第1回合",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

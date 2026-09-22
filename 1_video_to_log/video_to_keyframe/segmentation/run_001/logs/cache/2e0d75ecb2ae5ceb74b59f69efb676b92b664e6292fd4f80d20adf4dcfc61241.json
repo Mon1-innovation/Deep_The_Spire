@@ -1,0 +1,71 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": 1,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "gold": 58,
+            "energy": null
+        },
+        "enemies": [
+            {
+                "name": "石追踪者",
+                "hp": 54,
+                "max_hp": 54,
+                "statuses": [
+                    "中毒 14"
+                ]
+            }
+        ],
+        "hand": [
+            {
+                "name": "防御",
+                "cost": 1
+            },
+            {
+                "name": "拳击",
+                "cost": 1
+            },
+            {
+                "name": "精密瞄准",
+                "cost": 0
+            },
+            {
+                "name": "灵动步法",
+                "cost": 1
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "结束第1回合"
+        ],
+        "visible_text": [
+            "49/70",
+            "58",
+            "11",
+            "05:40",
+            "中毒",
+            "14",
+            "54/54",
+            "石追踪者",
+            "0/3",
+            "结束第1回合"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Combat screen with player and enemy",
+        "Hand shows 4 cards",
+        "Enemy has 中毒 14 and 54/54 HP",
+        "End turn button visible",
+        "Player HP 49/70 with 8 block",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

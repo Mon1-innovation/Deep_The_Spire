@@ -1,0 +1,43 @@
+{
+    "page_type": "card_reward",
+    "confidence": 0.6,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 38,
+            "max_hp": 70,
+            "gold": 65,
+            "energy": null
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "心神不宁",
+            "勤紧",
+            "亮剑",
+            "跳过"
+        ],
+        "visible_text": [
+            "选择一张牌",
+            "心神不宁",
+            "勤紧",
+            "亮剑",
+            "跳过"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "选择一张牌 banner",
+        "three card reward options",
+        "跳过 button",
+        "HP 38/70",
+        "gold 65",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

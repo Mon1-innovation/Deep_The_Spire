@@ -1,0 +1,74 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": 1,
+        "player": {
+            "hp": 52,
+            "max_hp": 70,
+            "gold": 14,
+            "energy": null
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 39,
+                "max_hp": 39
+            },
+            {
+                "name": null,
+                "hp": 26,
+                "max_hp": 26,
+                "status": "中毒"
+            }
+        ],
+        "hand": [
+            {
+                "name": "中和",
+                "cost": 0
+            },
+            {
+                "name": "打击",
+                "cost": 1
+            },
+            {
+                "name": "打击",
+                "cost": 1
+            },
+            {
+                "name": "灵动步法",
+                "cost": 1
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "结束第1回合"
+        ],
+        "visible_text": [
+            "52/70",
+            "14",
+            "7",
+            "04:01",
+            "弹跳药瓶",
+            "随机给予敌人3层中毒3次",
+            "中毒",
+            "39/39",
+            "26/26",
+            "结束第1回合"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Combat screen with player and two enemies",
+        "Hand shows 中和, 打击, 打击, 灵动步法",
+        "Enemy has 中毒 status",
+        "End turn button visible",
+        "Card 弹跳药瓶 displayed",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

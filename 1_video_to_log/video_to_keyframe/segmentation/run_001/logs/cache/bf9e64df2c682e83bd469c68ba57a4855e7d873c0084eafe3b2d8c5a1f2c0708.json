@@ -1,0 +1,61 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": 4,
+        "player": {
+            "hp": 50,
+            "max_hp": 70,
+            "gold": 14,
+            "energy": null
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 5,
+                "max_hp": 39,
+                "block": null,
+                "statuses": [
+                    "虚弱",
+                    "力量"
+                ]
+            },
+            {
+                "name": null,
+                "hp": 20,
+                "max_hp": 26,
+                "block": null,
+                "statuses": []
+            }
+        ],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "玩家回合",
+            "第4回合",
+            "格挡",
+            "虚弱",
+            "效果结束",
+            "力量",
+            "50/70",
+            "5/39",
+            "20/26",
+            "0/3"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "玩家回合 第4回合",
+        "玩家 HP 50/70，格挡 1",
+        "敌人 HP 5/39 与 20/26",
+        "敌人状态 虚弱/力量",
+        "左下 0/3",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

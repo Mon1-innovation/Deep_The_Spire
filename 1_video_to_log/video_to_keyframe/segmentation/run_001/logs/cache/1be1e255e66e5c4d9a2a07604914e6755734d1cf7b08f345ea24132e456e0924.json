@@ -1,0 +1,69 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 51,
+            "max_hp": 70,
+            "gold": 14,
+            "energy": null
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 19,
+                "max_hp": 39,
+                "block": 0,
+                "intent": "attack 13"
+            },
+            {
+                "name": null,
+                "hp": 21,
+                "max_hp": 26,
+                "block": 0,
+                "intent": "attack 4x3"
+            }
+        ],
+        "hand": [
+            {
+                "name": "拳斗",
+                "cost": 1,
+                "type": "attack"
+            },
+            {
+                "name": "计划妥当",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "skill"
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "力量",
+            "增加攻击牌造成的伤害值2点。",
+            "拳斗",
+            "计划妥当",
+            "防御"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Player HP 51/70",
+        "Enemy HP 19/39 and 21/26",
+        "Hand shows 拳斗, 计划妥当, 防御",
+        "Energy 3/3",
+        "Tooltip mentions 力量",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "status": "success",
+  "source": {
+    "path": "D:\\Deep_Spire\\Deep_The_Spire\\1_video_to_log\\video_to_keyframe\\temp\\video\\run_001.mp4",
+    "sha256": "7dd4693b8919ec6fa44870d2e39e3d2c415d7beb027f4db26303bbe3756a6d9d",
+    "name": "run_001.mp4"
+  },
+  "video": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30.0,
+    "frame_count": 4595,
+    "duration_sec": 153.16666666666666
+  },
+  "script_version": "0.3.0",
+  "parameters": {
+    "coarse_fps": 8.0,
+    "change_threshold": 0.08,
+    "page_threshold": 0.18,
+    "roi_change_threshold": 0.025,
+    "combat_change_threshold": 0.018,
+    "event_change_threshold": 0.018,
+    "shop_change_threshold": 0.018,
+    "pseudo_keyframe_fallback": false,
+    "battle_start_ocr_enabled": false,
+    "black_mean_threshold": 8.0,
+    "black_std_threshold": 12.0,
+    "black_dark_ratio": 0.995,
+    "stable_frames": 5,
+    "stable_threshold": 0.025,
+    "anchor_interval": 5.0,
+    "phash_distance": 6,
+    "ssim_threshold": 0.985
+  },
+  "output_count": 75,
+  "warnings_count": 0
+}

@@ -1,0 +1,86 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": 4,
+        "player": {
+            "hp": 50,
+            "max_hp": 70,
+            "gold": 14,
+            "energy": null
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 50,
+                "max_hp": 70,
+                "intent": "attack",
+                "intent_value": 10
+            },
+            {
+                "name": null,
+                "hp": 20,
+                "max_hp": 26,
+                "intent": "attack",
+                "intent_value": 8
+            }
+        ],
+        "hand": [
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "打击",
+                "cost": 1,
+                "type": "attack"
+            },
+            {
+                "name": "灵动步",
+                "cost": 1,
+                "type": "power"
+            },
+            {
+                "name": "打击",
+                "cost": 1,
+                "type": "attack"
+            },
+            {
+                "name": "准备",
+                "cost": 1,
+                "type": "skill"
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "结束第4回合"
+        ],
+        "visible_text": [
+            "50/70",
+            "14",
+            "7",
+            "04:26",
+            "3/3",
+            "结束第4回合",
+            "造成6点伤害。",
+            "防御",
+            "打击",
+            "灵动步"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Turn counter shows 4",
+        "Player HP 50/70 and energy 3/3",
+        "Two enemies with HP 50/70 and 20/26",
+        "Hand shows 5 cards",
+        "End turn button visible",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

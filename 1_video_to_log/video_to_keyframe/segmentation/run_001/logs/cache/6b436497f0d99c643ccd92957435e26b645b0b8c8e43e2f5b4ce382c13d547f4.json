@@ -1,0 +1,57 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 51,
+            "max_hp": 70,
+            "gold": 14,
+            "energy": null
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 5,
+                "max_hp": 39,
+                "block": null,
+                "intent": null
+            },
+            {
+                "name": null,
+                "hp": 20,
+                "max_hp": 26,
+                "block": null,
+                "intent": null
+            }
+        ],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "格挡",
+            "敌方回合",
+            "中毒",
+            "效果结束",
+            "4×3",
+            "0/3",
+            "51/70",
+            "5/39",
+            "20/26"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Player HP 51/70 with 11 Block",
+        "Enemy HP 5/39 and 20/26",
+        "Poison 4×3 shown on enemy",
+        "Enemy turn banner visible",
+        "Energy 3/3",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

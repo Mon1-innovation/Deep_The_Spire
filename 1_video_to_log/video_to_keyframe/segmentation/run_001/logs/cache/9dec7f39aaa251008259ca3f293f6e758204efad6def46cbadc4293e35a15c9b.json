@@ -1,0 +1,78 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": 10,
+        "turn": 1,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "gold": 58,
+            "energy": null
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 54,
+                "max_hp": 54,
+                "intent": "attack",
+                "intent_value": 14
+            }
+        ],
+        "hand": [
+            {
+                "name": "防御",
+                "cost": 1
+            },
+            {
+                "name": "弹跳药瓶",
+                "cost": 2
+            },
+            {
+                "name": "拳斗",
+                "cost": 1
+            },
+            {
+                "name": "防御",
+                "cost": 1
+            },
+            {
+                "name": "精密瞄准",
+                "cost": 1
+            },
+            {
+                "name": "灵动步法",
+                "cost": 1
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "结束第1回合"
+        ],
+        "visible_text": [
+            "49/70",
+            "58",
+            "11",
+            "05:35",
+            "2/3",
+            "54/54",
+            "14",
+            "3",
+            "6",
+            "结束第1回合"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Player HP 49/70 with 8 block",
+        "Enemy HP 54/54 with attack intent 14",
+        "Hand shows 6 cards",
+        "Energy counter shows 2/3",
+        "End turn button visible",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

@@ -1,0 +1,37 @@
+{
+    "page_type": "treasure",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "gold": 35,
+            "energy": null
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "里面有什么？",
+            "游戏已保存",
+            "49/70",
+            "35",
+            "10"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Treasure chest scene with coins bursting out",
+        "Banner text 里面有什么？",
+        "Top bar shows 49/70 HP and 35 gold",
+        "No cards or enemies visible",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

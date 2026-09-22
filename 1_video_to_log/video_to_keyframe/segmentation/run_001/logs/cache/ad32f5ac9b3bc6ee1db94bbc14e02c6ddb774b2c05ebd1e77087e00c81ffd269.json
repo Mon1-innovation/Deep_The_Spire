@@ -1,0 +1,47 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 43,
+            "max_hp": 70,
+            "gold": 58,
+            "energy": null
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": null,
+                "max_hp": null,
+                "block": null,
+                "intent": null,
+                "status": "死亡"
+            }
+        ],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "敌方回合",
+            "43/70",
+            "死亡",
+            "11",
+            "0/3"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "敌方回合",
+        "43/70",
+        "死亡",
+        "11",
+        "0/3",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

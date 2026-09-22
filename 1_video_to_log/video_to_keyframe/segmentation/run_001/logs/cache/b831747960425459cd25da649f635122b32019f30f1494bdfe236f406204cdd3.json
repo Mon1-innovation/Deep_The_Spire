@@ -1,0 +1,52 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": 6,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "gold": 14,
+            "energy": null
+        },
+        "enemies": [
+            {
+                "name": "蟾蜍蝌蚪",
+                "hp": 5,
+                "max_hp": 26,
+                "intent": "攻击 4点伤害 3次",
+                "statuses": [
+                    "荆棘 2"
+                ]
+            }
+        ],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": 9,
+        "discard_count": 5,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "玩家回合",
+            "第6回合",
+            "攻势",
+            "这个敌人将要攻击造成4点伤害3次。",
+            "荆棘",
+            "当被攻击命中时，反击造成2点伤害。",
+            "虚弱",
+            "效果结束",
+            "蟾蜍蝌蚪"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "玩家回合 / 第6回合",
+        "玩家 HP 49/70，格挡 2",
+        "敌人 蟾蜍蝌蚪 HP 5/26",
+        "敌人意图：攻击 4点伤害 3次",
+        "抽牌堆 9，弃牌堆 5",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

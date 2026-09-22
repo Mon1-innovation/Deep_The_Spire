@@ -1,0 +1,55 @@
+{
+    "page_type": "card_select",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "gold": 25,
+            "energy": null
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            {
+                "name": "精密瞄准+",
+                "cost": 3,
+                "type": "攻击",
+                "description": "造成22点伤害。你在本回合中每打出过一张技能牌，其耗能减少1。"
+            },
+            {
+                "name": "早有准备+",
+                "cost": 0,
+                "type": "技能",
+                "description": "抽2张牌。丢弃2张牌。"
+            }
+        ],
+        "visible_text": [
+            "光与暗的门扉",
+            "步入光明之中…",
+            "这股光流转而强化了你。",
+            "回到了暗港。",
+            "个事儿？哈…？",
+            "精密瞄准+",
+            "早有准备+",
+            "攻击",
+            "技能"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Two card reward options displayed",
+        "Card 精密瞄准+ costs 3 and is an attack",
+        "Card 早有准备+ costs 0 and is a skill",
+        "HP 49/70 and gold 25 visible in HUD",
+        "Timer 04:50 visible top-right",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

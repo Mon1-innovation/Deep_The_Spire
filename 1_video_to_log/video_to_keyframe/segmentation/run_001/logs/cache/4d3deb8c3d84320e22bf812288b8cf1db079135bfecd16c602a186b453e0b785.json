@@ -1,0 +1,95 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": 1,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "gold": 58,
+            "energy": null
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 54,
+                "max_hp": 54,
+                "intent": "attack",
+                "intent_value": 14
+            }
+        ],
+        "hand": [
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "弹跳药瓶",
+                "cost": 2,
+                "type": "skill"
+            },
+            {
+                "name": "拳击",
+                "cost": 1,
+                "type": "attack"
+            },
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "精密瞄准+",
+                "cost": 2,
+                "type": "attack",
+                "description": "造成22点伤害。你在本回合中每打出过一张技能牌，其耗能减少1。"
+            },
+            {
+                "name": "生存者",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "灵动步法",
+                "cost": 1,
+                "type": "skill"
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": 6,
+        "discard_count": 3,
+        "exhaust_count": null,
+        "options": [
+            "结束第1回合"
+        ],
+        "visible_text": [
+            "49/70",
+            "58",
+            "11",
+            "05:30",
+            "3/3",
+            "6",
+            "3",
+            "结束第1回合",
+            "54/54",
+            "14"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Player HP 49/70",
+        "Enemy HP 54/54 with 14 attack intent",
+        "Energy 3/3",
+        "Hand shows 8 cards",
+        "End turn button visible",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

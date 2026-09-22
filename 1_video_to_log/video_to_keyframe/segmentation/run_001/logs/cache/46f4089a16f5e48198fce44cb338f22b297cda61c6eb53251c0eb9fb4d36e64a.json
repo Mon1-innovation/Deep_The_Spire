@@ -1,0 +1,42 @@
+{
+    "page_type": "card_reward",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 38,
+            "max_hp": 70,
+            "gold": 65,
+            "energy": null
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "敏捷",
+            "斩击",
+            "跳过"
+        ],
+        "visible_text": [
+            "选择一张牌",
+            "跳过",
+            "游戏已保存",
+            "脑蛭",
+            "斩击",
+            "敏捷"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "选择一张牌 reward banner",
+        "three card options shown",
+        "跳过 button visible",
+        "HP 38/70 and gold 65 visible",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

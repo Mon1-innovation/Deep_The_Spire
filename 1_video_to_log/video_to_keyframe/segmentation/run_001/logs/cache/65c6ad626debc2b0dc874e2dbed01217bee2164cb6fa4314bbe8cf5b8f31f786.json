@@ -1,0 +1,89 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": 10,
+        "turn": 1,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "gold": 58,
+            "energy": null
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 54,
+                "max_hp": 54,
+                "intent": "attack",
+                "intent_value": 14
+            }
+        ],
+        "hand": [
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "拳斗",
+                "cost": 2,
+                "type": "attack"
+            },
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "精准瞄准",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "生存者",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "灵动步法",
+                "cost": 1,
+                "type": "skill"
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": 6,
+        "discard_count": 3,
+        "exhaust_count": null,
+        "options": [
+            "结束第1回合"
+        ],
+        "visible_text": [
+            "49/70",
+            "54/54",
+            "3/3",
+            "14",
+            "拳斗",
+            "防御",
+            "精准瞄准",
+            "生存者",
+            "灵动步法",
+            "结束第1回合"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Combat screen with player character and enemy",
+        "Player HP 49/70 and energy 3/3",
+        "Enemy HP 54/54 with attack intent 14",
+        "Hand shows 7 cards",
+        "End turn button visible",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

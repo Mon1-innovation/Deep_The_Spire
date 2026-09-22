@@ -1,0 +1,44 @@
+{
+    "page_type": "unknown",
+    "confidence": 0.0,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": null,
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "继续游戏",
+            "放弃当前游戏",
+            "多人模式",
+            "时间线",
+            "设置",
+            "百科大全",
+            "退出"
+        ],
+        "visible_text": [
+            "Slay the Spire II",
+            "继续游戏",
+            "放弃当前游戏",
+            "多人模式",
+            "时间线",
+            "设置",
+            "百科大全",
+            "退出",
+            "CS青木",
+            "bilibili"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Title screen with Slay the Spire II logo",
+        "Vertical menu of Chinese options",
+        "No gameplay HUD visible",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

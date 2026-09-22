@@ -1,0 +1,48 @@
+{
+    "page_type": "deck_view",
+    "confidence": 0.55,
+    "state": {
+        "floor": 10,
+        "turn": null,
+        "player": {
+            "hp": 38,
+            "max_hp": 70,
+            "gold": 65,
+            "energy": null
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "获得顺序",
+            "类型",
+            "费用",
+            "拼音顺序",
+            "查看升级"
+        ],
+        "visible_text": [
+            "打击",
+            "防御",
+            "中和",
+            "生存者",
+            "进阶之灾",
+            "早有准备",
+            "灵动步法",
+            "拳斗",
+            "计划妥当",
+            "你在战斗中将会使用这里的所有卡牌。"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Deck view grid of cards",
+        "Sort tabs visible",
+        "HP 38/70 and gold 65 visible",
+        "Card names and costs visible",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

@@ -1,0 +1,667 @@
+{
+    "page_type": "map",
+    "confidence": 0.95,
+    "state": {
+        "floor": null,
+        "map": {
+            "current_node_id": "r08n03",
+            "nodes": [
+                {
+                    "id": "r01n01",
+                    "level": 1,
+                    "type": "unknown",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.33,
+                        "y": 0.08
+                    },
+                    "next_nodes": [
+                        "r02n01"
+                    ],
+                    "previous_nodes": []
+                },
+                {
+                    "id": "r01n02",
+                    "level": 1,
+                    "type": "unknown",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.5,
+                        "y": 0.08
+                    },
+                    "next_nodes": [
+                        "r02n02"
+                    ],
+                    "previous_nodes": []
+                },
+                {
+                    "id": "r01n03",
+                    "level": 1,
+                    "type": "enemy",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.65,
+                        "y": 0.08
+                    },
+                    "next_nodes": [
+                        "r02n03"
+                    ],
+                    "previous_nodes": []
+                },
+                {
+                    "id": "r01n04",
+                    "level": 1,
+                    "type": "enemy",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.72,
+                        "y": 0.08
+                    },
+                    "next_nodes": [
+                        "r02n04"
+                    ],
+                    "previous_nodes": []
+                },
+                {
+                    "id": "r02n01",
+                    "level": 2,
+                    "type": "enemy",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.33,
+                        "y": 0.22
+                    },
+                    "next_nodes": [
+                        "r03n01"
+                    ],
+                    "previous_nodes": [
+                        "r01n01"
+                    ]
+                },
+                {
+                    "id": "r02n02",
+                    "level": 2,
+                    "type": "enemy",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.57,
+                        "y": 0.22
+                    },
+                    "next_nodes": [
+                        "r03n02"
+                    ],
+                    "previous_nodes": [
+                        "r01n02"
+                    ]
+                },
+                {
+                    "id": "r02n03",
+                    "level": 2,
+                    "type": "enemy",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.72,
+                        "y": 0.22
+                    },
+                    "next_nodes": [
+                        "r03n03"
+                    ],
+                    "previous_nodes": [
+                        "r01n03"
+                    ]
+                },
+                {
+                    "id": "r02n04",
+                    "level": 2,
+                    "type": "enemy",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.72,
+                        "y": 0.22
+                    },
+                    "next_nodes": [
+                        "r03n04"
+                    ],
+                    "previous_nodes": [
+                        "r01n04"
+                    ]
+                },
+                {
+                    "id": "r03n01",
+                    "level": 3,
+                    "type": "enemy",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.33,
+                        "y": 0.36
+                    },
+                    "next_nodes": [
+                        "r04n01"
+                    ],
+                    "previous_nodes": [
+                        "r02n01"
+                    ]
+                },
+                {
+                    "id": "r03n02",
+                    "level": 3,
+                    "type": "enemy",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.48,
+                        "y": 0.36
+                    },
+                    "next_nodes": [
+                        "r04n02"
+                    ],
+                    "previous_nodes": [
+                        "r02n02"
+                    ]
+                },
+                {
+                    "id": "r03n03",
+                    "level": 3,
+                    "type": "unknown",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.65,
+                        "y": 0.36
+                    },
+                    "next_nodes": [
+                        "r04n03"
+                    ],
+                    "previous_nodes": [
+                        "r02n03"
+                    ]
+                },
+                {
+                    "id": "r03n04",
+                    "level": 3,
+                    "type": "unknown",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.72,
+                        "y": 0.36
+                    },
+                    "next_nodes": [
+                        "r04n04"
+                    ],
+                    "previous_nodes": [
+                        "r02n04"
+                    ]
+                },
+                {
+                    "id": "r04n01",
+                    "level": 4,
+                    "type": "enemy",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.33,
+                        "y": 0.5
+                    },
+                    "next_nodes": [
+                        "r05n01"
+                    ],
+                    "previous_nodes": [
+                        "r03n01"
+                    ]
+                },
+                {
+                    "id": "r04n02",
+                    "level": 4,
+                    "type": "enemy",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.48,
+                        "y": 0.5
+                    },
+                    "next_nodes": [
+                        "r05n02"
+                    ],
+                    "previous_nodes": [
+                        "r03n02"
+                    ]
+                },
+                {
+                    "id": "r04n03",
+                    "level": 4,
+                    "type": "unknown",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.65,
+                        "y": 0.5
+                    },
+                    "next_nodes": [
+                        "r05n03"
+                    ],
+                    "previous_nodes": [
+                        "r03n03"
+                    ]
+                },
+                {
+                    "id": "r04n04",
+                    "level": 4,
+                    "type": "rest",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.72,
+                        "y": 0.5
+                    },
+                    "next_nodes": [
+                        "r05n04"
+                    ],
+                    "previous_nodes": [
+                        "r03n04"
+                    ]
+                },
+                {
+                    "id": "r05n01",
+                    "level": 5,
+                    "type": "unknown",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.33,
+                        "y": 0.64
+                    },
+                    "next_nodes": [
+                        "r06n01"
+                    ],
+                    "previous_nodes": [
+                        "r04n01"
+                    ]
+                },
+                {
+                    "id": "r05n02",
+                    "level": 5,
+                    "type": "enemy",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.48,
+                        "y": 0.64
+                    },
+                    "next_nodes": [
+                        "r06n02"
+                    ],
+                    "previous_nodes": [
+                        "r04n02"
+                    ]
+                },
+                {
+                    "id": "r05n03",
+                    "level": 5,
+                    "type": "unknown",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.65,
+                        "y": 0.64
+                    },
+                    "next_nodes": [
+                        "r06n03"
+                    ],
+                    "previous_nodes": [
+                        "r04n03"
+                    ]
+                },
+                {
+                    "id": "r05n04",
+                    "level": 5,
+                    "type": "unknown",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.72,
+                        "y": 0.64
+                    },
+                    "next_nodes": [
+                        "r06n04"
+                    ],
+                    "previous_nodes": [
+                        "r04n04"
+                    ]
+                },
+                {
+                    "id": "r06n01",
+                    "level": 6,
+                    "type": "unknown",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.33,
+                        "y": 0.78
+                    },
+                    "next_nodes": [
+                        "r07n01"
+                    ],
+                    "previous_nodes": [
+                        "r05n01"
+                    ]
+                },
+                {
+                    "id": "r06n02",
+                    "level": 6,
+                    "type": "unknown",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.48,
+                        "y": 0.78
+                    },
+                    "next_nodes": [
+                        "r07n02"
+                    ],
+                    "previous_nodes": [
+                        "r05n02"
+                    ]
+                },
+                {
+                    "id": "r06n03",
+                    "level": 6,
+                    "type": "unknown",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.65,
+                        "y": 0.78
+                    },
+                    "next_nodes": [
+                        "r07n03"
+                    ],
+                    "previous_nodes": [
+                        "r05n03"
+                    ]
+                },
+                {
+                    "id": "r06n04",
+                    "level": 6,
+                    "type": "unknown",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.72,
+                        "y": 0.78
+                    },
+                    "next_nodes": [
+                        "r07n04"
+                    ],
+                    "previous_nodes": [
+                        "r05n04"
+                    ]
+                },
+                {
+                    "id": "r07n01",
+                    "level": 7,
+                    "type": "rest",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.33,
+                        "y": 0.92
+                    },
+                    "next_nodes": [
+                        "r08n01"
+                    ],
+                    "previous_nodes": [
+                        "r06n01"
+                    ]
+                },
+                {
+                    "id": "r07n02",
+                    "level": 7,
+                    "type": "enemy",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.48,
+                        "y": 0.92
+                    },
+                    "next_nodes": [
+                        "r08n02"
+                    ],
+                    "previous_nodes": [
+                        "r06n02"
+                    ]
+                },
+                {
+                    "id": "r07n03",
+                    "level": 7,
+                    "type": "merchant",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.65,
+                        "y": 0.92
+                    },
+                    "next_nodes": [
+                        "r08n03"
+                    ],
+                    "previous_nodes": [
+                        "r06n03"
+                    ]
+                },
+                {
+                    "id": "r07n04",
+                    "level": 7,
+                    "type": "enemy",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.72,
+                        "y": 0.92
+                    },
+                    "next_nodes": [
+                        "r08n04"
+                    ],
+                    "previous_nodes": [
+                        "r06n04"
+                    ]
+                },
+                {
+                    "id": "r08n01",
+                    "level": 8,
+                    "type": "rest",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.33,
+                        "y": 1.0
+                    },
+                    "next_nodes": [],
+                    "previous_nodes": [
+                        "r07n01"
+                    ]
+                },
+                {
+                    "id": "r08n02",
+                    "level": 8,
+                    "type": "enemy",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.48,
+                        "y": 1.0
+                    },
+                    "next_nodes": [],
+                    "previous_nodes": [
+                        "r07n02"
+                    ]
+                },
+                {
+                    "id": "r08n03",
+                    "level": 8,
+                    "type": "rest",
+                    "status": "current",
+                    "position": {
+                        "x": 0.65,
+                        "y": 1.0
+                    },
+                    "next_nodes": [],
+                    "previous_nodes": [
+                        "r07n03"
+                    ]
+                },
+                {
+                    "id": "r08n04",
+                    "level": 8,
+                    "type": "enemy",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.72,
+                        "y": 1.0
+                    },
+                    "next_nodes": [],
+                    "previous_nodes": [
+                        "r07n04"
+                    ]
+                }
+            ],
+            "paths": [
+                {
+                    "from": "r01n01",
+                    "to": "r02n01",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r01n02",
+                    "to": "r02n02",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r01n03",
+                    "to": "r02n03",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r01n04",
+                    "to": "r02n04",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r02n01",
+                    "to": "r03n01",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r02n02",
+                    "to": "r03n02",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r02n03",
+                    "to": "r03n03",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r02n04",
+                    "to": "r03n04",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r03n01",
+                    "to": "r04n01",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r03n02",
+                    "to": "r04n02",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r03n03",
+                    "to": "r04n03",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r03n04",
+                    "to": "r04n04",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r04n01",
+                    "to": "r05n01",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r04n02",
+                    "to": "r05n02",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r04n03",
+                    "to": "r05n03",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r04n04",
+                    "to": "r05n04",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r05n01",
+                    "to": "r06n01",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r05n02",
+                    "to": "r06n02",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r05n03",
+                    "to": "r06n03",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r05n04",
+                    "to": "r06n04",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r06n01",
+                    "to": "r07n01",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r06n02",
+                    "to": "r07n02",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r06n03",
+                    "to": "r07n03",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r06n04",
+                    "to": "r07n04",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r07n01",
+                    "to": "r08n01",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r07n02",
+                    "to": "r08n02",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r07n03",
+                    "to": "r08n03",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r07n04",
+                    "to": "r08n04",
+                    "relation": "next_room"
+                }
+            ]
+        },
+        "visible_text": [
+            "图例",
+            "未知",
+            "商人",
+            "宝箱",
+            "休息",
+            "敌人",
+            "精英",
+            "敌人",
+            "这些房间里有敌人存在。"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Red downward arrow points to the node at the bottom center, marking it as current.",
+        "Legend indicates room types: unknown, merchant, chest, rest, enemy, elite.",
+        "Map shows a branching path structure with nodes connected by dashed lines."
+    ]
+}

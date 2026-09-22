@@ -1,0 +1,56 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": 10,
+        "turn": null,
+        "player": {
+            "hp": 52,
+            "max_hp": 70,
+            "gold": 14,
+            "energy": null
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 30,
+                "max_hp": 39,
+                "block": null,
+                "intent": "仪式"
+            },
+            {
+                "name": null,
+                "hp": 23,
+                "max_hp": 26,
+                "block": null,
+                "intent": null
+            }
+        ],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": 9,
+        "discard_count": 7,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "格挡",
+            "仪式",
+            "我们的力量无人能及！",
+            "52/70",
+            "30/39",
+            "23/26",
+            "0/3",
+            "04:05"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Player has 52/70 HP and a 格挡 status label",
+        "Enemy 1 has 30/39 HP and a 仪式 intent label",
+        "Enemy 2 has 23/26 HP",
+        "Draw pile shows 9, discard pile shows 7",
+        "Speech bubble reads 我们的力量无人能及！",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

@@ -1,0 +1,68 @@
+{
+    "page_type": "combat",
+    "confidence": 0.6,
+    "state": {
+        "floor": null,
+        "turn": 3,
+        "player": {
+            "hp": 51,
+            "max_hp": 70,
+            "gold": 14,
+            "energy": null
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 9,
+                "max_hp": 39,
+                "intent": "attack 9"
+            },
+            {
+                "name": null,
+                "hp": 21,
+                "max_hp": 26,
+                "intent": "attack 4x3"
+            }
+        ],
+        "hand": [
+            {
+                "name": "生存者",
+                "cost": 1,
+                "description": "获得8点格挡。丢弃1张牌。"
+            },
+            {
+                "name": "计划妥当",
+                "cost": 1
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "结束第3回合"
+        ],
+        "visible_text": [
+            "51/70",
+            "14",
+            "7",
+            "04:20",
+            "生存者",
+            "获得8点格挡。丢弃1张牌。",
+            "计划妥当",
+            "9/39",
+            "21/26",
+            "结束第3回合"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Turn counter shows 3",
+        "End turn button reads 结束第3回合",
+        "Enemy HP bars show 9/39 and 21/26",
+        "Player HP shows 51/70 with 20 block",
+        "Hand shows 生存者 and 计划妥当",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

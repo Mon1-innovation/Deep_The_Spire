@@ -1,0 +1,39 @@
+{
+    "page_type": "event",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 43,
+            "max_hp": 70,
+            "gold": 65,
+            "energy": null
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "前进"
+        ],
+        "visible_text": [
+            "43/70",
+            "65",
+            "11",
+            "05:49",
+            "前进"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Player character shown with 43/70 HP",
+        "No enemies or hand cards visible",
+        "A single option labeled 前进 is shown",
+        "Top-left HUD numbers are not clearly readable",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}

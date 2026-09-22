@@ -1,0 +1,39 @@
+{
+    "page_type": "event",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "gold": 25,
+            "energy": null
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "步入光明之中…"
+        ],
+        "visible_text": [
+            "光与暗的门扉",
+            "步入光明之中…",
+            "好刺眼的光！！但这股光流转而强化了你。",
+            "你回到了暗港。",
+            "怎么个事！！哈…？"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Event title 光与暗的门扉",
+        "Option 步入光明之中…",
+        "HP 49/70 and gold 25 visible in HUD",
+        "No combat hand or enemies visible",
+        "HUD 数值来自左上角独立 ROI 裁剪"
+    ]
+}
