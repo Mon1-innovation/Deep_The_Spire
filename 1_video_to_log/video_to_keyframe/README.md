@@ -6,7 +6,7 @@
 
 - 已完成基础 ROI 变化检测、候选窗口稳定帧选择、周期锚点、黑屏过滤以及 pHash/SSIM 去重。
 - 已加入 shop_decision 商店决策 ROI，并细化 event_options 事件选项 ROI，用于减少商店操作和事件选项选择的漏检。
-- 已加入 pseudo_keyframe_fallback beta 功能。启用后，手牌相关变化可以回退到前一个粗采样帧，适合保留抓牌动画开始前仍能看清卡牌的画面；默认关闭。
+- 已加入 pseudo_keyframe_fallback beta 功能。启用后，手牌相关变化可以回退到前一个粗采样帧，适合保留抓牌动画开始前仍能看清卡牌的画面；仓库提供的 `config/sts2_720p.json` 默认开启，可在自定义配置中关闭。
 - 已加入可选战斗开始 OCR。该功能默认关闭，需要在配置中启用并安装 pytesseract，用于辅助定位战斗开始和初始手牌阶段。
 - 当前配置和实现已通过 Python 编译、配置 JSON 解析及合成帧回退逻辑检查；完整 pytest 测试仍需在安装测试依赖的环境中执行。
 
@@ -49,7 +49,7 @@ config/sts2_720p.json 面向 1280x720、30 FPS 的录屏，包含：
 - 稳定帧数量、稳定性阈值、周期锚点间隔、pHash/SSIM 去重参数。
 - 黑屏识别的平均亮度、标准差和暗像素比例阈值。
 - top_hud、combat_center、hand、combat_hand、event_options、shop_decision、player_status 和 full_frame ROI。
-- 默认关闭的 pseudo_keyframe_fallback 和 battle_start_ocr beta 功能。
+- 默认开启的 pseudo_keyframe_fallback 和默认关闭的 battle_start_ocr beta 功能。
 
 可以复制 JSON 文件后调整参数，或通过 --config 指定自定义配置。ROI 坐标使用 0 到 1 的归一化值，抽帧时不会裁剪最终保存的关键帧。
 

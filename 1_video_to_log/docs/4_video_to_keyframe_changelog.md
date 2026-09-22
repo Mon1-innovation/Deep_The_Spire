@@ -20,7 +20,7 @@
 
 ### 兼容性
 
-- `pseudo_keyframe_fallback` 默认关闭，未启用时保持原有关键帧选择行为。
+- 仓库提供的 `sts2_720p.json` 默认开启 `pseudo_keyframe_fallback`；自定义配置可关闭，关闭时保持原有关键帧选择行为。
 - 战斗开始 OCR 默认关闭，未安装 `pytesseract` 不影响普通抽帧流程。
 - `frame_index`、`keyframes.jsonl` 顺序、pHash/SSIM 去重和原始图像尺寸保持原有约定。
 
