@@ -3,7 +3,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 
-from keyframe_extractor.config import Settings
+from keyframe_extractor.config import Settings, load_settings
 from keyframe_extractor.config import Roi
 from keyframe_extractor.pipeline import extract_video
 from keyframe_extractor.selector import Selector
@@ -22,7 +22,7 @@ def make_video(path: Path) -> None:
 def test_extract_writes_provenance_and_keyframes(tmp_path: Path) -> None:
     video = tmp_path / "run_001.mp4"
     make_video(video)
-    settings = Settings(coarse_fps=2, anchor_interval=100, stable_frames=2)
+    settings = Settings(coarse_fps=2, anchor_interval=100, stable_frames=2, pseudo_keyframe_fallback=False)
     result = extract_video(video, tmp_path / "segmentation", settings)
     output = tmp_path / "segmentation" / "run_001"
     assert result["status"] == "success"
@@ -47,7 +47,7 @@ def test_black_transition_is_not_a_keyframe(tmp_path: Path) -> None:
         for _ in range(30):
             writer.write(np.full((720, 1280, 3), value, dtype=np.uint8))
     writer.release()
-    result = extract_video(video, tmp_path / "segmentation", Settings(coarse_fps=10, anchor_interval=100))
+    result = extract_video(video, tmp_path / "segmentation", Settings(coarse_fps=10, anchor_interval=100, pseudo_keyframe_fallback=False))
     entries = [__import__("json").loads(line) for line in
                (tmp_path / "segmentation" / "transition" / "keyframes.jsonl").read_text().splitlines()]
     assert is_black_frame(np.zeros((720, 1280, 3), dtype=np.uint8))
@@ -66,7 +66,7 @@ def test_sensitive_roi_change_is_retained_in_order(tmp_path: Path) -> None:
             frame[180:540, 300:980] = 180
         writer.write(frame)
     writer.release()
-    result = extract_video(video, tmp_path / "segmentation", Settings(coarse_fps=10, anchor_interval=100))
+    result = extract_video(video, tmp_path / "segmentation", Settings(coarse_fps=10, anchor_interval=100, pseudo_keyframe_fallback=False))
     entries = [__import__("json").loads(line) for line in
                (tmp_path / "segmentation" / "combat" / "keyframes.jsonl").read_text().splitlines()]
     indices = [entry["frame_index"] for entry in entries]
@@ -97,3 +97,9 @@ def test_beta_pre_coarse_fallback_uses_previous_sample() -> None:
     assert selected is not None
     assert selected.trigger.endswith("_pre_coarse")
     assert selected.frame_index == 3
+
+
+def test_pseudo_keyframe_fallback_is_enabled_by_default():
+    config_path = Path(__file__).parents[1] / "config" / "sts2_720p.json"
+    assert Settings().pseudo_keyframe_fallback is True
+    assert load_settings(config_path).pseudo_keyframe_fallback is True

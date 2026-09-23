@@ -6,7 +6,7 @@
   "combat_change_threshold": 0.018,
   "event_change_threshold": 0.018,
   "shop_change_threshold": 0.018,
-  "pseudo_keyframe_fallback": false,
+  "pseudo_keyframe_fallback": true,
   "pseudo_keyframe_rois": ["combat_hand", "hand"],
   "battle_start_ocr": {
     "enabled": false,

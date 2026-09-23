@@ -59,7 +59,7 @@ class Settings:
     black_std_threshold: float = 12.0
     black_dark_ratio: float = 0.995
     rois: list[Roi] = field(default_factory=lambda: list(DEFAULT_ROIS))
-    pseudo_keyframe_fallback: bool = False
+    pseudo_keyframe_fallback: bool = True
     pseudo_keyframe_rois: tuple[str, ...] = ("combat_hand", "hand")
     battle_start_ocr_enabled: bool = False
     battle_start_ocr_interval: float = 1.0
