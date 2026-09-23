@@ -1,0 +1,77 @@
+{
+    "page_type": "combat",
+    "confidence": 0.6,
+    "state": {
+        "floor": 10,
+        "turn": 1,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "block": 8,
+            "energy": 0,
+            "gold": 58
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 54,
+                "max_hp": 54,
+                "statuses": [
+                    "中毒 14"
+                ]
+            }
+        ],
+        "hand": [
+            {
+                "name": "防御",
+                "cost": 1
+            },
+            {
+                "name": "拳斗",
+                "cost": 1
+            },
+            {
+                "name": "防御",
+                "cost": 1
+            },
+            {
+                "name": "精密瞄准",
+                "cost": 1
+            },
+            {
+                "name": "灵动步法",
+                "cost": 1
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": 6,
+        "discard_count": 5,
+        "exhaust_count": null,
+        "options": [
+            "结束第1回合"
+        ],
+        "visible_text": [
+            "49/70",
+            "58",
+            "11",
+            "05:38",
+            "0/3",
+            "中毒 14",
+            "54/54",
+            "结束第1回合",
+            "弹跳药瓶",
+            "随机给予敌人3层中毒4次"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Player HP 49/70 with 8 block",
+        "Enemy has 54/54 HP and 14 中毒",
+        "Hand shows 5 cards and 结束第1回合 button",
+        "Turn counter shows 第1回合",
+        "Potion card 弹跳药瓶 is displayed",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

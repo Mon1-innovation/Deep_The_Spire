@@ -1,0 +1,72 @@
+{
+    "page_type": "combat",
+    "confidence": 0.6,
+    "state": {
+        "floor": null,
+        "turn": 1,
+        "player": {
+            "hp": 52,
+            "max_hp": 70,
+            "block": 8,
+            "energy": 0,
+            "gold": 14
+        },
+        "enemies": [
+            {
+                "name": "钙化邪教徒",
+                "hp": 39,
+                "max_hp": 39,
+                "block": 0
+            },
+            {
+                "name": null,
+                "hp": 26,
+                "max_hp": 26,
+                "block": 0
+            }
+        ],
+        "hand": [
+            {
+                "name": "中和",
+                "cost": 0,
+                "type": "skill"
+            },
+            {
+                "name": null,
+                "cost": 1,
+                "type": "attack"
+            },
+            {
+                "name": "灵动步法",
+                "cost": 1,
+                "type": "skill"
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "结束第1回合"
+        ],
+        "visible_text": [
+            "中和",
+            "灵动步法",
+            "钙化邪教徒",
+            "造成3点伤害。",
+            "给予1层虚弱。",
+            "结束第1回合"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Combat screen with player and two enemies",
+        "Player HP 52/70 with 8 block",
+        "Enemy HP bars 39/39 and 26/26",
+        "Hand shows 中和, an attack, and 灵动步法",
+        "End turn button reads 结束第1回合",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

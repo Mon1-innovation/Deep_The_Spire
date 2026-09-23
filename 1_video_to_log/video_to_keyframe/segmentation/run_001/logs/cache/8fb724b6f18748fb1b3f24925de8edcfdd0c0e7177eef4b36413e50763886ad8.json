@@ -1,0 +1,107 @@
+{
+    "page_type": "combat",
+    "confidence": 0.6,
+    "state": {
+        "floor": null,
+        "turn": 1,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "block": null,
+            "energy": 3,
+            "gold": 58
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": null,
+                "max_hp": null,
+                "block": null
+            },
+            {
+                "name": null,
+                "hp": 34,
+                "max_hp": 34,
+                "block": null
+            }
+        ],
+        "hand": [
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "打击",
+                "cost": 1,
+                "type": "attack"
+            },
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "打击",
+                "cost": 1,
+                "type": "attack"
+            },
+            {
+                "name": "打击",
+                "cost": 1,
+                "type": "attack"
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "选择2张牌来丢弃。"
+        ],
+        "visible_text": [
+            "玩家回合",
+            "第1回合",
+            "选择2张牌来丢弃。",
+            "49/70",
+            "58",
+            "34/34"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Center text shows 玩家回合 and 第1回合.",
+        "Prompt text 选择2张牌来丢弃。 is visible.",
+        "Player HP 49/70 and gold 58 are visible.",
+        "Enemy HP 34/34 is visible on the right.",
+        "Hand cards are visible with costs and names.",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "page_type": "event",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 43,
+            "max_hp": 70,
+            "gold": 65
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "前进"
+        ],
+        "visible_text": [
+            "43/70",
+            "65",
+            "11",
+            "05:49",
+            "前进"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Event scene with a single character and a chest",
+        "HP shown as 43/70",
+        "Gold shown as 65",
+        "A red arrow button labeled 前进",
+        "No cards or enemies visible",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

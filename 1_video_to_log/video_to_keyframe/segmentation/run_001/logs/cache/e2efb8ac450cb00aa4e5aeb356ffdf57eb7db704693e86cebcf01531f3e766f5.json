@@ -1,0 +1,97 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": 10,
+        "turn": 1,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "block": 0,
+            "energy": 3,
+            "max_energy": 3,
+            "gold": 58
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": null,
+                "max_hp": null,
+                "intent": "attack",
+                "intent_value": 14
+            }
+        ],
+        "hand": [
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "skill",
+                "description": "获得5点格挡。"
+            },
+            {
+                "name": "弹跳药瓶",
+                "cost": 1,
+                "type": null,
+                "description": null
+            },
+            {
+                "name": "突刺",
+                "cost": 1,
+                "type": null,
+                "description": null
+            },
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "skill",
+                "description": null
+            },
+            {
+                "name": "精准瞄准",
+                "cost": 1,
+                "type": null,
+                "description": null
+            },
+            {
+                "name": "生存者",
+                "cost": 1,
+                "type": null,
+                "description": null
+            },
+            {
+                "name": "灵动步法",
+                "cost": 1,
+                "type": null,
+                "description": null
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": 5,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "结束第1回合"
+        ],
+        "visible_text": [
+            "格挡",
+            "在下个回合前，阻挡伤害。",
+            "获得5点格挡。",
+            "造成22点伤害",
+            "结束第1回合",
+            "49/70",
+            "14",
+            "3/3"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Combat screen with player character and enemy",
+        "Hand of 7 cards displayed",
+        "Enemy intent shows 14 attack",
+        "Energy counter shows 3/3",
+        "End turn button visible",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

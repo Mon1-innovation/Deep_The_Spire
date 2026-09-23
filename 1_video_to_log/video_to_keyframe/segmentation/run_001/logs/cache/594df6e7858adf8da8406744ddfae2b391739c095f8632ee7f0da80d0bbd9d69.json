@@ -1,0 +1,74 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": 2,
+        "player": {
+            "hp": 43,
+            "max_hp": 70,
+            "block": null,
+            "energy": 1,
+            "gold": 58
+        },
+        "enemies": [
+            {
+                "name": "化石追踪者",
+                "hp": 5,
+                "max_hp": null,
+                "block": null,
+                "intent": "attack 3"
+            }
+        ],
+        "hand": [
+            {
+                "name": "中和",
+                "cost": 0,
+                "type": "skill",
+                "description": "造成3点伤害。给予1层虚弱。"
+            },
+            {
+                "name": "计划妥当",
+                "cost": 1,
+                "type": "skill",
+                "description": null
+            },
+            {
+                "name": "进阶之灾",
+                "cost": 2,
+                "type": "status",
+                "description": null
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "结束第2回合"
+        ],
+        "visible_text": [
+            "中和",
+            "造成3点伤害。给予1层虚弱。",
+            "计划妥当",
+            "进阶之灾",
+            "结束第2回合",
+            "化石追踪者",
+            "43/70",
+            "1/3",
+            "5",
+            "3"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Combat screen with player and enemy",
+        "Hand shows 中和, 计划妥当, 进阶之灾",
+        "Enemy 化石追踪者 has 5 HP and intent 3",
+        "End turn button reads 结束第2回合",
+        "Player HP 43/70",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

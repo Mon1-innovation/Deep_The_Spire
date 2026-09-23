@@ -227,13 +227,19 @@ class OpenAICompatibleProvider(Provider):
             energy_image, energy_type = self._image_data(keyframe, energy_box)
             energy = self._ask(energy_image, energy_type, "Read the number before the slash in the bottom-left green energy gem.", system_prompt=ENERGY_PROMPT, max_tokens=256)
         state = full.setdefault("state", {})
+        if not isinstance(state, dict):
+            state = {}
+            full["state"] = state
+        player_state = state.get("player")
+        if not isinstance(player_state, dict):
+            player_state = {}
+            state["player"] = player_state
         hud_state = hud.get("state", {})
         if isinstance(hud_state, dict):
             for key in ("floor",):
                 if key in hud_state and hud_state[key] not in (None, {}):
                     state[key] = hud_state[key]
             if isinstance(hud_state.get("player"), dict):
-                player_state = state.setdefault("player", {})
                 for key, value in hud_state["player"].items():
                     if key != "energy" or value is not None:
                         player_state[key] = value
@@ -242,7 +248,7 @@ class OpenAICompatibleProvider(Provider):
             if isinstance(energy_state, dict) and isinstance(energy_state.get("player"), dict):
                 energy_value = energy_state["player"].get("energy")
                 if energy_value is not None:
-                    state.setdefault("player", {})["energy"] = energy_value
+                    player_state["energy"] = energy_value
             full.setdefault("evidence", []).append("战斗能量来自左下角独立能量 ROI")
         full.setdefault("evidence", []).append("血量、金币等来自左上角独立 HUD ROI")
         full["confidence"] = min(float(full.get("confidence", 0)), float(hud.get("confidence", 0)))

@@ -1,0 +1,75 @@
+{
+    "page_type": "card_select",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 50,
+            "max_hp": 70,
+            "block": null,
+            "energy": null,
+            "gold": 14
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 50,
+                "max_hp": 70
+            },
+            {
+                "name": null,
+                "hp": 20,
+                "max_hp": 26
+            }
+        ],
+        "hand": [
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "技能"
+            },
+            {
+                "name": "打击",
+                "cost": 1,
+                "type": "攻击"
+            },
+            {
+                "name": "灵动步法",
+                "cost": 1,
+                "type": "技能"
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "选择1张牌来丢弃。",
+            "弹跳药瓶"
+        ],
+        "visible_text": [
+            "选择1张牌来丢弃。",
+            "弹跳药瓶",
+            "随机给予敌人3层中毒3次。",
+            "防御",
+            "打击",
+            "灵动步法",
+            "结束第4回合",
+            "2/3"
+        ]
+    },
+    "action": {
+        "type": "select_card",
+        "card": "弹跳药瓶"
+    },
+    "evidence": [
+        "Prompt text: 选择1张牌来丢弃。",
+        "Highlighted card: 弹跳药瓶",
+        "Hand cards: 防御, 打击, 灵动步法",
+        "Player HP 50/70",
+        "Enemy HP 50/70 and 20/26",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

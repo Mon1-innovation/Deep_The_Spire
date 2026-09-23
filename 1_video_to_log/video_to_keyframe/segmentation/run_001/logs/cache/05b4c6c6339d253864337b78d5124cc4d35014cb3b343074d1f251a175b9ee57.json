@@ -1,0 +1,20 @@
+{
+    "page_type": "map",
+    "confidence": 0.0,
+    "state": {
+        "floor": null,
+        "map": {
+            "current_node_id": null,
+            "nodes": [],
+            "paths": []
+        },
+        "visible_text": [
+            "滑脚木桥",
+            "打击",
+            "造成6点伤害。",
+            "攻击"
+        ]
+    },
+    "action": null,
+    "evidence": []
+}

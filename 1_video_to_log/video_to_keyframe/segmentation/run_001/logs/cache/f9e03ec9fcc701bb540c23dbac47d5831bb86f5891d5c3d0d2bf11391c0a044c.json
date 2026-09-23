@@ -1,0 +1,55 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "block": 2,
+            "gold": 14,
+            "energy": 1
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": null,
+                "max_hp": null,
+                "status": "死亡"
+            }
+        ],
+        "hand": [
+            {
+                "name": "早有准备",
+                "cost": 0
+            },
+            {
+                "name": "打击",
+                "cost": 1
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "格挡",
+            "死亡",
+            "早有准备",
+            "打击",
+            "1/3"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Player HP 49/70 with 2 block",
+        "Enemy marked 死亡 (dead)",
+        "Hand shows 早有准备 and 打击",
+        "Green 1/3 indicator bottom-left",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

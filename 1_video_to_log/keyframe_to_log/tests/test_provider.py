@@ -70,3 +70,21 @@ def test_unreadable_energy_crop_does_not_erase_existing_value(tmp_path: Path, mo
     result = provider.observe(Keyframe(str(image_path), 17.2))
 
     assert result["state"]["player"]["energy"] == 2
+
+
+def test_null_player_state_is_initialized_before_hud_merge(tmp_path: Path, monkeypatch):
+    image_path = tmp_path / "combat.png"
+    Image.new("RGB", (1280, 720), "black").save(image_path)
+    provider = OpenAICompatibleProvider("https://example.invalid", "test", "test-model")
+    monkeypatch.setattr(provider, "_image_data", lambda frame, box=None: ("image", "image/png"))
+    responses = iter([
+        {"page_type": "combat", "confidence": 0.95},
+        {"page_type": "combat", "confidence": 0.9, "state": {"player": None}},
+        {"confidence": 0.9, "state": {"player": {"hp": 52, "gold": 14, "energy": None}}},
+        {"state": {"player": {"energy": 1}}},
+    ])
+    monkeypatch.setattr(provider, "_ask", lambda *args, **kwargs: next(responses))
+
+    result = provider.observe(Keyframe(str(image_path), 17.2))
+
+    assert result["state"]["player"] == {"hp": 52, "gold": 14, "energy": 1}

@@ -1,0 +1,40 @@
+{
+    "page_type": "event",
+    "confidence": 0.6,
+    "state": {
+        "floor": 10,
+        "turn": null,
+        "player": {
+            "hp": 43,
+            "max_hp": 70,
+            "gold": 65
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "分享知识",
+            "把它扯下来"
+        ],
+        "visible_text": [
+            "脑蛆",
+            "咚！",
+            "你的头顶传来一阵刺痛，一个念头刺",
+            "分享知识",
+            "从5张随机牌中选择1张加入你的牌组。",
+            "把它扯下来",
+            "失去7点生命值。获得一组无色卡牌奖励。"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Event screen with two choice buttons",
+        "Player HP 43/70 and gold 65 visible",
+        "Options: 分享知识 / 把它扯下来",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

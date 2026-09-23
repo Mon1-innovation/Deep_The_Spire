@@ -1,0 +1,41 @@
+{
+    "page_type": "card_reward",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 38,
+            "max_hp": 70,
+            "gold": 65
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "敏捷",
+            "斩击",
+            "跳过"
+        ],
+        "visible_text": [
+            "选择一张牌",
+            "跳过",
+            "敏捷",
+            "斩击",
+            "游戏已保存"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "选择一张牌",
+        "跳过",
+        "敏捷",
+        "斩击",
+        "游戏已保存",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

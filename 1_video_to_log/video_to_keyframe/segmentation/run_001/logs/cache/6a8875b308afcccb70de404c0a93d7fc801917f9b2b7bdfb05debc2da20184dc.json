@@ -1,0 +1,62 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 51,
+            "max_hp": 70,
+            "block": 11,
+            "statuses": [
+                "格挡"
+            ],
+            "gold": 14,
+            "energy": 0
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 5,
+                "max_hp": 39,
+                "statuses": [
+                    "中毒 4x3"
+                ]
+            },
+            {
+                "name": null,
+                "hp": 20,
+                "max_hp": 26,
+                "statuses": []
+            }
+        ],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "格挡",
+            "敌方回合",
+            "中毒",
+            "效果结束",
+            "51/70",
+            "5/39",
+            "20/26",
+            "0/3",
+            "4x3"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "敌方回合 is displayed, indicating enemy turn",
+        "Player has 11 Block and 51/70 HP",
+        "Enemy 1 has 5/39 HP and Poison 4x3",
+        "Enemy 2 has 20/26 HP",
+        "Hand cards are not visible",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

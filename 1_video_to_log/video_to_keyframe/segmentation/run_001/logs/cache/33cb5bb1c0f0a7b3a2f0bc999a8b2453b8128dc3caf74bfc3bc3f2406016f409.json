@@ -1,0 +1,45 @@
+{
+    "page_type": "event",
+    "confidence": 0.55,
+    "state": {
+        "floor": 10,
+        "turn": null,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "gold": 25
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            {
+                "label": "精密瞄准+",
+                "description": "造成22点伤害。你在本回合中每打出一张技能牌，其耗能减少1。"
+            },
+            {
+                "label": "早有准备+",
+                "description": "抽2张牌。丢弃2张牌。"
+            }
+        ],
+        "visible_text": [
+            "光与暗的门扉",
+            "步入光明之中…",
+            "这股光流转而强化了你。",
+            "回到了暗港。",
+            "个事儿？哈…？"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Event screen titled 光与暗的门扉",
+        "Two card reward options shown",
+        "Player HP 49/70 and gold 25 visible",
+        "No enemies or hand cards visible",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

@@ -1,0 +1,58 @@
+{
+    "page_type": "card_select",
+    "confidence": 0.6,
+    "state": {
+        "floor": 10,
+        "turn": null,
+        "player": {
+            "hp": 43,
+            "max_hp": 70,
+            "gold": 65
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            {
+                "name": "幻影之刃",
+                "cost": 1,
+                "type": "能力"
+            },
+            {
+                "name": "斗篷与匕首",
+                "cost": 1,
+                "type": "技能"
+            },
+            {
+                "name": "暴露",
+                "cost": 0,
+                "type": "技能"
+            },
+            {
+                "name": "紧勒",
+                "cost": 2,
+                "type": "攻击"
+            }
+        ],
+        "visible_text": [
+            "选择一张牌",
+            "易伤",
+            "人工制品",
+            "格挡",
+            "消耗"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Card selection screen with four cards",
+        "Prompt text 选择一张牌",
+        "Player HP 43/70 and gold 65",
+        "Keyword tooltips visible",
+        "No action confirmed",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

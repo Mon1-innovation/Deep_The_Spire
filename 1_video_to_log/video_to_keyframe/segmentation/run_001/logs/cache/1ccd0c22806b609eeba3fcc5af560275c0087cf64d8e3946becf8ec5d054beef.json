@@ -1,0 +1,73 @@
+{
+    "page_type": "combat",
+    "confidence": 0.6,
+    "state": {
+        "floor": null,
+        "turn": 1,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "block": 8,
+            "gold": 58,
+            "energy": 0
+        },
+        "enemies": [
+            {
+                "name": "石追踪者",
+                "hp": 54,
+                "max_hp": 54,
+                "statuses": [
+                    "中毒 14"
+                ]
+            }
+        ],
+        "hand": [
+            {
+                "name": "防御",
+                "cost": 1
+            },
+            {
+                "name": "拳击",
+                "cost": 1
+            },
+            {
+                "name": "防御",
+                "cost": 1
+            },
+            {
+                "name": "灵动步法",
+                "cost": 1
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "结束第1回合"
+        ],
+        "visible_text": [
+            "49/70",
+            "58",
+            "11",
+            "05:40",
+            "0/3",
+            "中毒",
+            "14",
+            "54/54",
+            "石追踪者",
+            "结束第1回合"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Combat screen with player and enemy",
+        "Enemy has 中毒 14 and 54/54 HP",
+        "Hand shows 防御, 拳击, 防御, 灵动步法",
+        "End turn button reads 结束第1回合",
+        "Player HP 49/70 with 8 block",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

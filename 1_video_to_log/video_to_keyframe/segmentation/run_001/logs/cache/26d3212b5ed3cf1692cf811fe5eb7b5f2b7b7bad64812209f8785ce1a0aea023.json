@@ -1,0 +1,38 @@
+{
+    "page_type": "rest",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "gold": 25
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "休息",
+            "锻造"
+        ],
+        "visible_text": [
+            "我该做什么呢?",
+            "休息",
+            "锻造",
+            "49/70",
+            "25"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Rest site screen with campfire and character",
+        "Two options shown: 休息 and 锻造",
+        "HP 49/70 and gold 25 visible in HUD",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

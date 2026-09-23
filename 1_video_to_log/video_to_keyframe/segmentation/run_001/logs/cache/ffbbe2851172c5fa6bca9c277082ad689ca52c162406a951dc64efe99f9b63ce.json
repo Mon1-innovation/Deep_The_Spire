@@ -1,0 +1,86 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": 10,
+        "turn": 1,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "block": 0,
+            "energy": 3,
+            "max_energy": 3,
+            "gold": 58
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 54,
+                "max_hp": 54,
+                "intent": "attack",
+                "intent_value": 14
+            }
+        ],
+        "hand": [
+            {
+                "name": "防御",
+                "cost": 1
+            },
+            {
+                "name": "弹跳药瓶",
+                "cost": 2
+            },
+            {
+                "name": "拳击",
+                "cost": 1
+            },
+            {
+                "name": "防御",
+                "cost": 1
+            },
+            {
+                "name": "防御",
+                "cost": 1
+            },
+            {
+                "name": "精准瞄准",
+                "cost": 1
+            },
+            {
+                "name": "生存者",
+                "cost": 1
+            },
+            {
+                "name": "灵动步法",
+                "cost": 1
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": 6,
+        "discard_count": 3,
+        "exhaust_count": null,
+        "options": [
+            "结束第1回合"
+        ],
+        "visible_text": [
+            "49/70",
+            "54/54",
+            "3/3",
+            "结束第1回合",
+            "14",
+            "6",
+            "3"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Player HP 49/70",
+        "Enemy HP 54/54 with intent 14",
+        "Energy 3/3",
+        "Hand shows 8 cards",
+        "End turn button visible",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

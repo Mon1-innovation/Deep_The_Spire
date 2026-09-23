@@ -1,0 +1,89 @@
+{
+    "page_type": "combat",
+    "confidence": 0.6,
+    "state": {
+        "floor": 10,
+        "turn": 1,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "block": 0,
+            "energy": 3,
+            "max_energy": 3,
+            "gold": 58
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 54,
+                "max_hp": 54,
+                "intent": "attack",
+                "intent_value": 14
+            }
+        ],
+        "hand": [
+            {
+                "name": "防御",
+                "cost": 1
+            },
+            {
+                "name": "防御",
+                "cost": 1
+            },
+            {
+                "name": "拳斗",
+                "cost": 2
+            },
+            {
+                "name": "防御",
+                "cost": 1
+            },
+            {
+                "name": "防御",
+                "cost": 1
+            },
+            {
+                "name": "精准瞄准",
+                "cost": 1
+            },
+            {
+                "name": "生存者",
+                "cost": 1
+            },
+            {
+                "name": "灵动步法",
+                "cost": 1
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": 6,
+        "discard_count": 3,
+        "exhaust_count": null,
+        "options": [
+            "结束第1回合"
+        ],
+        "visible_text": [
+            "49/70",
+            "54/54",
+            "3/3",
+            "14",
+            "拳斗",
+            "防御",
+            "精准瞄准",
+            "生存者",
+            "灵动步法",
+            "结束第1回合"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Combat scene with player character and one enemy",
+        "Enemy shows 54/54 HP and 14 attack intent",
+        "Player shows 49/70 HP and 3/3 energy",
+        "Hand contains 8 visible cards",
+        "End turn button reads 结束第1回合",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

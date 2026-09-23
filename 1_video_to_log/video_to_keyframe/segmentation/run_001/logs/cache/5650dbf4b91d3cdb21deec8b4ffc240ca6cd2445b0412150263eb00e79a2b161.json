@@ -1,0 +1,54 @@
+{
+    "page_type": "card_select",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "gold": 25
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "防御",
+            "防御",
+            "防御",
+            "中和",
+            "生存者",
+            "进阶之灾",
+            "早有准备",
+            "灵动步法",
+            "拳斗",
+            "特别受罚"
+        ],
+        "visible_text": [
+            "造成6点伤害。",
+            "造成5点伤害。",
+            "获得5点格挡。",
+            "获得5点格挡。",
+            "造成3点伤害。给予1层虚弱。",
+            "获得8点格挡。丢弃1张牌。",
+            "不能被打出。虚无。恐惧。",
+            "抽2张牌。丢弃2张牌。",
+            "获得2点敏捷。",
+            "造成7点伤害。获得等同于所造成伤害的格挡。",
+            "在你的回合结束时，保留最多1张牌。",
+            "你在战斗中将会使用这里的所有卡牌。"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Card selection screen with multiple card choices",
+        "Player HP 49/70 and gold 25 visible",
+        "Cards show cost, name, and description",
+        "Bottom text indicates cards will be used in combat",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

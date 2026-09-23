@@ -1,0 +1,89 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": 10,
+        "turn": 4,
+        "player": {
+            "hp": 50,
+            "max_hp": 70,
+            "block": null,
+            "energy": 3,
+            "max_energy": 3,
+            "gold": 14
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 50,
+                "max_hp": 70,
+                "intent": "attack",
+                "intent_value": 15
+            },
+            {
+                "name": null,
+                "hp": 20,
+                "max_hp": 26,
+                "intent": "attack",
+                "intent_value": 8
+            }
+        ],
+        "hand": [
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "打击",
+                "cost": 1,
+                "type": "attack"
+            },
+            {
+                "name": "灵动步",
+                "cost": 1,
+                "type": "power"
+            },
+            {
+                "name": "打击",
+                "cost": 1,
+                "type": "attack"
+            },
+            {
+                "name": "准备",
+                "cost": 1,
+                "type": "skill"
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": 5,
+        "discard_count": 5,
+        "exhaust_count": null,
+        "options": [
+            "结束第4回合"
+        ],
+        "visible_text": [
+            "50/70",
+            "14",
+            "7",
+            "04:26",
+            "3/3",
+            "结束第4回合",
+            "造成6点伤害。",
+            "防御",
+            "打击",
+            "灵动步"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Turn counter shows 4",
+        "Player HP 50/70 and energy 3/3",
+        "Two enemies with attack intents 15 and 8",
+        "Hand shows 5 cards",
+        "End turn button visible",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

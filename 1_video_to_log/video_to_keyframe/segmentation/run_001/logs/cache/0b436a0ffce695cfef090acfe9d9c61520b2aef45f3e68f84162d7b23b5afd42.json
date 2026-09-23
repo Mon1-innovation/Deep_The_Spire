@@ -1,0 +1,80 @@
+{
+    "page_type": "combat",
+    "confidence": 0.6,
+    "state": {
+        "floor": null,
+        "turn": 1,
+        "player": {
+            "hp": 52,
+            "max_hp": 70,
+            "block": 8,
+            "energy": 0,
+            "gold": 14
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 39,
+                "max_hp": 39,
+                "intent": "attack"
+            },
+            {
+                "name": null,
+                "hp": 26,
+                "max_hp": 26,
+                "statuses": [
+                    "中毒"
+                ]
+            }
+        ],
+        "hand": [
+            {
+                "name": "中和",
+                "cost": 0,
+                "type": "技能"
+            },
+            {
+                "name": "打击",
+                "cost": 1,
+                "type": "攻击"
+            },
+            {
+                "name": "打击",
+                "cost": 1,
+                "type": "攻击"
+            },
+            {
+                "name": "灵动步法",
+                "cost": 1,
+                "type": "技能"
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "结束第1回合"
+        ],
+        "visible_text": [
+            "弹跳药瓶",
+            "随机给予敌人3层中毒3次",
+            "中毒",
+            "结束第1回合",
+            "中和",
+            "打击",
+            "灵动步法"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Combat screen with player and two enemies",
+        "Hand shows 4 cards",
+        "End turn button visible",
+        "Enemy with 中毒 status",
+        "Card 弹跳药瓶 displayed",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

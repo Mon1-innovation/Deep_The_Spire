@@ -1,0 +1,59 @@
+{
+    "page_type": "combat",
+    "confidence": 0.6,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 51,
+            "max_hp": 70,
+            "block": 0,
+            "energy": 0,
+            "gold": 14
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 19,
+                "max_hp": 39,
+                "block": 4,
+                "intent": "attack 11"
+            },
+            {
+                "name": null,
+                "hp": 21,
+                "max_hp": 26,
+                "block": null,
+                "intent": "buff"
+            }
+        ],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "敌方回合",
+            "51/70",
+            "19/39",
+            "21/26",
+            "0/3",
+            "5",
+            "2",
+            "1",
+            "11"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "敌方回合 is displayed, indicating enemy turn",
+        "Player HP 51/70",
+        "Enemy HP 19/39 and 21/26",
+        "Enemy intent shows 11 attack and a buff icon",
+        "Hand is not visible",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

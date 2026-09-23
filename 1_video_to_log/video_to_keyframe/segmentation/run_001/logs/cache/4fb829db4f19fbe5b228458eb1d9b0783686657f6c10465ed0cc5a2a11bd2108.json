@@ -1,0 +1,36 @@
+{
+    "page_type": "event",
+    "confidence": 0.6,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 38,
+            "max_hp": 70,
+            "gold": 65
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "脑蛭",
+            "咚！",
+            "你的头顶传来一阵刺痛，一个念头刺入了你的脑海。",
+            "“分享知识吗？？？”",
+            "你不知如何是好…",
+            "游戏已保存"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Event screen with large creature illustration and event text",
+        "No option buttons visible",
+        "Top-left HUD shows HP 38/70 and gold 65",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

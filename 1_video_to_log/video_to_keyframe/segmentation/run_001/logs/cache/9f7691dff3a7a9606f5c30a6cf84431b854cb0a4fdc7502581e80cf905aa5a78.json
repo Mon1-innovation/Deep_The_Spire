@@ -1,0 +1,56 @@
+{
+    "page_type": "card_select",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "gold": 14
+        },
+        "enemies": [],
+        "hand": [
+            {
+                "name": "打击",
+                "cost": 1
+            },
+            {
+                "name": "早有准备",
+                "cost": 0
+            },
+            {
+                "name": "打击",
+                "cost": 1
+            },
+            {
+                "name": "弹跳药瓶",
+                "cost": 2
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "选择1张牌来丢弃。"
+        ],
+        "visible_text": [
+            "选择1张牌来丢弃。",
+            "49/70",
+            "14",
+            "04:40",
+            "2/3",
+            "5/26"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Prompt text: 选择1张牌来丢弃。",
+        "Four cards shown in hand",
+        "Player HP 49/70 and gold 14 visible",
+        "Timer 04:40 visible",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

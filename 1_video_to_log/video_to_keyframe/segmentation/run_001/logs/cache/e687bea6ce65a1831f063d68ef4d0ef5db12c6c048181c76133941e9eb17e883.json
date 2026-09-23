@@ -1,0 +1,59 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": 2,
+        "player": {
+            "hp": 52,
+            "max_hp": 70,
+            "block": null,
+            "energy": 0,
+            "statuses": [],
+            "gold": 14
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 30,
+                "max_hp": 39,
+                "block": 5,
+                "statuses": [
+                    "weak"
+                ]
+            },
+            {
+                "name": null,
+                "hp": 23,
+                "max_hp": 26,
+                "block": null,
+                "statuses": []
+            }
+        ],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "格挡",
+            "我们的力量无人能及!",
+            "玩家回合",
+            "第2回合",
+            "虚弱",
+            "效果结束"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Player turn 2 banner visible",
+        "Player HP 52/70",
+        "Enemy HP 30/39 with 5 block and weak status",
+        "Enemy HP 23/26",
+        "Block label 格挡 visible",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

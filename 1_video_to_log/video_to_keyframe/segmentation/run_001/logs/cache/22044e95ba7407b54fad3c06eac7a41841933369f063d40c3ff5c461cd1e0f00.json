@@ -1,0 +1,83 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": 2,
+        "player": {
+            "hp": 52,
+            "max_hp": 70,
+            "block": 0,
+            "gold": 14,
+            "energy": 2
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 30,
+                "max_hp": 39,
+                "block": 0,
+                "intent": "attack",
+                "intent_value": 11
+            },
+            {
+                "name": null,
+                "hp": 23,
+                "max_hp": 26,
+                "block": 0,
+                "intent": "unknown"
+            }
+        ],
+        "hand": [
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "早有准备",
+                "cost": 0,
+                "type": "skill"
+            },
+            {
+                "name": "打击",
+                "cost": 1,
+                "type": "attack"
+            },
+            {
+                "name": "进阶之灾",
+                "cost": null,
+                "type": "curse"
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "结束第2回合"
+        ],
+        "visible_text": [
+            "52/70",
+            "14",
+            "7",
+            "04:08",
+            "2/3",
+            "30/39",
+            "23/26",
+            "11",
+            "结束第2回合"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Turn counter shows 2",
+        "End turn button reads 结束第2回合",
+        "Enemy intent shows 11 attack",
+        "Hand shows 4 cards",
+        "Energy shows 2/3",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

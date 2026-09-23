@@ -1,0 +1,48 @@
+{
+    "page_type": "combat",
+    "confidence": 0.35,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": null,
+            "max_hp": null,
+            "block": null,
+            "energy": null,
+            "gold": 58
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": null,
+                "max_hp": null,
+                "block": null,
+                "intent": null
+            }
+        ],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "58",
+            "11",
+            "05:11",
+            "CS青木",
+            "bilibili"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Dark combat scene with player character on left and a frog-like enemy on right",
+        "Top bar shows gold 58 and a timer 05:11",
+        "Bottom-left shows a potion icon with 17",
+        "Bottom-right shows a potion icon with 0",
+        "No hand cards or intent icons are clearly visible",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "page_type": "card_reward",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "gold": 25
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            {
+                "label": "精密瞄准",
+                "cost": 3,
+                "type": "攻击",
+                "description": "造成17点伤害。你在本回合中每打出过一张技能牌，其耗能减少1。"
+            },
+            {
+                "label": "尖啸",
+                "cost": 1,
+                "type": "技能",
+                "description": "所有敌人在本回合失去6点力量。消耗。"
+            },
+            {
+                "label": "带毒刺击",
+                "cost": 1,
+                "type": "攻击",
+                "description": "造成6点伤害。给予3层中毒。"
+            },
+            {
+                "label": "跳过"
+            }
+        ],
+        "visible_text": [
+            "选择一张牌",
+            "跳过",
+            "49/70",
+            "25",
+            "04:45"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Card reward screen with three cards and a skip button",
+        "Player HP 49/70 and gold 25 visible in HUD",
+        "Three reward cards: 精密瞄准, 尖啸, 带毒刺击",
+        "Skip button labeled 跳过",
+        "Timer 04:45 visible top-right",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

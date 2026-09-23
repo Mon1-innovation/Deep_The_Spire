@@ -1,0 +1,40 @@
+{
+    "page_type": "card_reward",
+    "confidence": 0.6,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "block": 2,
+            "gold": 25
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "card_reward",
+            "前进"
+        ],
+        "visible_text": [
+            "49/70",
+            "25",
+            "7",
+            "04:45",
+            "前进"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Card reward panel visible with a single card",
+        "前进 button visible",
+        "Player HP 49/70 with 2 block",
+        "Top-left HUD numbers not clearly readable",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

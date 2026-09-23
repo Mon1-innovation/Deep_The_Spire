@@ -1,0 +1,60 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 40,
+            "max_hp": 70,
+            "block": null,
+            "energy": null,
+            "gold": 65
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": null,
+                "max_hp": null,
+                "intent": null
+            }
+        ],
+        "hand": [
+            {
+                "name": "打击",
+                "cost": 1,
+                "type": "attack"
+            },
+            {
+                "name": "生存者",
+                "cost": 1,
+                "type": "skill"
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "战斗开始",
+            "游戏已保存",
+            "打击",
+            "生存者",
+            "攻击",
+            "技能",
+            "灵动步法"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "战斗开始 text is displayed",
+        "Player HP is 40/70",
+        "Hand shows 打击 and 生存者",
+        "Gold is 65",
+        "Floor indicator shows 14",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

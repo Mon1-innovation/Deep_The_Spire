@@ -1,0 +1,55 @@
+{
+    "page_type": "card_select",
+    "confidence": 0.6,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 38,
+            "max_hp": 70,
+            "gold": 65
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "获得5点格挡。",
+            "获得5点格挡。",
+            "获得5点格挡。",
+            "造成3点伤害。给予1层虚弱。",
+            "获得8点格挡。丢弃1张牌。",
+            "进阶之灾",
+            "早有准备+",
+            "灵动步法",
+            "拳斗",
+            "计划妥当",
+            "弹跳药瓶+",
+            "精密瞄准+",
+            "杂技"
+        ],
+        "visible_text": [
+            "获得5点格挡。",
+            "造成3点伤害。给予1层虚弱。",
+            "获得8点格挡。丢弃1张牌。",
+            "抽2张牌。丢弃2张牌。",
+            "获得2点敏捷。",
+            "造成7点伤害。获得等量于所造成伤害的格挡。",
+            "在你的回合结束时，保留最多1张牌。",
+            "随机给予敌人3层中毒4次。",
+            "造成22点伤害。你在本回合中每打出过一张技能牌，其耗能减少1。",
+            "抽3张牌。"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Card selection screen with 13 cards displayed",
+        "Player HP 38/70 and gold 65 visible",
+        "Cards show Chinese names and descriptions",
+        "Bottom text indicates cards will be used in combat",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

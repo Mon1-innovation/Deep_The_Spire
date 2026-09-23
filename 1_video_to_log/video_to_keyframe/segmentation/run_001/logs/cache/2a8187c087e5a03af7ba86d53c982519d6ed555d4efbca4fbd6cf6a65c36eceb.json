@@ -1,0 +1,78 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": 1,
+        "player": {
+            "hp": 52,
+            "max_hp": 70,
+            "block": 8,
+            "gold": 14,
+            "energy": 2
+        },
+        "enemies": [
+            {
+                "hp": 39,
+                "max_hp": 39
+            },
+            {
+                "hp": 26,
+                "max_hp": 26
+            }
+        ],
+        "hand": [
+            {
+                "name": "中和",
+                "cost": 0
+            },
+            {
+                "name": "打击",
+                "cost": 1
+            },
+            {
+                "name": "打击",
+                "cost": 1
+            },
+            {
+                "name": "弹跳药瓶",
+                "cost": 2
+            },
+            {
+                "name": "灵动步法",
+                "cost": 1
+            },
+            {
+                "name": "防御",
+                "cost": 1
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "选择1张牌来丢弃。"
+        ],
+        "visible_text": [
+            "玩家回合",
+            "第1回合",
+            "选择1张牌来丢弃。",
+            "52/70",
+            "39/39",
+            "26/26",
+            "2/3"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "玩家回合 第1回合",
+        "选择1张牌来丢弃。",
+        "手牌6张",
+        "敌人39/39与26/26",
+        "玩家52/70",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

@@ -1,0 +1,91 @@
+{
+    "page_type": "card_select",
+    "confidence": 0.55,
+    "state": {
+        "floor": 10,
+        "turn": null,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "block": null,
+            "energy": null,
+            "gold": 58
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 49,
+                "max_hp": 70
+            },
+            {
+                "name": null,
+                "hp": 54,
+                "max_hp": 54
+            }
+        ],
+        "hand": [
+            {
+                "name": "防御",
+                "cost": 1
+            },
+            {
+                "name": "连续反弹",
+                "cost": 2
+            },
+            {
+                "name": "拳击",
+                "cost": 1
+            },
+            {
+                "name": "防御",
+                "cost": 1
+            },
+            {
+                "name": "防御",
+                "cost": 1
+            },
+            {
+                "name": "锋利瞄准",
+                "cost": 3
+            },
+            {
+                "name": "生存者",
+                "cost": 1
+            },
+            {
+                "name": "灵动步法",
+                "cost": 1
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "打击",
+            "打击"
+        ],
+        "visible_text": [
+            "选择2张牌来丢弃。",
+            "打击",
+            "造成6点伤害。",
+            "防御",
+            "连续反弹",
+            "拳击",
+            "锋利瞄准",
+            "生存者",
+            "灵动步法",
+            "结束回合"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Prompt text: 选择2张牌来丢弃。",
+        "Two highlighted 打击 cards with green selection borders",
+        "Hand of 8 cards visible at bottom",
+        "Player HP 49/70 and gold 58 visible in HUD",
+        "Enemy HP bars 49/70 and 54/54 visible",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

@@ -1,0 +1,58 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 52,
+            "max_hp": 70,
+            "block": null,
+            "energy": 0,
+            "gold": 14
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 30,
+                "max_hp": 39,
+                "block": null,
+                "intent": "仪式"
+            },
+            {
+                "name": null,
+                "hp": 23,
+                "max_hp": 26,
+                "block": null,
+                "intent": null
+            }
+        ],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": 9,
+        "discard_count": 7,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "格挡",
+            "仪式",
+            "我们的力量无人能及!",
+            "52/70",
+            "30/39",
+            "23/26",
+            "0/3",
+            "04:05"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Combat scene with player and two enemies",
+        "Player HP 52/70",
+        "Enemy HP 30/39 and 23/26",
+        "Enemy intent labeled 仪式",
+        "Draw pile 9, discard pile 7",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

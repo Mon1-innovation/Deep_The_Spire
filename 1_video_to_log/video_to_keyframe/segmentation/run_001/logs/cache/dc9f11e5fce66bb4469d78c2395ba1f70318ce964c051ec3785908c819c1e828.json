@@ -1,0 +1,85 @@
+{
+    "page_type": "card_select",
+    "confidence": 0.55,
+    "state": {
+        "floor": 10,
+        "turn": null,
+        "player": {
+            "hp": 38,
+            "max_hp": 70,
+            "gold": 65
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            {
+                "name": "进阶之灾",
+                "cost": null,
+                "type": "诅咒",
+                "description": "不能被打出。虚无。永恒。"
+            },
+            {
+                "name": "早有准备",
+                "cost": 0,
+                "type": "技能",
+                "description": "抽2张牌。丢弃2张牌。"
+            },
+            {
+                "name": "灵动步伐",
+                "cost": 1,
+                "type": "能力",
+                "description": "获得2点敏捷。"
+            },
+            {
+                "name": "争斗",
+                "cost": 1,
+                "type": "攻击",
+                "description": "造成7点伤害。获得等量于所造成伤害的格挡。"
+            },
+            {
+                "name": "计划妥当",
+                "cost": 1,
+                "type": "能力",
+                "description": "在你的回合结束时，保留最多1张牌。"
+            },
+            {
+                "name": "弹跳药瓶",
+                "cost": 2,
+                "type": "技能",
+                "description": "随机给予敌人3层中毒4次。"
+            },
+            {
+                "name": "精密瞄准",
+                "cost": 3,
+                "type": "攻击",
+                "description": "造成22点伤害。你在本回合中每打出过一张技能牌，其耗能减少1。"
+            },
+            {
+                "name": "杂技",
+                "cost": 1,
+                "type": "技能",
+                "description": "抽3张牌。丢弃1张牌。"
+            }
+        ],
+        "visible_text": [
+            "获得5点格挡。",
+            "造成3点伤害。给予1层虚弱。",
+            "获得8点格挡。丢弃1张牌。",
+            "查看升级",
+            "你在战斗中将会使用这里的所有卡牌。"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Card selection screen with multiple cards displayed",
+        "Player HP 38/70 and gold 65 visible",
+        "Cards show costs, types, and descriptions",
+        "Bottom text indicates cards will be used in combat",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

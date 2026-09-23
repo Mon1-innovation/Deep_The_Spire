@@ -1,0 +1,50 @@
+{
+    "page_type": "event",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 40,
+            "max_hp": 70,
+            "gold": 65
+        },
+        "enemies": [],
+        "hand": [
+            {
+                "name": "打击",
+                "cost": 1,
+                "type": "attack",
+                "description": "造成6点伤害。"
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "跨越",
+            "再撑一会"
+        ],
+        "visible_text": [
+            "滑脚木桥",
+            "你正在坚持",
+            "跨越",
+            "打击将从你的牌组中被移除",
+            "再撑一会",
+            "失去4点生命。重新随机上方选项中的卡牌。",
+            "打击",
+            "造成6点伤害。",
+            "游戏已保存"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Event title 滑脚木桥 visible",
+        "Two event options 跨越 and 再撑一会 visible",
+        "Card 打击 shown with 造成6点伤害。",
+        "HP 40/70 and gold 65 visible in HUD",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

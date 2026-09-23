@@ -1,0 +1,41 @@
+{
+    "page_type": "deck_view",
+    "confidence": 0.6,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "gold": 25
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "防御",
+            "中和",
+            "生存者",
+            "进阶之灾",
+            "早有准备",
+            "灵动步伐",
+            "争斗",
+            "精确妥当",
+            "弹跳药瓶",
+            "精巧瞄准"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Deck view grid of cards is visible",
+        "HP 49/70 and gold 25 shown in HUD",
+        "Card names and costs are visible",
+        "Bottom text: 你在战斗中将会使用这里的所有卡牌",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}

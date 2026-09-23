@@ -1,0 +1,86 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": 10,
+        "turn": 1,
+        "player": {
+            "hp": 49,
+            "max_hp": 70,
+            "block": 8,
+            "energy": 2,
+            "gold": 58
+        },
+        "enemies": [
+            {
+                "name": null,
+                "hp": 54,
+                "max_hp": 54,
+                "intent": "attack",
+                "intent_damage": 14
+            }
+        ],
+        "hand": [
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "弹跳药瓶",
+                "cost": 2,
+                "type": "skill"
+            },
+            {
+                "name": "拳击",
+                "cost": 1,
+                "type": "attack"
+            },
+            {
+                "name": "防御",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "精密瞄准",
+                "cost": 1,
+                "type": "skill"
+            },
+            {
+                "name": "灵动步法",
+                "cost": 1,
+                "type": "skill"
+            }
+        ],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "结束第1回合"
+        ],
+        "visible_text": [
+            "49/70",
+            "54/54",
+            "14",
+            "2/3",
+            "结束第1回合",
+            "防御",
+            "弹跳药瓶",
+            "拳击",
+            "精密瞄准",
+            "灵动步法"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Player HP 49/70 with 8 block",
+        "Enemy HP 54/54 with 14 attack intent",
+        "Turn 1 indicated by 结束第1回合",
+        "Hand shows 6 cards",
+        "Energy 3/3",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI"
+    ]
+}
