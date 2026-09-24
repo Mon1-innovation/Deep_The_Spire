@@ -102,4 +102,28 @@ def test_beta_pre_coarse_fallback_uses_previous_sample() -> None:
 def test_pseudo_keyframe_fallback_is_enabled_by_default():
     config_path = Path(__file__).parents[1] / "config" / "sts2_720p.json"
     assert Settings().pseudo_keyframe_fallback is True
-    assert load_settings(config_path).pseudo_keyframe_fallback is True
+    settings = load_settings(config_path)
+    assert settings.pseudo_keyframe_fallback is True
+    assert settings.pseudo_keyframe_scope == "global"
+    assert settings.coarse_fps == 12
+    assert settings.stable_frames == 3
+
+
+def test_load_settings_reads_pseudo_keyframe_and_decision_parameters(tmp_path: Path):
+    path = tmp_path / "settings.json"
+    path.write_text(
+        '{"pseudo_keyframe_scope":"global",'
+        '"pseudo_keyframe_rois":["full_frame"],'
+        '"decision_merge_window":2.5,'
+        '"decision_merge_ssim":0.9,'
+        '"decision_merge_phash_distance":9,'
+        '"decision_merge_rois":["full_frame"]}',
+        encoding="utf-8",
+    )
+    settings = load_settings(path)
+    assert settings.pseudo_keyframe_scope == "global"
+    assert settings.pseudo_keyframe_rois == ("full_frame",)
+    assert settings.decision_merge_window == 2.5
+    assert settings.decision_merge_ssim == 0.9
+    assert settings.decision_merge_phash_distance == 9
+    assert settings.decision_merge_rois == ("full_frame",)

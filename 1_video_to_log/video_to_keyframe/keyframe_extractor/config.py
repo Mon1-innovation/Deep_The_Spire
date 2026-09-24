@@ -28,6 +28,9 @@ DEFAULT_ROIS = [
     Roi("combat_center", 0.20, 0.18, 0.60, 0.58, 1.5),
     Roi("hand", 0.12, 0.72, 0.76, 0.28, 1.5),
     Roi("combat_hand", 0.18, 0.64, 0.64, 0.30, 2.2),
+    Roi("selection_overlay", 0.28, 0.16, 0.44, 0.58, 2.0),
+    Roi("deck_overlay", 0.10, 0.08, 0.80, 0.84, 1.8),
+    Roi("potion_bar", 0.78, 0.56, 0.22, 0.30, 1.6),
     Roi("player_status", 0.68, 0.00, 0.32, 0.28, 1.2),
     Roi("shop_decision", 0.10, 0.16, 0.80, 0.70, 1.8),
     Roi("event_options", 0.18, 0.24, 0.64, 0.54, 2.4),
@@ -61,6 +64,12 @@ class Settings:
     rois: list[Roi] = field(default_factory=lambda: list(DEFAULT_ROIS))
     pseudo_keyframe_fallback: bool = True
     pseudo_keyframe_rois: tuple[str, ...] = ("combat_hand", "hand")
+    # combat keeps the conservative default; decision also covers event/shop/deck views.
+    pseudo_keyframe_scope: str = "combat"
+    decision_merge_window: float = 1.5
+    decision_merge_ssim: float = 0.94
+    decision_merge_phash_distance: int = 12
+    decision_merge_rois: tuple[str, ...] = ("event_options", "shop_decision", "deck_overlay")
     battle_start_ocr_enabled: bool = False
     battle_start_ocr_interval: float = 1.0
     battle_start_ocr_keywords: tuple[str, ...] = ("battle start", "combat start", "战斗开始")
@@ -75,7 +84,9 @@ def load_settings(path: str | Path | None) -> Settings:
                 "combat_change_threshold", "event_change_threshold", "shop_change_threshold", "stable_frames",
                 "stable_threshold", "anchor_interval", "phash_distance", "ssim_threshold",
                 "pre_roll", "settle_timeout", "jpeg_quality", "max_decode_errors",
-                "black_mean_threshold", "black_std_threshold", "black_dark_ratio"):
+                "black_mean_threshold", "black_std_threshold", "black_dark_ratio",
+                "decision_merge_window", "decision_merge_ssim",
+                "decision_merge_phash_distance"):
         if key in data:
             setattr(settings, key, type(getattr(settings, key))(data[key]))
     if "rois" in data:
@@ -83,6 +94,13 @@ def load_settings(path: str | Path | None) -> Settings:
     settings.pseudo_keyframe_fallback = bool(data.get("pseudo_keyframe_fallback", settings.pseudo_keyframe_fallback))
     if "pseudo_keyframe_rois" in data:
         settings.pseudo_keyframe_rois = tuple(str(value) for value in data["pseudo_keyframe_rois"])
+    if "pseudo_keyframe_scope" in data:
+        scope = str(data["pseudo_keyframe_scope"]).lower()
+        if scope not in {"combat", "decision", "global"}:
+            raise ValueError("pseudo_keyframe_scope must be one of: combat, decision, global")
+        settings.pseudo_keyframe_scope = scope
+    if "decision_merge_rois" in data:
+        settings.decision_merge_rois = tuple(str(value) for value in data["decision_merge_rois"])
     ocr = data.get("battle_start_ocr", {})
     if isinstance(ocr, dict):
         settings.battle_start_ocr_enabled = bool(ocr.get("enabled", settings.battle_start_ocr_enabled))

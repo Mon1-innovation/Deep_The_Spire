@@ -104,9 +104,18 @@ class Selector:
         return self._emit_pending(pending, "low")
 
     def _emit_pending(self, pending: dict[str, Any], confidence: str) -> Selected | None:
+        changed_set = set(pending["changed"])
+        scope = self.settings.pseudo_keyframe_scope
+        scope_match = (scope == "global" or
+                       (scope == "combat" and changed_set.intersection({"hand", "combat_hand", "selection_overlay", "deck_overlay", "potion_bar"})) or
+                       (scope == "decision" and changed_set.intersection(self.settings.decision_merge_rois)))
         use_previous = (self.settings.pseudo_keyframe_fallback
+                        and scope_match
                         and pending.get("previous") is not None
-                        and set(pending["changed"]).intersection(self.settings.pseudo_keyframe_rois))
+                        and (scope == "global" or
+                             (scope == "decision" and changed_set.intersection(self.settings.decision_merge_rois)) or
+                             changed_set.intersection(self.settings.pseudo_keyframe_rois) or
+                             changed_set.intersection({"selection_overlay", "deck_overlay", "potion_bar"})))
         if use_previous:
             return self._emit(pending["previous_index"], pending["previous_timestamp"], pending["previous"],
                               pending["trigger"] + "_pre_coarse", pending["changed"], pending["score"],
@@ -118,7 +127,12 @@ class Selector:
         image_hash = phash(frame)
         if self.last_output is not None:
             distance = phash_distance(self.last_output_hash, image_hash)
-            if distance <= self.settings.phash_distance and ssim(self.last_output, frame) >= self.settings.ssim_threshold:
+            similarity = ssim(self.last_output, frame)
+            decision_merge = (set(changed).intersection(self.settings.decision_merge_rois)
+                              and timestamp - self.last_anchor <= self.settings.decision_merge_window)
+            if decision_merge and distance <= self.settings.decision_merge_phash_distance and similarity >= self.settings.decision_merge_ssim:
+                return None
+            if distance <= self.settings.phash_distance and similarity >= self.settings.ssim_threshold:
                 return None
         self.last_output = frame.copy(); self.last_output_hash = image_hash; self.last_anchor = timestamp
         return Selected(index, timestamp, frame, trigger, changed, score, stable, confidence)

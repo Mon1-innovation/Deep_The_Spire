@@ -105,16 +105,19 @@ segmentation/
 
 坐标均为相对于 1280×720 画面的归一化值；`weight` 用于局部变化的加权合并。ROI 可以重叠，`full_frame` 覆盖整幅画面。
 
-| 名称              | x    | y    | w    | h    | weight | 关注内容              |
-| --------------- | ----:| ----:| ----:| ----:| ------:| ----------------- |
-| `top_hud`       | 0.00 | 0.00 | 0.42 | 0.18 | 0.7    | 左上 HUD、生命/金币/层数等。 |
-| `combat_center` | 0.20 | 0.18 | 0.60 | 0.58 | 1.5    | 敌人、意图和战斗中心区域。     |
-| `hand`          | 0.12 | 0.72 | 0.76 | 0.28 | 1.5    | 底部手牌区域。           |
-| `combat_hand`   | 0.18 | 0.64 | 0.64 | 0.30 | 2.2    | 战斗中手牌和出牌区域，敏感度更高。 |
-| `event_options` | 0.18 | 0.24 | 0.64 | 0.54 | 2.4    | 事件选项面板。           |
-| `shop_decision` | 0.10 | 0.16 | 0.80 | 0.70 | 1.8    | 商店决策区域。           |
-| `player_status` | 0.68 | 0.00 | 0.32 | 0.28 | 1.2    | 右上玩家状态、能量和图标。     |
-| `full_frame`    | 0.00 | 0.00 | 1.00 | 1.00 | 0.9    | 地图、商店、事件及全屏页面变化。  |
+| 名称                  | x    | y    | w    | h    | weight | 关注内容              |
+| ------------------- | ----:| ----:| ----:| ----:| ------:| ----------------- |
+| `top_hud`           | 0.00 | 0.00 | 0.42 | 0.18 | 0.7    | 左上 HUD、生命/金币/层数等。 |
+| `combat_center`     | 0.20 | 0.18 | 0.60 | 0.58 | 1.5    | 敌人、意图和战斗中心区域。     |
+| `hand`              | 0.12 | 0.72 | 0.76 | 0.28 | 1.5    | 底部手牌区域。           |
+| `combat_hand`       | 0.18 | 0.64 | 0.64 | 0.30 | 2.2    | 战斗中手牌和出牌区域，敏感度更高。 |
+| `selection_overlay` | 0.28 | 0.16 | 0.44 | 0.58 | 2.0    | 中央放大选牌确认区域。       |
+| `deck_overlay`      | 0.10 | 0.08 | 0.80 | 0.84 | 1.8    | 牌堆平铺和牌组查看区域。      |
+| `potion_bar`        | 0.78 | 0.56 | 0.22 | 0.30 | 1.6    | 独立药水栏位。           |
+| `event_options`     | 0.18 | 0.24 | 0.64 | 0.54 | 2.4    | 事件选项面板。           |
+| `shop_decision`     | 0.10 | 0.16 | 0.80 | 0.70 | 1.8    | 商店决策区域。           |
+| `player_status`     | 0.68 | 0.00 | 0.32 | 0.28 | 1.2    | 右上玩家状态、能量和图标。     |
+| `full_frame`        | 0.00 | 0.00 | 1.00 | 1.00 | 0.9    | 地图、商店、事件及全屏页面变化。  |
 
 `combat_center`、`combat_hand`、`event_options` 和 `shop_decision` 使用各自更低的变化阈值，以减少短暂出牌、事件选项和商店操作的漏检。ROI 名称只描述证据区域，不表示脚本已经完成场景分类。
 
@@ -122,33 +125,37 @@ segmentation/
 
 以下为当前 `sts2_720p.json` 的有效配置项。数值阈值使用归一化灰度差（0–1）或代码注明的单位。
 
-| 参数                          | 当前配置                  | 功能                                                 |
-| --------------------------- | ---------------------:| -------------------------------------------------- |
-| `coarse_fps`                | 8                     | 粗扫比较频率（帧/秒）；越高越不易漏掉短变化，但计算量更大。                     |
-| `change_threshold`          | 0.08                  | 通用 ROI 加权局部变化阈值。                                   |
-| `page_threshold`            | 0.18                  | 全屏变化阈值，触发 `page_change` 候选。                        |
-| `roi_change_threshold`      | 0.025                 | 普通 ROI 单区变化阈值。                                     |
-| `combat_change_threshold`   | 0.018                 | `combat_center`、`combat_hand` 阈值。                  |
-| `event_change_threshold`    | 0.018                 | `event_options` 阈值。                                |
-| `shop_change_threshold`     | 0.018                 | `shop_decision` 阈值。                                |
-| `stable_frames`             | 5                     | 连续满足稳定条件所需的比较帧数。                                   |
-| `stable_threshold`          | 0.025                 | 候选帧之间被视为稳定的变化上限。                                   |
-| `anchor_interval`           | 5                     | 周期锚点间隔（秒）；用于覆盖长时间静止页面。                             |
-| `phash_distance`            | 6                     | pHash 汉明距离不超过该值时进入 SSIM 去重判断。                      |
-| `ssim_threshold`            | 0.985                 | SSIM 大于等于该值视为重复帧。                                  |
-| `pre_roll`                  | 0.5                   | 配置中保留的候选前置时间（秒）；当前 selector 尚未使用该值。                |
-| `settle_timeout`            | 2                     | 候选等待稳定的最长时间（秒）。                                    |
-| `black_mean_threshold`      | 8                     | 黑屏平均灰度阈值。                                          |
-| `black_std_threshold`       | 12                    | 黑屏灰度标准差阈值。                                         |
-| `black_dark_ratio`          | 0.995                 | 暗像素比例阈值。                                           |
-| `jpeg_quality`              | 95                    | JPG 编码质量。                                          |
-| `max_decode_errors`         | 10                    | 单视频允许的累计解码/处理异常数。                                  |
-| `pseudo_keyframe_fallback`  | `true`                | 是否在敏感 ROI 变化时回退到变化前的粗采样帧；仓库 `sts2_720p.json` 默认开启。 |
-| `pseudo_keyframe_rois`      | `combat_hand`, `hand` | 触发回退的 ROI 名称；回退帧的 trigger 增加 `_pre_coarse`。        |
-| `battle_start_ocr.enabled`  | `false`               | 是否启用战斗开始 OCR。                                      |
-| `battle_start_ocr.interval` | 1.0                   | 两次 OCR 尝试的最短间隔（秒）。                                 |
-| `battle_start_ocr.keywords` | 配置列表                  | OCR 文本命中任一关键词时触发战斗开始帧。                             |
-| `rois`                      | 见上表                   | 完整 ROI 列表；可通过 JSON 覆盖。                             |
+| 参数                              | 当前配置                  | 功能                                                 |
+| ------------------------------- | ---------------------:| -------------------------------------------------- |
+| `coarse_fps`                    | 8                     | 粗扫比较频率（帧/秒）；越高越不易漏掉短变化，但计算量更大。                     |
+| `change_threshold`              | 0.08                  | 通用 ROI 加权局部变化阈值。                                   |
+| `page_threshold`                | 0.18                  | 全屏变化阈值，触发 `page_change` 候选。                        |
+| `roi_change_threshold`          | 0.025                 | 普通 ROI 单区变化阈值。                                     |
+| `combat_change_threshold`       | 0.018                 | `combat_center`、`combat_hand` 阈值。                  |
+| `event_change_threshold`        | 0.018                 | `event_options` 阈值。                                |
+| `shop_change_threshold`         | 0.018                 | `shop_decision` 阈值。                                |
+| `stable_frames`                 | 5                     | 连续满足稳定条件所需的比较帧数。                                   |
+| `stable_threshold`              | 0.025                 | 候选帧之间被视为稳定的变化上限。                                   |
+| `anchor_interval`               | 5                     | 周期锚点间隔（秒）；用于覆盖长时间静止页面。                             |
+| `phash_distance`                | 6                     | pHash 汉明距离不超过该值时进入 SSIM 去重判断。                      |
+| `ssim_threshold`                | 0.985                 | SSIM 大于等于该值视为重复帧。                                  |
+| `pre_roll`                      | 0.5                   | 配置中保留的候选前置时间（秒）；当前 selector 尚未使用该值。                |
+| `settle_timeout`                | 2                     | 候选等待稳定的最长时间（秒）。                                    |
+| `black_mean_threshold`          | 8                     | 黑屏平均灰度阈值。                                          |
+| `black_std_threshold`           | 12                    | 黑屏灰度标准差阈值。                                         |
+| `black_dark_ratio`              | 0.995                 | 暗像素比例阈值。                                           |
+| `jpeg_quality`                  | 95                    | JPG 编码质量。                                          |
+| `max_decode_errors`             | 10                    | 单视频允许的累计解码/处理异常数。                                  |
+| `pseudo_keyframe_fallback`      | `true`                | 是否在敏感 ROI 变化时回退到变化前的粗采样帧；仓库 `sts2_720p.json` 默认开启。 |
+| `pseudo_keyframe_rois`          | `combat_hand`, `hand` | 触发回退的 ROI 名称；回退帧的 trigger 增加 `_pre_coarse`。        |
+| `pseudo_keyframe_scope`         | `combat`              | 伪关键帧适用范围：`combat`、`decision` 或 `global`。           |
+| `decision_merge_window`         | 1.5                   | 决策界面近帧合并时间窗口（秒）。                                   |
+| `decision_merge_ssim`           | 0.94                  | 决策界面合并使用的 SSIM 下限。                                 |
+| `decision_merge_phash_distance` | 12                    | 决策界面合并使用的 pHash 距离上限。                              |
+| `battle_start_ocr.enabled`      | `false`               | 是否启用战斗开始 OCR（默认关闭；不建议常规启用）。                        |
+| `battle_start_ocr.interval`     | 1.0                   | 两次 OCR 尝试的最短间隔（秒）。                                 |
+| `battle_start_ocr.keywords`     | 配置列表                  | OCR 文本命中任一关键词时触发战斗开始帧。                             |
+| `rois`                          | 见上表                   | 完整 ROI 列表；可通过 JSON 覆盖。                             |
 
 代码内默认 `coarse_fps` 为 6；使用仓库配置文件时以文件中的 8 为准。`pre_roll` 已被解析并写入设置接口，但当前版本没有根据它回溯输出帧；如需改变行为，应先修改 selector 并补充测试。使用仓库 `sts2_720p.json` 时 `pseudo_keyframe_fallback` 默认开启，OCR 默认关闭；自定义配置可关闭伪关键帧回退，不影响普通抽帧路径。
 
@@ -167,3 +174,15 @@ segmentation/
 ## 8. 与后续日志流程的接口
 
 后续流程应读取 `keyframes.jsonl` 中的相对路径、`frame_index`、`timestamp_sec`、`trigger`、`changed_rois` 和 `confidence`，并保留输入视频及 SHA-256 关联。抽帧脚本只提供图像证据和 provenance；不得根据 `trigger` 直接推断卡牌、事件或动作语义。
+
+## 9. 高密度动作采样与伪关键帧作用域
+
+仓库提供的 `sts2_720p.json` 使用 `coarse_fps=16` 和 `stable_frames=2`。提高粗采样频率可以降低短暂出牌或选牌变化落在采样间隔之间、从而被遗漏的概率；减少稳定确认帧数可以缩短确认延迟。pHash/SSIM 去重仍会抑制视觉上重复的输出。
+
+`pseudo_keyframe_scope` 会在启动时从配置文件读取：
+
+- `combat`：仅对手牌和战斗相关变化启用回退。
+- `decision`：对 `decision_merge_rois` 中列出的决策界面 ROI 启用回退。
+- `global`：任何通过变化检测的候选帧都可以回退到前一个粗采样帧。
+
+实际生效的作用域和合并参数会写入 `manifest.json`。当输入视频 SHA-256 未变化且已有成功 manifest 时，脚本会跳过处理；修改配置或脚本行为后应使用 `--force` 重新运行。

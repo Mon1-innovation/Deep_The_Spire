@@ -1,3 +1,23 @@
+## 2026-09-25 伪关键帧作用域加载与高密度动作采样
+
+### 修复
+
+- 修复配置加载问题，使 `pseudo_keyframe_scope` 能够在运行时生效。`global`、`decision` 和 `combat` 会正确传递给 `Selector`，并写入 `manifest.json`；配置为其他值时会立即报错。
+- 修复 `pseudo_keyframe_rois`、`decision_merge_window`、`decision_merge_ssim`、`decision_merge_phash_distance` 和 `decision_merge_rois` 未完整加载的问题，确保配置、实际行为和 manifest 记录保持一致。
+
+### 调整
+
+- 将 `config/sts2_720p.json` 的 `coarse_fps` 从 8 提高到 12，将 `stable_frames` 从 5 调整为 3，以提高出牌、选牌等短时操作被采样到的概率，同时保留 pHash/SSIM 去重和候选帧稳定等待机制。
+- 更密的粗采样只会增加候选帧发现率，不会强制输出视觉上重复的画面。如果单段录像的输出量仍然过高，应优先提高 `stable_frames` 或相关变化阈值，不建议直接关闭去重逻辑。
+
+## 2026-09-24 关键帧范围与决策界面合并
+
+- 新增 `selection_overlay`、`deck_overlay` 和 `potion_bar` ROI，覆盖战斗中的中央选牌、牌堆平铺和药水栏变化。
+- 新增 `pseudo_keyframe_scope`（`combat`、`decision`、`global`），默认 `combat`；可按需将伪关键帧回退推广到事件、商店和全局关键决策帧。
+- 新增决策界面近帧合并参数 `decision_merge_window`、`decision_merge_ssim`、`decision_merge_phash_distance` 与 `decision_merge_rois`，用于抑制地图/牌组滚动和商店动画造成的相近重复帧。
+- 战斗开始 OCR 保持默认关闭。根据速度与准确度评估，后续不将 OCR 作为常规战斗切分改进方向。
+- `manifest.json` 现在记录伪关键帧范围和决策界面合并参数。
+
 ## 2026-09-23 默认启用伪关键帧
 
 - 将 `pseudo_keyframe_fallback` 在程序默认值和 `sts2_720p.json` 中设为开启。
@@ -54,5 +74,7 @@
 ### 兼容性
 
 - `frame_index` 和 `keyframes.jsonl` 的记录顺序继续与原视频一致。
+
 - pHash/SSIM 去重逻辑保持不变。
-- 抽帧脚本只负责保留图像证据和来源信息，不负责判断具体游戏语义；卡牌、事件和其他动作的识别由后续流程完成。
+
+- 抽帧脚本只负责保留图像证据和来源信息，不负责判断具体游戏语义；卡牌、事件和其他动作的识别由后续流程完成。   

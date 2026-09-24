@@ -5,13 +5,15 @@
 ## 当前进度
 
 - 已完成基础 ROI 变化检测、候选窗口稳定帧选择、周期锚点、黑屏过滤以及 pHash/SSIM 去重。
+
 - 已加入 shop_decision 商店决策 ROI，并细化 event_options 事件选项 ROI，用于减少商店操作和事件选项选择的漏检。
-<<<<<<< HEAD
+
 - 已加入 pseudo_keyframe_fallback beta 功能。启用后，手牌相关变化可以回退到前一个粗采样帧，适合保留抓牌动画开始前仍能看清卡牌的画面；默认开启。
-=======
+
 - 已加入 pseudo_keyframe_fallback beta 功能。启用后，手牌相关变化可以回退到前一个粗采样帧，适合保留抓牌动画开始前仍能看清卡牌的画面；仓库提供的 `config/sts2_720p.json` 默认开启，可在自定义配置中关闭。
->>>>>>> 635e2876434d247eb2408190e238c28386c15b5f
-- 已加入可选战斗开始 OCR。该功能默认关闭，需要在配置中启用并安装 pytesseract，用于辅助定位战斗开始和初始手牌阶段。
+
+- 已加入可选战斗开始 OCR，但实测会明显降低速度且未改善战斗中切分；默认关闭，后续不作为常规改进方向。
+
 - 当前配置和实现已通过 Python 编译、配置 JSON 解析及合成帧回退逻辑检查；完整 pytest 测试仍需在安装测试依赖的环境中执行。
 
 详细变更见[视频转关键帧变更日志](../docs/4_video_to_keyframe_changelog.md)。
@@ -50,14 +52,16 @@
 config/sts2_720p.json 面向 1280x720、30 FPS 的录屏，包含：
 
 - 粗采样频率、普通页面变化阈值、战斗变化阈值、事件选项变化阈值和商店变化阈值。
+
 - 稳定帧数量、稳定性阈值、周期锚点间隔、pHash/SSIM 去重参数。
+
 - 黑屏识别的平均亮度、标准差和暗像素比例阈值。
-- top_hud、combat_center、hand、combat_hand、event_options、shop_decision、player_status 和 full_frame ROI。
-<<<<<<< HEAD
-- 默认开启的 pseudo_keyframe_fallback，以及默认关闭的 battle_start_ocr beta 功能。
-=======
+
+- top_hud、combat_center、hand、combat_hand、selection_overlay、deck_overlay、potion_bar、event_options、shop_decision、player_status 和 full_frame ROI。
+
+- 默认开启的 pseudo_keyframe_fallback（默认作用于战斗场景），以及默认关闭的 battle_start_ocr 功能。
+
 - 默认开启的 pseudo_keyframe_fallback 和默认关闭的 battle_start_ocr beta 功能。
->>>>>>> 635e2876434d247eb2408190e238c28386c15b5f
 
 可以复制 JSON 文件后调整参数，或通过 --config 指定自定义配置。ROI 坐标使用 0 到 1 的归一化值，抽帧时不会裁剪最终保存的关键帧。
 
@@ -73,3 +77,19 @@ trigger 只表示抽取原因，例如 roi_change、page_change、periodic_ancho
 - --config 指定完整 JSON 配置；--roi-config 可单独指定同格式配置文件。
 - --force 强制重新处理已有成功结果。
 - --dry-run 只执行抽帧分析并生成元数据，不写入 JPEG 和 JSONL 关键帧内容。
+
+### 新增操作与合并控制
+
+- `selection_overlay`、`deck_overlay`、`potion_bar` 分别关注中央选牌、牌堆平铺和药水栏。
+
+- `pseudo_keyframe_scope` 可设为 `combat`（默认）、`decision` 或 `global`，控制伪关键帧回退适用范围。
+
+- `decision_merge_window`、`decision_merge_ssim` 和 `decision_merge_phash_distance` 控制事件、商店、牌组等决策界面的近帧合并。
+
+- 战斗开始 OCR 仅用于实验性定位，保持关闭可避免显著性能损失。
+  
+  ## 最近行为说明
+
+仓库配置使用 `coarse_fps=16` 和 `stable_frames=3`，用于更好地捕获出牌、选牌等短时且信息密度较高的战斗操作。pHash/SSIM 去重仍然启用，因此这些参数会提高候选帧发现率，但不会输出每一张采样帧。
+
+`pseudo_keyframe_scope` 从 JSON 配置中读取，可设置为 `combat`、`decision` 或 `global`。实际生效的值会写入 `manifest.json`；如果 manifest 是由旧脚本或旧配置生成的，重新处理时请使用 `--force`。
