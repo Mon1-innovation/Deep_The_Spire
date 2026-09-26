@@ -10,9 +10,9 @@ from .codex import CodexCatalog, enrich_state
 from .validate import validate_observation
 
 LOG_SCHEMA_VERSION = "2.0"
-OBSERVATION_SCHEMA_VERSION = "6"
+OBSERVATION_SCHEMA_VERSION = "7"
 MAP_SCHEMA_VERSION = "2"
-OBSERVATION_CACHE_VERSION = "observation-v7"
+OBSERVATION_CACHE_VERSION = "observation-v8"
 
 def _cache_key(frame: Keyframe, prompt_version: str, model_version: str) -> str:
     digest = hashlib.sha256(Path(frame.path).read_bytes()).hexdigest()
@@ -88,9 +88,16 @@ def _build_events(observations: list[Observation]) -> list[dict[str, Any]]:
         events.append({"id": len(events), "by": "world", "type": "response", "t": observation.keyframe.timestamp, "info": {"page_type": observation.page_type, "state": observation.state, "confidence": observation.confidence, "evidence": observation.evidence, "frame": observation.keyframe.path}})
     return events
 
-def _build_result(run_id: str, patch: str | None, provider: Provider, frames: list[Keyframe], observations: list[Observation], status: str, catalog: CodexCatalog | None = None) -> dict[str, Any]:
+def _catalog_provenance(catalog: CodexCatalog) -> dict[str, Any]:
+    return {"source": catalog.source, "channel": catalog.channel, "language": catalog.lang, "requested_version": catalog.requested_version, "data_version": catalog.data_version, "entity_type": catalog.entity_type}
+
+
+def _build_result(run_id: str, patch: str | None, provider: Provider, frames: list[Keyframe], observations: list[Observation], status: str, catalog: CodexCatalog | None = None, catalogs: dict[str, CodexCatalog] | None = None) -> dict[str, Any]:
+    active_catalogs = dict(catalogs or {})
+    if catalog is not None:
+        active_catalogs.setdefault("cards", catalog)
     for observation in observations:
-        observation.state = _normalize_map_state(enrich_state(observation.state, catalog, game_patch=patch))
+        observation.state = _normalize_map_state(enrich_state(observation.state, catalog, game_patch=patch, catalogs=active_catalogs, page_type=observation.page_type))
     return {
         "run_id": run_id,
         "game": "sts2",
@@ -100,7 +107,8 @@ def _build_result(run_id: str, patch: str | None, provider: Provider, frames: li
         "observations": [dict(observation.as_dict(), state=_normalize_map_state(observation.state)) for observation in observations],
         "provenance": {
             "extractor": provider.cache_identity,
-            "codex": ({"source": catalog.source, "channel": catalog.channel, "language": catalog.lang, "requested_version": catalog.requested_version, "data_version": catalog.data_version} if catalog else {"enabled": False}),
+            "codex": (_catalog_provenance(active_catalogs["cards"]) if "cards" in active_catalogs else {"enabled": False}),
+            "codex_catalogs": {entity_type: _catalog_provenance(value) for entity_type, value in active_catalogs.items()},
             "keyframe_count": len(frames),
             "processed_keyframe_count": len(observations),
             "schema_version": LOG_SCHEMA_VERSION,
@@ -140,7 +148,7 @@ def _write_markdown(path: Path, result: dict[str, Any]) -> None:
             lines.extend(["", "#### 识别依据", ""])
             lines.extend(f"- {item}" for item in observation["evidence"])
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-def convert_keyframes(input_dir: str | Path, output_path: str | Path, provider: Provider, run_id: str = "run-unknown", patch: str | None = None, cache_dir: str | Path | None = None, catalog: CodexCatalog | None = None) -> dict[str, Any]:
+def convert_keyframes(input_dir: str | Path, output_path: str | Path, provider: Provider, run_id: str = "run-unknown", patch: str | None = None, cache_dir: str | Path | None = None, catalog: CodexCatalog | None = None, catalogs: dict[str, CodexCatalog] | None = None) -> dict[str, Any]:
     frames = discover_keyframes(input_dir)
     if not frames:
         raise ValueError(f"no supported keyframe images found in {input_dir}")
@@ -156,17 +164,17 @@ def convert_keyframes(input_dir: str | Path, output_path: str | Path, provider: 
                 cache_file.write_text(json.dumps(value, ensure_ascii=False, indent=4), encoding="utf-8")
             value["keyframe"] = frame
             observations.append(validate_observation(value))
-            processing = _build_result(run_id, patch, provider, frames, observations, "processing", catalog)
+            processing = _build_result(run_id, patch, provider, frames, observations, "processing", catalog, catalogs)
             _write_json(output, processing)
             _write_jsonl(output, processing)
         except Exception as error:
-            result = _build_result(run_id, patch, provider, frames, observations, "failed", catalog)
+            result = _build_result(run_id, patch, provider, frames, observations, "failed", catalog, catalogs)
             result["error"] = {"frame": frame.path, "message": str(error)}
             _write_json(output, result)
             _write_jsonl(output, result)
             _write_markdown(output.with_suffix(".md"), result)
             raise
-    result = _build_result(run_id, patch, provider, frames, observations, "complete", catalog)
+    result = _build_result(run_id, patch, provider, frames, observations, "complete", catalog, catalogs)
     _write_json(output, result)
     _write_jsonl(output, result)
     _write_markdown(output.with_suffix(".md"), result)

@@ -13,13 +13,37 @@ from .models import Keyframe
 SYSTEM_PROMPT = """You are a careful Slay the Spire 2 screenshot annotator.
 Return only valid JSON matching the requested structure. Report only information visibly supported by the image.
 Use null for unreadable values, page_type=unknown for an unclear page, and lower confidence
-when uncertain. Do not invent hidden state, action history, card IDs, or long card descriptions.
+when uncertain. Do not invent hidden state, action history, entity IDs, or long card descriptions.
 An action is only present when the screenshot itself visibly supports it.
 The JSON must contain page_type, confidence, state, action, and evidence. The state object should
 contain floor, turn, player, enemies, hand, relics, potions, draw_count, discard_count,
 exhaust_count, options, and visible_text; use null or empty arrays when not visible.
+Return every visible enemy, potion, and relic as one object per entity. Transcribe a name only when
+supported by visible text or clearly recognizable art; otherwise use null. Always set entity_id to
+null because the local catalog resolves IDs. Never list empty item slots. Add visual_confidence from
+0 to 1 for each identifiable entity, or null when its identity is not clear. Entity objects must
+include entity_type (cards, relics, potions, or null). For the player actor, set entity_id and
+visual_confidence to null.
 Keep the response concise. Evidence should contain at most 5 short strings and visible_text at
 most 10 short strings. Never include markdown fences or explanatory text outside the JSON.
+"""
+
+INVENTORY_PROMPT = """Inspect this enlarged top inventory bar crop from a Slay the Spire 2 screenshot.
+Return only JSON shaped as {"confidence":0.0,"state":{"relics":[],"potions":[]},"evidence":[]}.
+List each occupied player relic and potion slot exactly once; omit empty slots. Keep potion bottles
+and passive relic icons in separate arrays. Name an item only when its icon or visible tooltip is
+recognizable; otherwise include the occupied item with name=null and visual_confidence=null.
+Do not count empty slots or infer hidden items. Each item must include name, entity_id, amount,
+upgraded, cost, entity_type, and visual_confidence. entity_id must always be null.
+"""
+
+ENEMY_PROMPT = """Inspect this combat crop from a Slay the Spire 2 screenshot. Ignore the player.
+Return only JSON shaped as {"confidence":0.0,"state":{"enemies":[]},"evidence":[]}.
+Return one object per visible enemy, in left-to-right order. Read its name from visible text when
+available; otherwise identify it from the enemy art only when confident. Read current/max HP, block,
+and intent only when visible; do not infer intent from animation. Each enemy object must include
+name, entity_id, hp, max_hp, block, energy, gold, intent, and visual_confidence. Set entity_id,
+energy, and gold to null. Use null for unreadable fields.
 """
 
 CLASSIFY_PROMPT = """Classify a Slay the Spire 2 screenshot.
@@ -52,27 +76,31 @@ NULLABLE_STRING = {"anyOf": [{"type": "string"}, {"type": "null"}]}
 ENTITY_SCHEMA = {
     "type": "object",
     "additionalProperties": False,
-    "required": ["name", "entity_id", "amount", "upgraded", "cost"],
+    "required": ["name", "entity_id", "amount", "upgraded", "cost", "entity_type", "visual_confidence"],
     "properties": {
         "name": NULLABLE_STRING,
         "entity_id": NULLABLE_STRING,
         "amount": NULLABLE_INTEGER,
         "upgraded": {"anyOf": [{"type": "boolean"}, {"type": "null"}]},
         "cost": NULLABLE_INTEGER,
+        "entity_type": {"anyOf": [{"type": "string", "enum": ["cards", "relics", "potions"]}, {"type": "null"}]},
+        "visual_confidence": {"anyOf": [{"type": "number", "minimum": 0, "maximum": 1}, {"type": "null"}]},
     },
 }
 ACTOR_SCHEMA = {
     "type": "object",
     "additionalProperties": False,
-    "required": ["name", "hp", "max_hp", "block", "energy", "gold", "intent"],
+    "required": ["name", "entity_id", "hp", "max_hp", "block", "energy", "gold", "intent", "visual_confidence"],
     "properties": {
         "name": NULLABLE_STRING,
+        "entity_id": NULLABLE_STRING,
         "hp": NULLABLE_INTEGER,
         "max_hp": NULLABLE_INTEGER,
         "block": NULLABLE_INTEGER,
         "energy": NULLABLE_INTEGER,
         "gold": NULLABLE_INTEGER,
         "intent": NULLABLE_STRING,
+        "visual_confidence": {"anyOf": [{"type": "number", "minimum": 0, "maximum": 1}, {"type": "null"}]},
     },
 }
 STATE_SCHEMA = {
@@ -200,27 +228,77 @@ class OpenAICompatibleProvider(Provider):
                     time.sleep(1 << retry)
         raise RuntimeError(f"VLM returned invalid JSON after {self.max_retries} attempts: " + " | ".join(errors))
 
-    def _image_data(self, keyframe: Keyframe, box: tuple[int, int, int, int] | None = None) -> tuple[str, str]:
+    def _image_data(self, keyframe: Keyframe, box: tuple[int, int, int, int] | None = None, scale: float = 1.0) -> tuple[str, str]:
         with Image.open(keyframe.path) as source:
             image = source.crop(box) if box else source.copy()
+            if scale != 1.0:
+                size = (max(1, round(image.width * scale)), max(1, round(image.height * scale)))
+                image = image.resize(size, getattr(Image, "Resampling", Image).LANCZOS)
             buffer = BytesIO()
             image.save(buffer, format="PNG", optimize=True)
         return base64.b64encode(buffer.getvalue()).decode("ascii"), "image/png"
+
+    @staticmethod
+    def _merge_entities(existing: object, focused: object) -> list[dict]:
+        if not isinstance(focused, list) or not focused:
+            return existing if isinstance(existing, list) else []
+        merged = [dict(item) for item in focused if isinstance(item, dict)]
+        originals = existing if isinstance(existing, list) else []
+        for index, item in enumerate(merged):
+            if index < len(originals) and isinstance(originals[index], dict):
+                combined = dict(originals[index])
+                combined.update({key: value for key, value in item.items() if value is not None})
+                merged[index] = combined
+        if len(originals) > len(merged):
+            merged.extend(dict(item) for item in originals[len(merged):] if isinstance(item, dict))
+        return merged
+
+    @staticmethod
+    def _append_evidence(observation: dict, evidence: str) -> None:
+        values = observation.get("evidence")
+        if not isinstance(values, list):
+            values = []
+            observation["evidence"] = values
+        values.append(evidence)
+
+    def _inventory_observation(self, keyframe: Keyframe, width: int, height: int) -> dict:
+        inventory_box = (int(width * 0.22), 0, int(width * 0.62), int(height * 0.16))
+        inventory_image, inventory_type = self._image_data(keyframe, inventory_box, scale=2.0)
+        return self._ask(inventory_image, inventory_type, "Read the occupied relic and potion slots from this crop.", system_prompt=INVENTORY_PROMPT, max_tokens=2048)
 
     def observe(self, keyframe: Keyframe) -> dict:
         full_image, content_type = self._image_data(keyframe)
         classification = self._ask(full_image, content_type, "Classify this screenshot only.", system_prompt=CLASSIFY_PROMPT, max_tokens=int(os.environ.get("STS_VLM_CLASSIFY_MAX_TOKENS", "1024")))
         page_type = classification.get("page_type", "unknown")
+        with Image.open(keyframe.path) as source:
+            width, height = source.size
         if page_type == "map":
-            return self._ask(full_image, content_type, "Extract the complete visible map using the required node objects and directed path relationships.", system_prompt=MAP_PROMPT)
+            full = self._ask(full_image, content_type, "Extract the complete visible map using the required node objects and directed path relationships.", system_prompt=MAP_PROMPT)
+            inventory = self._inventory_observation(keyframe, width, height)
+            state = full.setdefault("state", {})
+            if not isinstance(state, dict):
+                state = {}
+                full["state"] = state
+            inventory_state = inventory.get("state", {})
+            if isinstance(inventory_state, dict):
+                for field in ("relics", "potions"):
+                    state[field] = self._merge_entities(state.get(field), inventory_state.get(field))
+            full["page_type"] = page_type
+            full["confidence"] = min(float(full.get("confidence", 0)), float(classification.get("confidence", 0)))
+            self._append_evidence(full, "Relics and potions read from the enlarged top inventory crop")
+            return full
         full = self._ask(full_image, content_type, f"The page type is {page_type}. Extract the visible non-HUD state. Leave precise top-left HUD numbers null.")
         full["page_type"] = page_type
         full["confidence"] = min(float(full.get("confidence", 0)), float(classification.get("confidence", 0)))
-        with Image.open(keyframe.path) as source:
-            width, height = source.size
         hud_box = (0, 0, max(1, int(width * 0.34)), max(1, int(height * 0.14)))
         hud_image, hud_type = self._image_data(keyframe, hud_box)
-        hud = self._ask(hud_image, hud_type, "This is a crop of the top-left HUD, not the full screen. Read only visible HUD values: current/max HP, gold, floor/act indicators, and visible potion/relic counters. Do not read combat energy from this crop because energy is displayed separately at the bottom-left.")
+        hud = self._ask(hud_image, hud_type, "This is a crop of the top-left HUD, not the full screen. Read only visible HUD values: current/max HP, gold, and floor/act indicators. Do not read combat energy from this crop because energy is displayed separately at the bottom-left.")
+        inventory = self._inventory_observation(keyframe, width, height)
+        focused_enemies = None
+        if page_type == "combat":
+            enemy_box = (int(width * 0.30), int(height * 0.16), int(width * 0.99), int(height * 0.79))
+            enemy_image, enemy_type = self._image_data(keyframe, enemy_box, scale=1.5)
+            focused_enemies = self._ask(enemy_image, enemy_type, "Identify and read the visible enemies in this combat crop.", system_prompt=ENEMY_PROMPT, max_tokens=2048)
         energy = None
         if page_type == "combat":
             energy_box = (0, max(1, int(height * 0.70)), max(1, int(width * 0.20)), max(1, int(height * 0.98)))
@@ -230,6 +308,14 @@ class OpenAICompatibleProvider(Provider):
         if not isinstance(state, dict):
             state = {}
             full["state"] = state
+        inventory_state = inventory.get("state", {})
+        if isinstance(inventory_state, dict):
+            for field in ("relics", "potions"):
+                state[field] = self._merge_entities(state.get(field), inventory_state.get(field))
+        if isinstance(focused_enemies, dict):
+            focused_state = focused_enemies.get("state", {})
+            if isinstance(focused_state, dict):
+                state["enemies"] = self._merge_entities(state.get("enemies"), focused_state.get("enemies"))
         player_state = state.get("player")
         if not isinstance(player_state, dict):
             player_state = {}
@@ -249,8 +335,11 @@ class OpenAICompatibleProvider(Provider):
                 energy_value = energy_state["player"].get("energy")
                 if energy_value is not None:
                     player_state["energy"] = energy_value
-            full.setdefault("evidence", []).append("战斗能量来自左下角独立能量 ROI")
-        full.setdefault("evidence", []).append("血量、金币等来自左上角独立 HUD ROI")
+            self._append_evidence(full, "战斗能量来自左下角独立能量 ROI")
+        self._append_evidence(full, "血量、金币等来自左上角独立 HUD ROI")
+        self._append_evidence(full, "Relics and potions read from the enlarged top inventory crop")
+        if focused_enemies is not None:
+            self._append_evidence(full, "Enemy identities and combat stats read from the focused combat crop")
         full["confidence"] = min(float(full.get("confidence", 0)), float(hud.get("confidence", 0)))
         return full
 
@@ -258,4 +347,3 @@ def provider_from_environment(mode: str) -> Provider:
     if mode == "mock":
         return MockProvider()
     return OpenAICompatibleProvider(os.environ.get("STS_VLM_BASE_URL", "https://api.deepseek.com"), os.environ["STS_VLM_API_KEY"], os.environ.get("STS_VLM_MODEL", "deepseek-flash"))
-

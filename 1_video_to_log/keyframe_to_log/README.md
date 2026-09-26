@@ -64,9 +64,9 @@ python -m keyframe_to_log `
 
 程序会读取该目录下的 `keyframes/*.jpg` 和 `keyframes.jsonl`，保留原视频帧号、时间戳、抽帧触发原因等元数据。也可以直接传入 `keyframes` 子目录，程序会尝试读取其父目录中的 `keyframes.jsonl`。
 
-## Spire Codex 卡牌归一化
+## Spire Codex 实体归一化
 
-使用 OpenAI-compatible VLM 时，程序默认从 `https://spire-codex.com` 读取卡牌目录，将手牌和卡牌选项中的 OCR/VLM 名称匹配到规范 `entity_id`。原始识别文本保留在 `raw_name`，不会被覆盖。
+使用 OpenAI-compatible VLM 时，程序分别加载卡牌、怪物、遗物和药水目录。战斗观测会对敌怪及顶部物品栏执行放大 ROI 复核；敌怪名称归一化到怪物目录，`state.relics` 和 `state.potions` 分别归一化到对应目录，手牌和奖励/商店选项按实体类型匹配规范 `entity_id`。VLM 不负责生成 ID；原始名称保存在 `raw_name`，无法识别或目录不可用时保留名称并写明匹配状态。
 
 可选参数：
 
@@ -81,4 +81,4 @@ python -m keyframe_to_log `
     --codex-lang zhs
 ```
 
-版本规则：`stable`/`beta` 选择 Codex 数据频道；`--codex-version` 请求指定版本；如果游戏补丁未知或目录版本无法确认，匹配仍会保留，但 `version_status` 会是 `unknown` 或 `unverified`，不会伪装成已验证历史数据。目录缓存在每局的 `logs/codex_cache/`。使用 `--no-codex` 可禁用归一化。
+版本规则：`stable`/`beta` 选择 Codex 数据频道；`--codex-version` 请求指定版本；如果游戏补丁未知或目录版本无法确认，匹配仍会保留，但 `version_status` 会是 `unknown` 或 `unverified`，不会伪装成已验证历史数据。四类目录分别缓存在每局的 `logs/codex_cache/`，单类目录不可用不会阻塞其余类型。日志的 `provenance.codex_catalogs` 记录每类目录的来源。此次识别流程使用观测 schema 7 和缓存 `observation-v8`，升级后会自动重跑旧观测缓存。使用 `--no-codex` 可禁用归一化。
