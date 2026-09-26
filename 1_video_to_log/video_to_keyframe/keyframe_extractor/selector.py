@@ -59,6 +59,8 @@ class Selector:
                            "combat_hand": self.settings.combat_change_threshold,
                            "event_options": self.settings.event_change_threshold})
         thresholds["shop_decision"] = self.settings.shop_change_threshold
+        thresholds["player_status_left"] = self.settings.player_status_change_threshold
+        thresholds["player_energy_left"] = self.settings.player_status_change_threshold
         previous_sample = self.last_sample_frame
         previous_index = self.last_sample_index
         previous_timestamp = previous_index / self.fps if self.fps else timestamp
@@ -68,7 +70,8 @@ class Selector:
         self.last_sample_index = index
         if timestamp - self.last_anchor >= self.settings.anchor_interval:
             return self._emit(index, timestamp, frame, "periodic_anchor", [], global_score, 1, "candidate")
-        sensitive = {"hand", "combat_center", "combat_hand", "event_options", "shop_decision"}
+        sensitive = {"hand", "combat_center", "combat_hand", "event_options", "shop_decision",
+                     "player_status_left", "player_energy_left"}
         sensitive_changed = bool(sensitive.intersection(changed))
         if (local < self.settings.change_threshold and
                 global_score < self.settings.page_threshold and not sensitive_changed):
@@ -107,7 +110,7 @@ class Selector:
         changed_set = set(pending["changed"])
         scope = self.settings.pseudo_keyframe_scope
         scope_match = (scope == "global" or
-                       (scope == "combat" and changed_set.intersection({"hand", "combat_hand", "selection_overlay", "deck_overlay", "potion_bar"})) or
+                       (scope == "combat" and changed_set.intersection({"hand", "combat_hand", "selection_overlay", "deck_overlay", "potion_bar", "player_status_left", "player_energy_left"})) or
                        (scope == "decision" and changed_set.intersection(self.settings.decision_merge_rois)))
         use_previous = (self.settings.pseudo_keyframe_fallback
                         and scope_match
@@ -115,7 +118,7 @@ class Selector:
                         and (scope == "global" or
                              (scope == "decision" and changed_set.intersection(self.settings.decision_merge_rois)) or
                              changed_set.intersection(self.settings.pseudo_keyframe_rois) or
-                             changed_set.intersection({"selection_overlay", "deck_overlay", "potion_bar"})))
+                             changed_set.intersection({"selection_overlay", "deck_overlay", "potion_bar", "player_status_left", "player_energy_left"})))
         if use_previous:
             return self._emit(pending["previous_index"], pending["previous_timestamp"], pending["previous"],
                               pending["trigger"] + "_pre_coarse", pending["changed"], pending["score"],

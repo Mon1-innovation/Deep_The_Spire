@@ -57,7 +57,7 @@ config/sts2_720p.json 面向 1280x720、30 FPS 的录屏，包含：
 
 - 黑屏识别的平均亮度、标准差和暗像素比例阈值。
 
-- top_hud、combat_center、hand、combat_hand、selection_overlay、deck_overlay、potion_bar、event_options、shop_decision、player_status 和 full_frame ROI。
+- top_hud、combat_center、hand、combat_hand、selection_overlay、deck_overlay、potion_bar、player_status_left、player_energy_left、event_options、shop_decision、player_status 和 full_frame ROI。
 
 - 默认开启的 pseudo_keyframe_fallback（默认作用于战斗场景），以及默认关闭的 battle_start_ocr 功能。
 

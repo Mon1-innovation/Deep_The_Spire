@@ -80,7 +80,9 @@ JPG 使用固定质量（默认 95），保持原始 1280x720 尺寸，不在抽
   - `top_hud`：左上血量、金币、层数等；
   - `combat_center`：敌人、意图和战斗区；
   - `hand`：底部手牌区；
-  - `player_status`：能量、格挡和状态图标；
+  - `player_status_left`：左侧角色生命、格挡和状态图标；
+  - `player_energy_left`：左下能量区域，避开大部分手牌展开区域；
+  - `player_status`（历史兼容名称）：右上角运行元数据、版本号及该区域 HUD 文本；
   - `full_frame`：地图、商店、事件和奖励页面。
 - ROI 分数按权重合并。默认 `hand`、`combat_center`、`full_frame` 权重高于 `top_hud`，避免数字动画造成大量误触发。
 

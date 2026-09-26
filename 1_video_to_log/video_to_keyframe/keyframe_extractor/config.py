@@ -31,6 +31,8 @@ DEFAULT_ROIS = [
     Roi("selection_overlay", 0.28, 0.16, 0.44, 0.58, 2.0),
     Roi("deck_overlay", 0.10, 0.08, 0.80, 0.84, 1.8),
     Roi("potion_bar", 0.78, 0.56, 0.22, 0.30, 1.6),
+    Roi("player_status_left", 0.18, 0.62, 0.20, 0.16, 2.6),
+    Roi("player_energy_left", 0.00, 0.74, 0.14, 0.16, 2.2),
     Roi("player_status", 0.68, 0.00, 0.32, 0.28, 1.2),
     Roi("shop_decision", 0.10, 0.16, 0.80, 0.70, 1.8),
     Roi("event_options", 0.18, 0.24, 0.64, 0.54, 2.4),
@@ -49,6 +51,7 @@ class Settings:
     combat_change_threshold: float = 0.018
     event_change_threshold: float = 0.018
     shop_change_threshold: float = 0.018
+    player_status_change_threshold: float = 0.015
     stable_frames: int = 5
     stable_threshold: float = 0.025
     anchor_interval: float = 5.0
@@ -81,7 +84,7 @@ def load_settings(path: str | Path | None) -> Settings:
         return settings
     data: dict[str, Any] = json.loads(Path(path).read_text(encoding="utf-8"))
     for key in ("coarse_fps", "change_threshold", "page_threshold", "roi_change_threshold",
-                "combat_change_threshold", "event_change_threshold", "shop_change_threshold", "stable_frames",
+                "combat_change_threshold", "event_change_threshold", "shop_change_threshold", "player_status_change_threshold", "stable_frames",
                 "stable_threshold", "anchor_interval", "phash_distance", "ssim_threshold",
                 "pre_roll", "settle_timeout", "jpeg_quality", "max_decode_errors",
                 "black_mean_threshold", "black_std_threshold", "black_dark_ratio",
