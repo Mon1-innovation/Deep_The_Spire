@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 
 import cv2
@@ -28,6 +29,9 @@ def test_extract_writes_provenance_and_keyframes(tmp_path: Path) -> None:
     assert result["status"] == "success"
     assert result["output_count"] >= 2
     assert (output / "manifest.json").exists()
+    manifest = json.loads((output / "manifest.json").read_text(encoding="utf-8"))
+    assert manifest["parameters"]["pseudo_keyframe_rois"] == list(settings.pseudo_keyframe_rois)
+    assert manifest["parameters"]["decision_merge_rois"] == list(settings.decision_merge_rois)
     assert len((output / "keyframes.jsonl").read_text().splitlines()) == result["output_count"]
 
 
@@ -66,7 +70,7 @@ def test_sensitive_roi_change_is_retained_in_order(tmp_path: Path) -> None:
             frame[180:540, 300:980] = 180
         writer.write(frame)
     writer.release()
-    result = extract_video(video, tmp_path / "segmentation", Settings(coarse_fps=10, anchor_interval=100, pseudo_keyframe_fallback=False))
+    result = extract_video(video, tmp_path / "segmentation", Settings(coarse_fps=10, anchor_interval=100, settle_timeout=1.0, pseudo_keyframe_fallback=False))
     entries = [__import__("json").loads(line) for line in
                (tmp_path / "segmentation" / "combat" / "keyframes.jsonl").read_text().splitlines()]
     indices = [entry["frame_index"] for entry in entries]
@@ -105,8 +109,10 @@ def test_pseudo_keyframe_fallback_is_enabled_by_default():
     settings = load_settings(config_path)
     assert settings.pseudo_keyframe_fallback is True
     assert settings.pseudo_keyframe_scope == "global"
-    assert settings.coarse_fps == 12
+    assert settings.coarse_fps == 16
     assert settings.stable_frames == 3
+    assert settings.pseudo_keyframe_rois == ("combat_hand", "hand")
+    assert settings.decision_merge_rois == ("event_options", "shop_decision", "deck_overlay")
 
 
 def test_load_settings_reads_pseudo_keyframe_and_decision_parameters(tmp_path: Path):

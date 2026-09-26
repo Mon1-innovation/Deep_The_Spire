@@ -82,7 +82,7 @@ trigger 只表示抽取原因，例如 roi_change、page_change、periodic_ancho
 
 - `selection_overlay`、`deck_overlay`、`potion_bar` 分别关注中央选牌、牌堆平铺和药水栏。
 
-- `pseudo_keyframe_scope` 可设为 `combat`（默认）、`decision` 或 `global`，控制伪关键帧回退适用范围。
+- `pseudo_keyframe_scope` 可设为 `combat`（代码默认；仓库配置使用 `global`）、`decision` 或 `global`，控制伪关键帧回退适用范围。
 
 - `decision_merge_window`、`decision_merge_ssim` 和 `decision_merge_phash_distance` 控制事件、商店、牌组等决策界面的近帧合并。
 

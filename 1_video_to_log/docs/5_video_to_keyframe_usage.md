@@ -127,14 +127,14 @@ segmentation/
 
 | 参数                              | 当前配置                  | 功能                                                 |
 | ------------------------------- | ---------------------:| -------------------------------------------------- |
-| `coarse_fps`                    | 8                     | 粗扫比较频率（帧/秒）；越高越不易漏掉短变化，但计算量更大。                     |
+| `coarse_fps`                    | 16                    | 粗扫比较频率（帧/秒）；越高越不易漏掉短变化，但计算量更大。                     |
 | `change_threshold`              | 0.08                  | 通用 ROI 加权局部变化阈值。                                   |
 | `page_threshold`                | 0.18                  | 全屏变化阈值，触发 `page_change` 候选。                        |
 | `roi_change_threshold`          | 0.025                 | 普通 ROI 单区变化阈值。                                     |
 | `combat_change_threshold`       | 0.018                 | `combat_center`、`combat_hand` 阈值。                  |
 | `event_change_threshold`        | 0.018                 | `event_options` 阈值。                                |
 | `shop_change_threshold`         | 0.018                 | `shop_decision` 阈值。                                |
-| `stable_frames`                 | 5                     | 连续满足稳定条件所需的比较帧数。                                   |
+| `stable_frames`                 | 3                     | 连续满足稳定条件所需的比较帧数。                                   |
 | `stable_threshold`              | 0.025                 | 候选帧之间被视为稳定的变化上限。                                   |
 | `anchor_interval`               | 5                     | 周期锚点间隔（秒）；用于覆盖长时间静止页面。                             |
 | `phash_distance`                | 6                     | pHash 汉明距离不超过该值时进入 SSIM 去重判断。                      |
@@ -148,7 +148,8 @@ segmentation/
 | `max_decode_errors`             | 10                    | 单视频允许的累计解码/处理异常数。                                  |
 | `pseudo_keyframe_fallback`      | `true`                | 是否在敏感 ROI 变化时回退到变化前的粗采样帧；仓库 `sts2_720p.json` 默认开启。 |
 | `pseudo_keyframe_rois`          | `combat_hand`, `hand` | 触发回退的 ROI 名称；回退帧的 trigger 增加 `_pre_coarse`。        |
-| `pseudo_keyframe_scope`         | `combat`              | 伪关键帧适用范围：`combat`、`decision` 或 `global`。           |
+| `pseudo_keyframe_scope`         | `global`              | 伪关键帧适用范围：`combat`、`decision` 或 `global`。           |
+| `decision_merge_rois`           | `event_options`, `shop_decision`, `deck_overlay` | 决策界面合并和 `decision` 作用域回退使用的 ROI。 |
 | `decision_merge_window`         | 1.5                   | 决策界面近帧合并时间窗口（秒）。                                   |
 | `decision_merge_ssim`           | 0.94                  | 决策界面合并使用的 SSIM 下限。                                 |
 | `decision_merge_phash_distance` | 12                    | 决策界面合并使用的 pHash 距离上限。                              |
@@ -157,7 +158,7 @@ segmentation/
 | `battle_start_ocr.keywords`     | 配置列表                  | OCR 文本命中任一关键词时触发战斗开始帧。                             |
 | `rois`                          | 见上表                   | 完整 ROI 列表；可通过 JSON 覆盖。                             |
 
-代码内默认 `coarse_fps` 为 6；使用仓库配置文件时以文件中的 8 为准。`pre_roll` 已被解析并写入设置接口，但当前版本没有根据它回溯输出帧；如需改变行为，应先修改 selector 并补充测试。使用仓库 `sts2_720p.json` 时 `pseudo_keyframe_fallback` 默认开启，OCR 默认关闭；自定义配置可关闭伪关键帧回退，不影响普通抽帧路径。
+不提供配置文件时，代码默认 `coarse_fps=6`、`stable_frames=5`、`pseudo_keyframe_scope=combat`；使用仓库配置文件时分别为 `16`、`3` 和 `global`。`pre_roll` 已被解析并写入设置接口，但当前版本没有根据它回溯输出帧；如需改变行为，应先修改 selector 并补充测试。使用仓库 `sts2_720p.json` 时 `pseudo_keyframe_fallback` 默认开启，OCR 默认关闭；自定义配置可关闭伪关键帧回退，不影响普通抽帧路径。
 
 ## 7. trigger、置信度与去重语义
 
@@ -177,7 +178,7 @@ segmentation/
 
 ## 9. 高密度动作采样与伪关键帧作用域
 
-仓库提供的 `sts2_720p.json` 使用 `coarse_fps=16` 和 `stable_frames=2`。提高粗采样频率可以降低短暂出牌或选牌变化落在采样间隔之间、从而被遗漏的概率；减少稳定确认帧数可以缩短确认延迟。pHash/SSIM 去重仍会抑制视觉上重复的输出。
+仓库提供的 `sts2_720p.json` 使用 `coarse_fps=16` 和 `stable_frames=3`。提高粗采样频率可以降低短暂出牌或选牌变化落在采样间隔之间、从而被遗漏的概率；减少稳定确认帧数可以缩短确认延迟。pHash/SSIM 去重仍会抑制视觉上重复的输出。
 
 `pseudo_keyframe_scope` 会在启动时从配置文件读取：
 
