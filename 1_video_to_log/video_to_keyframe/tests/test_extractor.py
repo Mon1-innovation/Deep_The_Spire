@@ -133,3 +133,21 @@ def test_load_settings_reads_pseudo_keyframe_and_decision_parameters(tmp_path: P
     assert settings.decision_merge_ssim == 0.9
     assert settings.decision_merge_phash_distance == 9
     assert settings.decision_merge_rois == ("full_frame",)
+
+
+def test_beta_combat_detail_uses_dense_sampling():
+    settings = Settings(coarse_fps=6, combat_detail_enabled=True, combat_detail_fps=30,
+                        anchor_interval=100, rois=[Roi("combat_hand", 0, 0, 1, 1, 1)])
+    selector = Selector(settings, 30)
+    frame = np.full((20, 20, 3), 30, dtype=np.uint8)
+    assert selector.consider(0, 0.0, frame) is not None
+    selector.consider(1, 1 / 30, frame)
+    assert selector.last_sample_index == 1
+
+
+def test_event_focus_beta_roi_is_loaded(tmp_path: Path):
+    path = tmp_path / "settings.json"
+    path.write_text('{"event_options_focus_enabled":true}', encoding="utf-8")
+    settings = load_settings(path)
+    assert settings.event_options_focus_enabled is True
+    assert any(roi.name == "event_options_focus" for roi in settings.rois)

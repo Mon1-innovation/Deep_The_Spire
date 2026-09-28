@@ -1,5 +1,15 @@
 {
   "coarse_fps": 16,
+  "combat_detail_enabled": true,
+  "combat_detail_fps": 30,
+  "event_options_focus_enabled": true,
+  "event_options_focus_roi": {
+    "x": 0.48,
+    "y": 0.24,
+    "w": 0.42,
+    "h": 0.30,
+    "weight": 2.8
+  },
   "change_threshold": 0.08,
   "page_threshold": 0.18,
   "roi_change_threshold": 0.025,

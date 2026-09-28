@@ -93,3 +93,11 @@ trigger 只表示抽取原因，例如 roi_change、page_change、periodic_ancho
 仓库配置使用 `coarse_fps=16` 和 `stable_frames=3`，用于更好地捕获出牌、选牌等短时且信息密度较高的战斗操作。pHash/SSIM 去重仍然启用，因此这些参数会提高候选帧发现率，但不会输出每一张采样帧。
 
 `pseudo_keyframe_scope` 从 JSON 配置中读取，可设置为 `combat`、`decision` 或 `global`。实际生效的值会写入 `manifest.json`；如果 manifest 是由旧脚本或旧配置生成的，重新处理时请使用 `--force`。
+
+## 0.4.0 beta 参数
+
+- `combat_detail_enabled` / `combat_detail_fps`: 高密度战斗交互的独立采样频率，默认关闭。
+- `event_options_focus_enabled` / `event_options_focus_roi`: 事件选项文字聚焦 ROI，默认关闭，可覆盖为特殊事件的关注区域。
+- 伪关键帧和周期锚点统一按原始帧号排序后写出，`keyframes.jsonl` 始终按录屏时间顺序排列。
+
+仓库提供的 `config/sts2_720p.json` 已显式写入 beta 默认值：`combat_detail_enabled=true`、`combat_detail_fps=30`、`event_options_focus_enabled=true`，以及事件文字聚焦 ROI 的默认坐标。需要启用 beta 时复制该配置并修改对应开关；特殊事件可同时调整 `event_options_focus_roi`。

@@ -29,7 +29,7 @@ def extract_video(video_path: Path, output_root: Path, settings: Settings, force
     warnings: list[str] = []
     capture = None
     selected_count = 0
-    entries: list[dict] = []
+    entries: list[object] = []
     try:
         capture, info = open_video(video_path)
         warnings.extend(_validate(info.width, info.height, info.fps, video_path))
@@ -48,26 +48,10 @@ def extract_video(video_path: Path, output_root: Path, settings: Settings, force
                 continue
             if selected is None:
                 continue
-            selected_count += 1
-            name = f"kf_{selected_count:06d}_t_{selected.timestamp_sec:010.3f}.jpg"
-            relative = Path("keyframes") / name
-            entry = {"keyframe_id": f"{video_path.stem}-kf-{selected_count:06d}", "frame_index": selected.frame_index, "timestamp_sec": round(selected.timestamp_sec, 6), "path": relative.as_posix(), "trigger": selected.trigger, "changed_rois": selected.changed_rois, "change_score": round(selected.change_score, 6), "stable_frames": selected.stable_frames, "dedup_distance": None, "confidence": selected.confidence, "source": {"video": video_path.name, "sha256": source_hash}}
-            entries.append(entry)
-            if not dry_run:
-                write_jpeg(output_dir / relative, selected.frame, settings.jpeg_quality)
-                with jsonl_path.open("a", encoding="utf-8") as stream:
-                    stream.write(json.dumps(entry, ensure_ascii=True) + "\n")
+            entries.append(selected)
         selected = selector.finish()
         if selected is not None:
-            selected_count += 1
-            name = f"kf_{selected_count:06d}_t_{selected.timestamp_sec:010.3f}.jpg"
-            relative = Path("keyframes") / name
-            entry = {"keyframe_id": f"{video_path.stem}-kf-{selected_count:06d}", "frame_index": selected.frame_index, "timestamp_sec": round(selected.timestamp_sec, 6), "path": relative.as_posix(), "trigger": selected.trigger, "changed_rois": selected.changed_rois, "change_score": round(selected.change_score, 6), "stable_frames": selected.stable_frames, "dedup_distance": None, "confidence": selected.confidence, "source": {"video": video_path.name, "sha256": source_hash}}
-            entries.append(entry)
-            if not dry_run:
-                write_jpeg(output_dir / relative, selected.frame, settings.jpeg_quality)
-                with jsonl_path.open("a", encoding="utf-8") as stream:
-                    stream.write(json.dumps(entry, ensure_ascii=True) + "\n")
+            entries.append(selected)
     except Exception as error:
         warnings.append(str(error))
         status = "failed"
@@ -77,11 +61,23 @@ def extract_video(video_path: Path, output_root: Path, settings: Settings, force
     finally:
         if capture is not None:
             capture.release()
+    entries.sort(key=lambda item: (item.frame_index, item.timestamp_sec))
+    if not dry_run and status == "success":
+        jsonl_path.write_text("", encoding="utf-8")
+    for selected in entries:
+        selected_count += 1
+        name = f"kf_{selected_count:06d}_t_{selected.timestamp_sec:010.3f}.jpg"
+        relative = Path("keyframes") / name
+        entry = {"keyframe_id": f"{video_path.stem}-kf-{selected_count:06d}", "frame_index": selected.frame_index, "timestamp_sec": round(selected.timestamp_sec, 6), "path": relative.as_posix(), "trigger": selected.trigger, "changed_rois": selected.changed_rois, "change_score": round(selected.change_score, 6), "stable_frames": selected.stable_frames, "dedup_distance": None, "confidence": selected.confidence, "source": {"video": video_path.name, "sha256": source_hash}}
+        if not dry_run and status == "success":
+            write_jpeg(output_dir / relative, selected.frame, settings.jpeg_quality)
+            with jsonl_path.open("a", encoding="utf-8") as stream:
+                stream.write(json.dumps(entry, ensure_ascii=True) + "\n")
     if warnings:
         warnings_path.write_text("\n".join(warnings) + "\n", encoding="utf-8")
     elif warnings_path.exists():
         warnings_path.unlink()
-    manifest = {"schema_version": 1, "status": status, "source": {"path": str(video_path.resolve()), "sha256": source_hash, "name": video_path.name}, "video": {"width": getattr(info, "width", None), "height": getattr(info, "height", None), "fps": getattr(info, "fps", None), "frame_count": getattr(info, "frame_count", None), "duration_sec": getattr(info, "duration_sec", None)}, "script_version": "0.3.0", "parameters": {"coarse_fps": settings.coarse_fps, "change_threshold": settings.change_threshold, "page_threshold": settings.page_threshold, "roi_change_threshold": settings.roi_change_threshold, "combat_change_threshold": settings.combat_change_threshold, "event_change_threshold": settings.event_change_threshold, "shop_change_threshold": settings.shop_change_threshold, "pseudo_keyframe_fallback": settings.pseudo_keyframe_fallback, "pseudo_keyframe_scope": settings.pseudo_keyframe_scope, "decision_merge_window": settings.decision_merge_window, "decision_merge_ssim": settings.decision_merge_ssim, "decision_merge_phash_distance": settings.decision_merge_phash_distance, "battle_start_ocr_enabled": settings.battle_start_ocr_enabled, "black_mean_threshold": settings.black_mean_threshold, "black_std_threshold": settings.black_std_threshold, "black_dark_ratio": settings.black_dark_ratio, "stable_frames": settings.stable_frames, "stable_threshold": settings.stable_threshold, "anchor_interval": settings.anchor_interval, "phash_distance": settings.phash_distance, "ssim_threshold": settings.ssim_threshold}, "output_count": selected_count, "warnings_count": len(warnings)}
+    manifest = {"schema_version": 1, "status": status, "source": {"path": str(video_path.resolve()), "sha256": source_hash, "name": video_path.name}, "video": {"width": getattr(info, "width", None), "height": getattr(info, "height", None), "fps": getattr(info, "fps", None), "frame_count": getattr(info, "frame_count", None), "duration_sec": getattr(info, "duration_sec", None)}, "script_version": "0.4.0", "parameters": {"coarse_fps": settings.coarse_fps, "combat_detail_enabled": settings.combat_detail_enabled, "combat_detail_fps": settings.combat_detail_fps, "event_options_focus_enabled": settings.event_options_focus_enabled, "change_threshold": settings.change_threshold, "page_threshold": settings.page_threshold, "roi_change_threshold": settings.roi_change_threshold, "combat_change_threshold": settings.combat_change_threshold, "event_change_threshold": settings.event_change_threshold, "shop_change_threshold": settings.shop_change_threshold, "pseudo_keyframe_fallback": settings.pseudo_keyframe_fallback, "pseudo_keyframe_scope": settings.pseudo_keyframe_scope, "decision_merge_window": settings.decision_merge_window, "decision_merge_ssim": settings.decision_merge_ssim, "decision_merge_phash_distance": settings.decision_merge_phash_distance, "battle_start_ocr_enabled": settings.battle_start_ocr_enabled, "black_mean_threshold": settings.black_mean_threshold, "black_std_threshold": settings.black_std_threshold, "black_dark_ratio": settings.black_dark_ratio, "stable_frames": settings.stable_frames, "stable_threshold": settings.stable_threshold, "anchor_interval": settings.anchor_interval, "phash_distance": settings.phash_distance, "ssim_threshold": settings.ssim_threshold}, "output_count": selected_count, "warnings_count": len(warnings)}
     manifest["parameters"]["player_status_change_threshold"] = settings.player_status_change_threshold
     manifest["parameters"]["pseudo_keyframe_rois"] = list(settings.pseudo_keyframe_rois)
     manifest["parameters"]["decision_merge_rois"] = list(settings.decision_merge_rois)

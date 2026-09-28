@@ -47,7 +47,12 @@ class Selector:
             self.last_sample_frame = frame
             self.last_sample_index = index
             return self._emit(index, timestamp, frame, "periodic_anchor", [], 0.0, 1, "candidate")
-        sample_gap = max(1, round(self.fps / max(self.settings.coarse_fps, 0.1)))
+        combat_rois = {"combat_center", "combat_hand", "hand", "player_status_left", "player_energy_left"}
+        configured_combat = combat_rois.intersection(roi.name for roi in self.settings.rois)
+        sample_fps = (self.settings.combat_detail_fps
+                      if self.settings.combat_detail_enabled and configured_combat
+                      else self.settings.coarse_fps)
+        sample_gap = max(1, round(self.fps / max(sample_fps, 0.1)))
         if index - self.last_sample_index < sample_gap:
             return None
         if (timestamp - self.last_ocr_timestamp >= self.settings.battle_start_ocr_interval
@@ -57,7 +62,8 @@ class Selector:
         thresholds = {roi.name: self.settings.roi_change_threshold for roi in self.settings.rois}
         thresholds.update({"combat_center": self.settings.combat_change_threshold,
                            "combat_hand": self.settings.combat_change_threshold,
-                           "event_options": self.settings.event_change_threshold})
+                           "event_options": self.settings.event_change_threshold,
+                           "event_options_focus": self.settings.event_change_threshold})
         thresholds["shop_decision"] = self.settings.shop_change_threshold
         thresholds["player_status_left"] = self.settings.player_status_change_threshold
         thresholds["player_energy_left"] = self.settings.player_status_change_threshold
@@ -70,7 +76,7 @@ class Selector:
         self.last_sample_index = index
         if timestamp - self.last_anchor >= self.settings.anchor_interval:
             return self._emit(index, timestamp, frame, "periodic_anchor", [], global_score, 1, "candidate")
-        sensitive = {"hand", "combat_center", "combat_hand", "event_options", "shop_decision",
+        sensitive = {"hand", "combat_center", "combat_hand", "event_options", "event_options_focus", "shop_decision",
                      "player_status_left", "player_energy_left"}
         sensitive_changed = bool(sensitive.intersection(changed))
         if (local < self.settings.change_threshold and

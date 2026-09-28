@@ -89,5 +89,19 @@
 ## 2026-09-27 左侧玩家状态与能量 ROI
 
 - 新增 `player_status_left` 和 `player_energy_left` ROI，分别覆盖左侧角色状态区与左下能量区，避免使用包含大块手牌的单一 ROI。
+
 - 两个 ROI 使用权重 `2.6`、`2.2` 和专用阈值 `player_status_change_threshold=0.015`，并纳入战斗敏感判断及伪关键帧回退，用于提高出牌后生命、格挡、状态和能量变化的召回率。
+
 - 原 `player_status` 保留为右上角运行元数据的历史兼容名称。
+  
+  ## 2026-09-29 关键帧顺序与高密度交互 beta
+
+### 修复
+
+- 修复伪关键帧回退导致的输出顺序问题。抽帧期间先收集候选结果，结束后按原视频 `frame_index` 和时间戳排序，再统一写入 `keyframes.jsonl` 与 JPEG 文件名；后续日志可以直接按文件顺序读取。
+
+### 新增
+
+- 新增 `combat_detail_enabled` 和 `combat_detail_fps` beta 参数。启用后，在存在战斗相关 ROI 时按独立频率采样，适合高频出牌/用牌场景；默认打开，保持现有性能和输出规模。
+- 新增 `event_options_focus_enabled` beta 参数及 `event_options_focus_roi` 配置。启用后增加默认位于屏幕右上侧的事件文字聚焦 ROI；水晶球等特殊事件仍可通过自定义 ROI 坐标覆盖，默认打开。
+- `manifest.json` 记录上述 beta 参数，脚本版本更新为 `0.4.0`。

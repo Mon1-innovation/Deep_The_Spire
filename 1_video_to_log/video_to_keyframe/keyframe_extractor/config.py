@@ -73,6 +73,11 @@ class Settings:
     decision_merge_ssim: float = 0.94
     decision_merge_phash_distance: int = 12
     decision_merge_rois: tuple[str, ...] = ("event_options", "shop_decision", "deck_overlay")
+    # Beta switches for high-density interaction regions.
+    combat_detail_enabled: bool = False
+    combat_detail_fps: float = 30.0
+    event_options_focus_enabled: bool = False
+    event_options_focus_roi: Roi = field(default_factory=lambda: Roi("event_options_focus", 0.48, 0.24, 0.42, 0.30, 2.8))
     battle_start_ocr_enabled: bool = False
     battle_start_ocr_interval: float = 1.0
     battle_start_ocr_keywords: tuple[str, ...] = ("battle start", "combat start", "战斗开始")
@@ -95,6 +100,18 @@ def load_settings(path: str | Path | None) -> Settings:
     if "rois" in data:
         settings.rois = [Roi(r["name"], r["x"], r["y"], r["w"], r["h"], r.get("weight", 1.0)) for r in data["rois"]]
     settings.pseudo_keyframe_fallback = bool(data.get("pseudo_keyframe_fallback", settings.pseudo_keyframe_fallback))
+    settings.combat_detail_enabled = bool(data.get("combat_detail_enabled", settings.combat_detail_enabled))
+    if "combat_detail_fps" in data:
+        settings.combat_detail_fps = float(data["combat_detail_fps"])
+    settings.event_options_focus_enabled = bool(data.get("event_options_focus_enabled", settings.event_options_focus_enabled))
+    focus = data.get("event_options_focus_roi")
+    if isinstance(focus, dict):
+        settings.event_options_focus_roi = Roi(
+            "event_options_focus", float(focus["x"]), float(focus["y"]),
+            float(focus["w"]), float(focus["h"]), float(focus.get("weight", 2.8)),
+        )
+    if settings.event_options_focus_enabled and not any(roi.name == "event_options_focus" for roi in settings.rois):
+        settings.rois.append(settings.event_options_focus_roi)
     if "pseudo_keyframe_rois" in data:
         settings.pseudo_keyframe_rois = tuple(str(value) for value in data["pseudo_keyframe_rois"])
     if "pseudo_keyframe_scope" in data:
