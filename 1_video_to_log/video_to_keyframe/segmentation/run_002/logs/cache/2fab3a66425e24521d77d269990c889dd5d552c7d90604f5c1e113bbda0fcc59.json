@@ -1,0 +1,94 @@
+{
+    "page_type": "deck_view",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "entity_type": null,
+            "name": null,
+            "entity_id": null,
+            "hp": 42,
+            "max_hp": 70,
+            "block": null,
+            "visual_confidence": null,
+            "gold": 127
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            }
+        ],
+        "potions": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            }
+        ],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "获得顺序",
+            "类型",
+            "费用",
+            "拼音顺序",
+            "格挡",
+            "在下个回合前，阻挡伤害。",
+            "造成6点伤害。",
+            "获得5点格挡。",
+            "造成3点伤害。",
+            "给予1层虚弱。"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Deck view grid of cards is visible",
+        "Card names and descriptions are readable",
+        "Top-left HUD numbers are partially obscured",
+        "No enemies or hand cards are shown",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop"
+    ]
+}

@@ -1,0 +1,53 @@
+{
+    "page_type": "unknown",
+    "confidence": 0.3,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "entity_id": null,
+            "name": null,
+            "entity_type": null,
+            "hp": null,
+            "max_hp": null,
+            "block": null,
+            "gold": null,
+            "visual_confidence": null
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "单人模式",
+            "多人模式",
+            "时间线",
+            "设置",
+            "百科大全",
+            "退出"
+        ],
+        "visible_text": [
+            "Slay the Spire II",
+            "单人模式",
+            "多人模式",
+            "时间线",
+            "设置",
+            "百科大全",
+            "退出",
+            "存档1",
+            "点击编辑",
+            "CS青木 bilibili"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Title screen of Slay the Spire II",
+        "Main menu options visible in Chinese",
+        "No combat HUD or in-run state visible",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop"
+    ]
+}

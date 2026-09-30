@@ -1,0 +1,159 @@
+{
+    "page_type": "combat",
+    "confidence": 0.6,
+    "state": {
+        "floor": 10,
+        "turn": 2,
+        "player": {
+            "entity_id": null,
+            "name": null,
+            "hp": 42,
+            "max_hp": 70,
+            "block": null,
+            "energy": 3,
+            "max_energy": 3,
+            "statuses": [],
+            "entity_type": null,
+            "visual_confidence": null,
+            "gold": 114
+        },
+        "enemies": [
+            {
+                "entity_id": null,
+                "name": "海洋混混",
+                "hp": 37,
+                "max_hp": 49,
+                "block": null,
+                "statuses": [
+                    "虚弱"
+                ],
+                "intent": null,
+                "entity_type": null,
+                "visual_confidence": 0.9
+            }
+        ],
+        "hand": [
+            {
+                "entity_id": null,
+                "name": "中和",
+                "cost": 0,
+                "type": "技能",
+                "description": "造成3点伤害。给予1层虚弱。",
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "打击",
+                "cost": 1,
+                "type": "攻击",
+                "description": null,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "防御",
+                "cost": 1,
+                "type": "技能",
+                "description": null,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "打击",
+                "cost": 1,
+                "type": "攻击",
+                "description": null,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            }
+        ],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            }
+        ],
+        "potions": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            }
+        ],
+        "draw_count": 5,
+        "discard_count": 0,
+        "exhaust_count": null,
+        "options": [
+            "结束第2回合"
+        ],
+        "visible_text": [
+            "中和",
+            "造成3点伤害。给予1层虚弱。",
+            "打击",
+            "防御",
+            "海洋混混",
+            "37/49",
+            "42/70",
+            "3/3",
+            "结束第2回合",
+            "虚弱"
+        ]
+    },
+    "action": {
+        "type": "play_card",
+        "card_name": "中和",
+        "source": "hand",
+        "target": "海洋混混",
+        "description": "Player plays 中和 on 海洋混混."
+    },
+    "evidence": [
+        "Card 中和 is shown enlarged in the center, indicating it is being played.",
+        "A green projectile effect connects the player side to the enemy.",
+        "Enemy 海洋混混 displays 37/49 HP and a 虚弱 status.",
+        "Player HP is 42/70 and energy is 3/3.",
+        "End turn button reads 结束第2回合.",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop",
+        "Enemy identities and combat stats read from the focused combat crop"
+    ]
+}

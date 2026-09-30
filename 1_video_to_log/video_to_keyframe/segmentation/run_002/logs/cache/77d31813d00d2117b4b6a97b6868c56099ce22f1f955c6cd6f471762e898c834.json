@@ -1,0 +1,117 @@
+{
+    "page_type": "event",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "entity_id": null,
+            "name": null,
+            "hp": 56,
+            "max_hp": 70,
+            "block": null,
+            "energy": null,
+            "entity_type": null,
+            "visual_confidence": null,
+            "gold": 99
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": 0.4
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": 0.4
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": 0.4
+            }
+        ],
+        "potions": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": 0.4
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": 0.4
+            }
+        ],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            {
+                "entity_id": null,
+                "name": "橙型香盒",
+                "description": "升级一张牌。",
+                "entity_type": null,
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "失物盒",
+                "description": "获得1组卡牌奖励和1瓶随机药水。",
+                "entity_type": null,
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "松动羊毛剪",
+                "description": "从你的牌组中移除2张牌，然后受到13点伤害。",
+                "entity_type": null,
+                "visual_confidence": 0.9
+            }
+        ],
+        "visible_text": [
+            "...杀...死... 建筑师",
+            "橙型香盒",
+            "升级一张牌。",
+            "失物盒",
+            "获得1组卡牌奖励和1瓶随机药水。",
+            "松动羊毛剪",
+            "从你的牌组中移除2张牌，然后受到13点伤害。",
+            "56/70",
+            "99",
+            "00:48"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Event screen with three selectable options",
+        "Player HP 56/70 and gold 99 visible",
+        "Timer 00:48 visible",
+        "No combat hand or enemies shown",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop"
+    ]
+}

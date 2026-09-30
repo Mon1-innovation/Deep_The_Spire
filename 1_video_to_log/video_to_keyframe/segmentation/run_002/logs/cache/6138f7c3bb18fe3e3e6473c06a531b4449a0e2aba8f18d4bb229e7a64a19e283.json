@@ -1,0 +1,131 @@
+{
+    "page_type": "card_select",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "entity_id": null,
+            "name": null,
+            "hp": 42,
+            "max_hp": 70,
+            "block": null,
+            "energy": null,
+            "entity_type": null,
+            "visual_confidence": null,
+            "gold": 99
+        },
+        "enemies": [],
+        "hand": [
+            {
+                "entity_id": null,
+                "name": "防御",
+                "cost": 1,
+                "entity_type": "cards",
+                "visual_confidence": 0.95
+            },
+            {
+                "entity_id": null,
+                "name": "打击",
+                "cost": 1,
+                "entity_type": "cards",
+                "visual_confidence": 0.95
+            },
+            {
+                "entity_id": null,
+                "name": "打击",
+                "cost": 1,
+                "entity_type": "cards",
+                "visual_confidence": 0.95
+            },
+            {
+                "entity_id": null,
+                "name": "打击",
+                "cost": 1,
+                "entity_type": "cards",
+                "visual_confidence": 0.95
+            }
+        ],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": 0.4
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": 0.4
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": 0.4
+            }
+        ],
+        "potions": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": 0.3
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": 0.3
+            }
+        ],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "选择1张牌来丢弃。"
+        ],
+        "visible_text": [
+            "选择1张牌来丢弃。",
+            "防御",
+            "获得5点格挡。",
+            "打击",
+            "造成 点伤害。",
+            "2/3",
+            "42/70",
+            "99",
+            "01:04"
+        ]
+    },
+    "action": {
+        "type": "select_card",
+        "description": "Prompted to choose 1 card to discard",
+        "entity_id": null,
+        "visual_confidence": 0.9
+    },
+    "evidence": [
+        "Prompt text: 选择1张牌来丢弃。",
+        "Four cards shown: 防御 and three 打击",
+        "Player HP 42/70",
+        "Energy counter 2/3",
+        "Confirm checkmark button visible",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop"
+    ]
+}

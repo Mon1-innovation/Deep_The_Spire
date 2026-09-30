@@ -1,0 +1,96 @@
+{
+    "page_type": "event",
+    "confidence": 0.6,
+    "state": {
+        "floor": 10,
+        "turn": null,
+        "player": {
+            "entity_id": null,
+            "name": null,
+            "hp": 42,
+            "max_hp": 70,
+            "block": null,
+            "energy": null,
+            "entity_type": null,
+            "visual_confidence": null,
+            "gold": 127
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            }
+        ],
+        "potions": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            }
+        ],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "投身其中 获得2点最大生命值。受到8点伤害。",
+            "敬而远之 回复10点生命。"
+        ],
+        "visible_text": [
+            "深渊浴场",
+            "你发现了一间僻静的密室。",
+            "氤氲的雾气从沸腾的池水中升腾而起，池水的色泽正以一种催眠般的节奏变幻。天花板上垂挂着覆满藤蔓的异形生长物，滴落的黏稠液体在触及水面的瞬间，一边发出嘶嘶声，一边如活物般扭动挣扎。空气粘滞沉重，充斥着盐的味道和某种不言而喻的活物的气息。",
+            "当你靠近那口最大的水池时，液面泛起了涟漪。水流翻腾得愈发狂乱，仿佛正期待着你的到来。",
+            "投身其中",
+            "获得2点最大生命值。受到8点伤害。",
+            "敬而远之",
+            "回复10点生命。",
+            "游戏已保存"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Event title 深渊浴场 is visible.",
+        "Two event options are shown with their effects.",
+        "No action is visibly confirmed.",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop"
+    ]
+}

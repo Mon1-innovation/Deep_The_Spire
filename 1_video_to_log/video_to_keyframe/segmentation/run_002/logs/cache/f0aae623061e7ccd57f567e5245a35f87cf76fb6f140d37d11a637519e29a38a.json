@@ -1,0 +1,143 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": 10,
+        "turn": 1,
+        "player": {
+            "entity_id": null,
+            "name": null,
+            "hp": 42,
+            "max_hp": 70,
+            "block": null,
+            "energy": 0,
+            "entity_type": null,
+            "visual_confidence": null,
+            "gold": 114
+        },
+        "enemies": [
+            {
+                "entity_id": null,
+                "name": null,
+                "hp": 40,
+                "max_hp": 49,
+                "block": null,
+                "intent": null,
+                "entity_type": null,
+                "visual_confidence": 0.6
+            }
+        ],
+        "hand": [
+            {
+                "entity_id": null,
+                "name": "生存者",
+                "cost": 1,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "进阶之灾",
+                "cost": null,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "防御",
+                "cost": 1,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            }
+        ],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            }
+        ],
+        "potions": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            }
+        ],
+        "draw_count": 6,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "结束回合"
+        ],
+        "visible_text": [
+            "玩家回合",
+            "第1回合",
+            "结束回合",
+            "你会丢弃你的手牌，然后敌人进行他们的回合，接着你会再次抽取5张牌、开始你的下一个回合。",
+            "0/3",
+            "42/70",
+            "40/49"
+        ]
+    },
+    "action": {
+        "type": "end_turn",
+        "source": null,
+        "target": null
+    },
+    "evidence": [
+        "玩家回合 第1回合",
+        "结束回合 (E)",
+        "手牌显示 生存者、进阶之灾、防御",
+        "敌人 HP 40/49",
+        "玩家 HP 42/70，格挡 10",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop",
+        "Enemy identities and combat stats read from the focused combat crop"
+    ]
+}

@@ -1,0 +1,122 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": 10,
+        "turn": 2,
+        "player": {
+            "entity_id": null,
+            "name": null,
+            "hp": 42,
+            "max_hp": 70,
+            "block": null,
+            "energy": 1,
+            "entity_type": null,
+            "visual_confidence": null,
+            "gold": 114
+        },
+        "enemies": [
+            {
+                "entity_id": null,
+                "name": null,
+                "hp": 40,
+                "max_hp": 49,
+                "block": null,
+                "intent": "2x4 attack",
+                "statuses": [
+                    "虚弱"
+                ],
+                "entity_type": null,
+                "visual_confidence": 0.75
+            }
+        ],
+        "hand": [
+            {
+                "entity_id": null,
+                "name": "打击",
+                "cost": 1,
+                "type": "攻击",
+                "entity_type": "cards",
+                "visual_confidence": 0.95
+            }
+        ],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            }
+        ],
+        "potions": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            }
+        ],
+        "draw_count": 4,
+        "discard_count": 6,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "格挡",
+            "玩家回合",
+            "第2回合",
+            "虚弱",
+            "效果结束",
+            "打击",
+            "攻击"
+        ]
+    },
+    "action": {
+        "type": "play_card",
+        "card_name": "打击",
+        "source": "hand",
+        "target": null
+    },
+    "evidence": [
+        "玩家回合 第2回合",
+        "敌人意图 2×4",
+        "手牌 打击 费用1",
+        "抽牌堆4 弃牌堆6",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop",
+        "Enemy identities and combat stats read from the focused combat crop"
+    ]
+}

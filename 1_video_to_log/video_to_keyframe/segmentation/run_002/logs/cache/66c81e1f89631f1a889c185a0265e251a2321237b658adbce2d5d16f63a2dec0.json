@@ -1,0 +1,200 @@
+{
+    "page_type": "card_select",
+    "confidence": 0.6,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "entity_id": null,
+            "name": null,
+            "hp": 56,
+            "max_hp": 70,
+            "block": null,
+            "energy": null,
+            "entity_type": null,
+            "visual_confidence": null,
+            "gold": 99
+        },
+        "enemies": [],
+        "hand": [
+            {
+                "entity_id": null,
+                "name": "打击",
+                "cost": 1,
+                "type": "攻击",
+                "description": "造成6点伤害。",
+                "entity_type": "cards",
+                "visual_confidence": 0.95
+            },
+            {
+                "entity_id": null,
+                "name": "打击",
+                "cost": 1,
+                "type": "攻击",
+                "description": "造成6点伤害。",
+                "entity_type": "cards",
+                "visual_confidence": 0.95
+            },
+            {
+                "entity_id": null,
+                "name": "打击",
+                "cost": 1,
+                "type": "攻击",
+                "description": "造成6点伤害。",
+                "entity_type": "cards",
+                "visual_confidence": 0.95
+            },
+            {
+                "entity_id": null,
+                "name": "打击",
+                "cost": 1,
+                "type": "攻击",
+                "description": "造成6点伤害。",
+                "entity_type": "cards",
+                "visual_confidence": 0.95
+            },
+            {
+                "entity_id": null,
+                "name": "打击",
+                "cost": 1,
+                "type": "攻击",
+                "description": "造成6点伤害。",
+                "entity_type": "cards",
+                "visual_confidence": 0.95
+            },
+            {
+                "entity_id": null,
+                "name": "防御",
+                "cost": 1,
+                "type": "技能",
+                "description": "获得5点格挡。",
+                "entity_type": "cards",
+                "visual_confidence": 0.95
+            },
+            {
+                "entity_id": null,
+                "name": "防御",
+                "cost": 1,
+                "type": "技能",
+                "description": "获得5点格挡。",
+                "entity_type": "cards",
+                "visual_confidence": 0.95
+            },
+            {
+                "entity_id": null,
+                "name": "防御",
+                "cost": 1,
+                "type": "技能",
+                "description": "获得5点格挡。",
+                "entity_type": "cards",
+                "visual_confidence": 0.95
+            },
+            {
+                "entity_id": null,
+                "name": "防御",
+                "cost": 1,
+                "type": "技能",
+                "description": "获得5点格挡。",
+                "entity_type": "cards",
+                "visual_confidence": 0.95
+            },
+            {
+                "entity_id": null,
+                "name": "防御",
+                "cost": 1,
+                "type": "技能",
+                "description": "获得5点格挡。",
+                "entity_type": "cards",
+                "visual_confidence": 0.95
+            },
+            {
+                "entity_id": null,
+                "name": "中和",
+                "cost": 0,
+                "type": null,
+                "description": null,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "生存者",
+                "cost": 1,
+                "type": null,
+                "description": null,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            }
+        ],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            }
+        ],
+        "potions": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            }
+        ],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "格挡",
+            "在下一个回合前，阻挡伤害。",
+            "选择2张牌来移除。",
+            "56/70",
+            "99",
+            "00:50"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Card selection screen with multiple 打击 and 防御 cards",
+        "Bottom text: 选择2张牌来移除。",
+        "Tooltip: 格挡 / 在下一个回合前，阻挡伤害。",
+        "HP 56/70 and gold 99 visible in top-left HUD",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop"
+    ]
+}

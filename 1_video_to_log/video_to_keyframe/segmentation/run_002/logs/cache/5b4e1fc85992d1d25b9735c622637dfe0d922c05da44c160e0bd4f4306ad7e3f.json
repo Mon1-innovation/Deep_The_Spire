@@ -1,0 +1,139 @@
+{
+    "page_type": "combat",
+    "confidence": 0.6,
+    "state": {
+        "floor": 10,
+        "turn": 3,
+        "player": {
+            "entity_id": null,
+            "name": null,
+            "hp": 42,
+            "max_hp": 70,
+            "block": null,
+            "energy": 2,
+            "entity_type": null,
+            "visual_confidence": null,
+            "gold": 114
+        },
+        "enemies": [
+            {
+                "entity_id": null,
+                "name": "Leaf Slime",
+                "hp": 19,
+                "max_hp": 49,
+                "block": null,
+                "intent": null,
+                "entity_type": null,
+                "visual_confidence": 0.8
+            }
+        ],
+        "hand": [
+            {
+                "entity_id": null,
+                "name": "防御",
+                "cost": 1,
+                "playable": true,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "生存者",
+                "cost": 1,
+                "playable": true,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "防御",
+                "cost": 1,
+                "playable": true,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "防御",
+                "cost": 1,
+                "playable": true,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            }
+        ],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            }
+        ],
+        "potions": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            }
+        ],
+        "draw_count": 21,
+        "discard_count": 0,
+        "exhaust_count": null,
+        "options": [
+            "结束第3回合"
+        ],
+        "visible_text": [
+            "我的抽牌堆是21",
+            "结束第3回合",
+            "42/70",
+            "19/49",
+            "2/3"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Turn counter shows 3",
+        "Player HP 42/70",
+        "Enemy HP 19/49",
+        "Hand contains 防御 and 生存者",
+        "Draw pile text 我的抽牌堆是21",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop",
+        "Enemy identities and combat stats read from the focused combat crop"
+    ]
+}

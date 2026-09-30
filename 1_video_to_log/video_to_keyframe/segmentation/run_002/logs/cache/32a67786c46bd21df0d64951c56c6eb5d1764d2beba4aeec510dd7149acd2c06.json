@@ -1,0 +1,127 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": 10,
+        "turn": 5,
+        "player": {
+            "entity_id": null,
+            "name": null,
+            "hp": 42,
+            "max_hp": 70,
+            "block": null,
+            "energy": 3,
+            "max_energy": 3,
+            "entity_type": null,
+            "visual_confidence": null,
+            "gold": 99
+        },
+        "enemies": [
+            {
+                "entity_id": null,
+                "name": null,
+                "hp": 3,
+                "max_hp": 41,
+                "block": null,
+                "intent": "attack",
+                "entity_type": null,
+                "visual_confidence": 0.4
+            }
+        ],
+        "hand": [
+            {
+                "entity_id": null,
+                "name": "打击",
+                "cost": 1,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "打击",
+                "cost": 1,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "防御",
+                "cost": 1,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "防御",
+                "cost": 1,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "打击",
+                "cost": 1,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            }
+        ],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            }
+        ],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "结束第5回合"
+        ],
+        "visible_text": [
+            "玩家回合",
+            "第5回合",
+            "42/70",
+            "3/41",
+            "打击",
+            "防御",
+            "结束第5回合",
+            "3/3"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "玩家回合",
+        "第5回合",
+        "42/70",
+        "3/41",
+        "结束第5回合",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop",
+        "Enemy identities and combat stats read from the focused combat crop"
+    ]
+}

@@ -1,0 +1,145 @@
+{
+    "page_type": "card_select",
+    "confidence": 0.55,
+    "state": {
+        "floor": 10,
+        "turn": null,
+        "player": {
+            "entity_id": null,
+            "name": null,
+            "hp": 42,
+            "max_hp": 70,
+            "block": null,
+            "energy": null,
+            "entity_type": null,
+            "visual_confidence": null,
+            "gold": 114
+        },
+        "enemies": [
+            {
+                "entity_id": null,
+                "name": null,
+                "hp": null,
+                "max_hp": null,
+                "block": null,
+                "intent": null,
+                "entity_type": null,
+                "visual_confidence": null
+            },
+            {
+                "entity_id": null,
+                "name": null,
+                "hp": null,
+                "max_hp": null,
+                "block": null,
+                "intent": null,
+                "entity_type": null,
+                "visual_confidence": null
+            }
+        ],
+        "hand": [
+            {
+                "entity_id": null,
+                "name": "打击",
+                "cost": 1,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "防御",
+                "cost": 1,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "打击",
+                "cost": 1,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": null,
+                "cost": 1,
+                "entity_type": "cards",
+                "visual_confidence": 0.4
+            },
+            {
+                "entity_id": null,
+                "name": "中和",
+                "cost": 0,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            }
+        ],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            }
+        ],
+        "potions": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            }
+        ],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "选择1张牌来丢弃。",
+            "打击",
+            "防御",
+            "中和",
+            "42/70",
+            "114",
+            "3",
+            "01:41"
+        ]
+    },
+    "action": {
+        "type": "select_card",
+        "description": "Prompt to choose 1 card to discard"
+    },
+    "evidence": [
+        "Text reads 选择1张牌来丢弃。",
+        "Five cards are shown in hand",
+        "Player HP 42/70 visible",
+        "Gold 114 visible",
+        "Timer 01:41 visible",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop"
+    ]
+}

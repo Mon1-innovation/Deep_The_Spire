@@ -1,0 +1,67 @@
+{
+    "page_type": "combat",
+    "confidence": 0.35,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "entity_id": null,
+            "name": null,
+            "entity_type": null,
+            "visual_confidence": null,
+            "hp": 42,
+            "max_hp": 70,
+            "block": null,
+            "gold": 114,
+            "energy": 0
+        },
+        "enemies": [
+            {
+                "entity_id": null,
+                "name": null,
+                "entity_type": null,
+                "visual_confidence": 0.3
+            }
+        ],
+        "hand": [],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            }
+        ],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "42/70",
+            "114",
+            "3",
+            "01:32",
+            "0/3",
+            "12",
+            "10",
+            "CS青木",
+            "bilibili"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Combat scene with player character and one enemy",
+        "Top HUD shows 42/70, 114, 3, and 01:32",
+        "Bottom-left shows 0/3 and a card with 12",
+        "Bottom-right shows a card with 10",
+        "No playable hand cards are visible",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop",
+        "Enemy identities and combat stats read from the focused combat crop"
+    ]
+}

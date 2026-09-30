@@ -1,0 +1,111 @@
+{
+    "page_type": "card_reward",
+    "confidence": 0.55,
+    "state": {
+        "floor": 10,
+        "turn": null,
+        "player": {
+            "entity_id": null,
+            "name": null,
+            "hp": 42,
+            "max_hp": 70,
+            "block": null,
+            "energy": null,
+            "entity_type": null,
+            "visual_confidence": null,
+            "gold": 114
+        },
+        "enemies": [
+            {
+                "entity_id": null,
+                "name": null,
+                "hp": 12,
+                "max_hp": 70,
+                "block": null,
+                "intent": null,
+                "entity_type": null,
+                "visual_confidence": 0.3
+            }
+        ],
+        "hand": [],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            }
+        ],
+        "potions": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            }
+        ],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "跳过"
+        ],
+        "visible_text": [
+            "选择一张牌",
+            "跳过",
+            "游戏已保存",
+            "42/70",
+            "114",
+            "12/70"
+        ]
+    },
+    "action": {
+        "type": "card_reward",
+        "source": null,
+        "target": null,
+        "card": null,
+        "option": "跳过"
+    },
+    "evidence": [
+        "选择一张牌 header visible",
+        "跳过 button visible",
+        "player HP 42/70",
+        "enemy HP 12/70",
+        "gold 114",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop"
+    ]
+}

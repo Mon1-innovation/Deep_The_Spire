@@ -18,7 +18,7 @@ def test_mock_pipeline_is_repeatable_and_cached(tmp_path: Path):
     result = convert_keyframes(tmp_path, output, MockProvider(), run_id="test")
     assert result["run_id"] == "test"
     assert result["provenance"]["schema_version"] == "2.0"
-    assert result["provenance"]["observation_schema_version"] == "7"
+    assert result["provenance"]["observation_schema_version"] == "8"
     assert result["provenance"]["map_schema_version"] == "2"
     assert result["provenance"]["game_patch"] == "unknown"
     assert result["provenance"]["codex_catalogs"] == {}
@@ -68,6 +68,11 @@ def test_pipeline_writes_normalized_combat_entities_to_log(tmp_path: Path):
     assert observation["state"]["potions"][0]["entity_id"] == "FIRE_POTION"
     assert result["events"][-1]["info"]["state"]["potions"][0]["entity_id"] == "FIRE_POTION"
     assert result["provenance"]["codex_catalogs"]["monsters"]["entity_type"] == "monsters"
+    logged_events = [json.loads(line) for line in output.with_suffix(".jsonl").read_text(encoding="utf-8").splitlines()]
+    logged_state = next(event["info"]["state"] for event in logged_events if "state" in event.get("info", {}))
+    assert logged_state["enemies"][0]["entity_id"] == "CULTIST"
+    assert logged_state["relics"][0]["entity_id"] == "OLD_COIN"
+    assert logged_state["potions"][0]["entity_id"] == "FIRE_POTION"
 
 def test_empty_input_is_rejected(tmp_path: Path):
     with pytest.raises(ValueError, match="no supported keyframe images"):

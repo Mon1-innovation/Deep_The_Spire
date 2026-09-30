@@ -1,0 +1,117 @@
+{
+    "page_type": "card_select",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "entity_id": null,
+            "name": null,
+            "hp": 42,
+            "max_hp": 70,
+            "block": null,
+            "energy": null,
+            "entity_type": null,
+            "visual_confidence": null,
+            "gold": 99
+        },
+        "enemies": [],
+        "hand": [
+            {
+                "entity_id": null,
+                "name": "防御",
+                "cost": 1,
+                "type": "skill",
+                "description": "获得5点格挡。",
+                "entity_type": "cards",
+                "visual_confidence": 0.95
+            },
+            {
+                "entity_id": null,
+                "name": "防御",
+                "cost": 1,
+                "type": "skill",
+                "description": null,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            }
+        ],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            }
+        ],
+        "potions": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            }
+        ],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "选择1张牌来丢弃。"
+        ],
+        "visible_text": [
+            "选择1张牌来丢弃。",
+            "防御",
+            "获得5点格挡。",
+            "42/70",
+            "99",
+            "01:18"
+        ]
+    },
+    "action": {
+        "type": "select_card",
+        "description": "Prompt to choose 1 card to discard",
+        "entity_id": null
+    },
+    "evidence": [
+        "Text '选择1张牌来丢弃。' visible",
+        "Two '防御' cards visible",
+        "HP 42/70 visible",
+        "Gold 99 visible",
+        "Timer 01:18 visible",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop"
+    ]
+}

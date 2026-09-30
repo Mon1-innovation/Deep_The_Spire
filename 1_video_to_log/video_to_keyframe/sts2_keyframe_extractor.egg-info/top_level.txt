@@ -1,4 +1,5 @@
 config
 keyframe_extractor
+segmentation
 temp
 tests

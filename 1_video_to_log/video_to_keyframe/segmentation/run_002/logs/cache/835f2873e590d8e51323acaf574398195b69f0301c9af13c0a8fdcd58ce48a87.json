@@ -1,0 +1,47 @@
+{
+    "page_type": "map",
+    "confidence": 0.0,
+    "state": {
+        "floor": null,
+        "map": {
+            "current_node_id": null,
+            "nodes": [],
+            "paths": []
+        },
+        "visible_text": [],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": 0.6
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": 0.55
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": 0.5
+            }
+        ],
+        "potions": []
+    },
+    "action": null,
+    "evidence": [
+        "Relics and potions read from the enlarged top inventory crop"
+    ]
+}

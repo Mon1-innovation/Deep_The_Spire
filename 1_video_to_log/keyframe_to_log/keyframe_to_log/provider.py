@@ -8,6 +8,7 @@ import urllib.error
 import urllib.request
 from io import BytesIO
 from PIL import Image
+from .codex import normalize_name
 from .models import Keyframe
 
 SYSTEM_PROMPT = """You are a careful Slay the Spire 2 screenshot annotator.
@@ -242,15 +243,36 @@ class OpenAICompatibleProvider(Provider):
     def _merge_entities(existing: object, focused: object) -> list[dict]:
         if not isinstance(focused, list) or not focused:
             return existing if isinstance(existing, list) else []
-        merged = [dict(item) for item in focused if isinstance(item, dict)]
-        originals = existing if isinstance(existing, list) else []
-        for index, item in enumerate(merged):
-            if index < len(originals) and isinstance(originals[index], dict):
-                combined = dict(originals[index])
+        merged = [dict(item) for item in existing if isinstance(item, dict)] if isinstance(existing, list) else []
+        used_indices: set[int] = set()
+        focused_items = [item for item in focused if isinstance(item, dict)]
+
+        def identity_keys(entity: dict) -> set[str]:
+            keys = set()
+            for field in ("entity_id", "raw_name", "name"):
+                value = entity.get(field)
+                if isinstance(value, str) and value.strip():
+                    keys.add(normalize_name(value))
+            return keys
+
+        for focused_index, item in enumerate(focused_items):
+            focused_keys = identity_keys(item)
+            candidates = [
+                index for index, original in enumerate(merged)
+                if index not in used_indices and focused_keys.intersection(identity_keys(original))
+            ]
+            if not candidates and focused_index < len(merged) and focused_index not in used_indices:
+                original_keys = identity_keys(merged[focused_index])
+                if not focused_keys or not original_keys or len(focused_items) == len(merged):
+                    candidates = [focused_index]
+            if candidates:
+                original_index = min(candidates, key=lambda index: abs(index - focused_index))
+                combined = dict(merged[original_index])
                 combined.update({key: value for key, value in item.items() if value is not None})
-                merged[index] = combined
-        if len(originals) > len(merged):
-            merged.extend(dict(item) for item in originals[len(merged):] if isinstance(item, dict))
+                merged[original_index] = combined
+                used_indices.add(original_index)
+            else:
+                merged.append(dict(item))
         return merged
 
     @staticmethod

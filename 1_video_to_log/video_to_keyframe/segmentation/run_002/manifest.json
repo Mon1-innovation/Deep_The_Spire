@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "status": "success",
+  "source": {
+    "path": "D:\\Deep_Spire\\Deep_The_Spire\\1_video_to_log\\video_to_keyframe\\temp\\video\\run_002.mp4",
+    "sha256": "bfecb03af1b39db7f89d7398e3d3f28d00c0a7575cc55fca504cade73219a7b6",
+    "name": "run_002.mp4"
+  },
+  "video": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30.0,
+    "frame_count": 5550,
+    "duration_sec": 185.0
+  },
+  "script_version": "0.4.0",
+  "parameters": {
+    "coarse_fps": 16.0,
+    "combat_detail_enabled": true,
+    "combat_detail_fps": 30.0,
+    "event_options_focus_enabled": true,
+    "change_threshold": 0.08,
+    "page_threshold": 0.18,
+    "roi_change_threshold": 0.025,
+    "combat_change_threshold": 0.018,
+    "event_change_threshold": 0.018,
+    "shop_change_threshold": 0.018,
+    "pseudo_keyframe_fallback": true,
+    "pseudo_keyframe_scope": "global",
+    "decision_merge_window": 1.5,
+    "decision_merge_ssim": 0.94,
+    "decision_merge_phash_distance": 12,
+    "battle_start_ocr_enabled": false,
+    "black_mean_threshold": 8.0,
+    "black_std_threshold": 12.0,
+    "black_dark_ratio": 0.995,
+    "stable_frames": 3,
+    "stable_threshold": 0.025,
+    "anchor_interval": 5.0,
+    "phash_distance": 6,
+    "ssim_threshold": 0.985,
+    "player_status_change_threshold": 0.015,
+    "pseudo_keyframe_rois": [
+      "combat_hand",
+      "hand"
+    ],
+    "decision_merge_rois": [
+      "event_options",
+      "shop_decision",
+      "deck_overlay"
+    ]
+  },
+  "output_count": 124,
+  "warnings_count": 0
+}

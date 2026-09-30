@@ -1,0 +1,80 @@
+{
+    "page_type": "card_select",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "entity_id": null,
+            "name": null,
+            "hp": 52,
+            "max_hp": 70,
+            "block": null,
+            "energy": null,
+            "entity_type": null,
+            "visual_confidence": null,
+            "gold": 127
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            }
+        ],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            {
+                "entity_id": null,
+                "name": "拳斗+",
+                "cost": 1,
+                "description": "造成9点伤害。获得等量于所造成伤害的格挡。",
+                "entity_type": "cards",
+                "visual_confidence": 0.95
+            },
+            {
+                "entity_id": null,
+                "name": null,
+                "cost": 1,
+                "description": "造成7点伤害。获得等量于所造成伤害的格挡。",
+                "entity_type": "cards",
+                "visual_confidence": 0.6
+            },
+            {
+                "entity_id": null,
+                "name": null,
+                "cost": 1,
+                "description": "在你的回合结束时，获得1点格挡。",
+                "entity_type": "cards",
+                "visual_confidence": 0.6
+            }
+        ],
+        "visible_text": [
+            "拳斗+",
+            "攻击",
+            "造成9点伤害。",
+            "获得等量于所造成伤害的格挡。",
+            "查看升级",
+            "在你的回合结束时，获得1点格挡。"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Card selection overlay with three cards",
+        "Selected card 拳斗+ shows cost 1 and 攻击 tag",
+        "Description text visible for selected card",
+        "查看升级 button at bottom",
+        "Top-left HUD numbers not clearly readable",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop"
+    ]
+}

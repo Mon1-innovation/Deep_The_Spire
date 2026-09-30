@@ -1,0 +1,109 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": 10,
+        "turn": null,
+        "player": {
+            "entity_id": null,
+            "name": null,
+            "hp": 42,
+            "max_hp": 70,
+            "block": null,
+            "energy": 0,
+            "entity_type": null,
+            "visual_confidence": null,
+            "gold": 114
+        },
+        "enemies": [
+            {
+                "entity_id": null,
+                "name": "海洋混混",
+                "hp": 25,
+                "max_hp": 49,
+                "block": null,
+                "intent": "attack 6",
+                "entity_type": null,
+                "visual_confidence": 0.8
+            }
+        ],
+        "hand": [],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            }
+        ],
+        "potions": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            }
+        ],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "敌方回合",
+            "42/70",
+            "25/49",
+            "海洋混混",
+            "0/3",
+            "01:45",
+            "114"
+        ]
+    },
+    "action": {
+        "type": "enemy_turn",
+        "description": "Enemy turn is displayed; the enemy is attacking."
+    },
+    "evidence": [
+        "敌方回合 text is visible",
+        "Player HP 42/70 and block 5 are visible",
+        "Enemy 海洋混混 HP 25/49 is visible",
+        "Enemy attack intent with 6 damage is visible",
+        "0/3 counter is visible",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop",
+        "Enemy identities and combat stats read from the focused combat crop"
+    ]
+}

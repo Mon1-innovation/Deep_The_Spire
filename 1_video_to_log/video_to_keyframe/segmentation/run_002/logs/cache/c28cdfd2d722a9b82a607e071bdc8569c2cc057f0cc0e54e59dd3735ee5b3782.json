@@ -1,0 +1,344 @@
+{
+    "page_type": "map",
+    "confidence": 0.95,
+    "state": {
+        "floor": null,
+        "map": {
+            "current_node_id": null,
+            "nodes": [
+                {
+                    "id": "r01n01",
+                    "level": 1,
+                    "type": "unknown",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.25,
+                        "y": 0.12
+                    },
+                    "next_nodes": [
+                        "r02n01"
+                    ],
+                    "previous_nodes": []
+                },
+                {
+                    "id": "r01n02",
+                    "level": 1,
+                    "type": "unknown",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.5,
+                        "y": 0.12
+                    },
+                    "next_nodes": [
+                        "r02n02"
+                    ],
+                    "previous_nodes": []
+                },
+                {
+                    "id": "r01n03",
+                    "level": 1,
+                    "type": "unknown",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.75,
+                        "y": 0.12
+                    },
+                    "next_nodes": [
+                        "r02n03"
+                    ],
+                    "previous_nodes": []
+                },
+                {
+                    "id": "r02n01",
+                    "level": 2,
+                    "type": "combat",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.25,
+                        "y": 0.25
+                    },
+                    "next_nodes": [
+                        "r03n01"
+                    ],
+                    "previous_nodes": [
+                        "r01n01"
+                    ]
+                },
+                {
+                    "id": "r02n02",
+                    "level": 2,
+                    "type": "unknown",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.5,
+                        "y": 0.25
+                    },
+                    "next_nodes": [
+                        "r03n02"
+                    ],
+                    "previous_nodes": [
+                        "r01n02"
+                    ]
+                },
+                {
+                    "id": "r02n03",
+                    "level": 2,
+                    "type": "combat",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.75,
+                        "y": 0.25
+                    },
+                    "next_nodes": [
+                        "r03n03"
+                    ],
+                    "previous_nodes": [
+                        "r01n03"
+                    ]
+                },
+                {
+                    "id": "r03n01",
+                    "level": 3,
+                    "type": "combat",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.25,
+                        "y": 0.4
+                    },
+                    "next_nodes": [
+                        "r04n01"
+                    ],
+                    "previous_nodes": [
+                        "r02n01"
+                    ]
+                },
+                {
+                    "id": "r03n02",
+                    "level": 3,
+                    "type": "combat",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.5,
+                        "y": 0.4
+                    },
+                    "next_nodes": [
+                        "r04n02"
+                    ],
+                    "previous_nodes": [
+                        "r02n02"
+                    ]
+                },
+                {
+                    "id": "r03n03",
+                    "level": 3,
+                    "type": "combat",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.75,
+                        "y": 0.4
+                    },
+                    "next_nodes": [
+                        "r04n03"
+                    ],
+                    "previous_nodes": [
+                        "r02n03"
+                    ]
+                },
+                {
+                    "id": "r04n01",
+                    "level": 4,
+                    "type": "combat",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.25,
+                        "y": 0.55
+                    },
+                    "next_nodes": [
+                        "r05n01"
+                    ],
+                    "previous_nodes": [
+                        "r03n01"
+                    ]
+                },
+                {
+                    "id": "r04n02",
+                    "level": 4,
+                    "type": "combat",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.5,
+                        "y": 0.55
+                    },
+                    "next_nodes": [
+                        "r05n02"
+                    ],
+                    "previous_nodes": [
+                        "r03n02"
+                    ]
+                },
+                {
+                    "id": "r04n03",
+                    "level": 4,
+                    "type": "combat",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.75,
+                        "y": 0.55
+                    },
+                    "next_nodes": [
+                        "r05n03"
+                    ],
+                    "previous_nodes": [
+                        "r03n03"
+                    ]
+                },
+                {
+                    "id": "r05n01",
+                    "level": 5,
+                    "type": "rest",
+                    "status": "unvisited",
+                    "position": {
+                        "x": 0.5,
+                        "y": 0.75
+                    },
+                    "next_nodes": [],
+                    "previous_nodes": [
+                        "r04n01",
+                        "r04n02",
+                        "r04n03"
+                    ]
+                }
+            ],
+            "paths": [
+                {
+                    "from": "r01n01",
+                    "to": "r02n01",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r01n02",
+                    "to": "r02n02",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r01n03",
+                    "to": "r02n03",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r02n01",
+                    "to": "r03n01",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r02n02",
+                    "to": "r03n02",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r02n03",
+                    "to": "r03n03",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r03n01",
+                    "to": "r04n01",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r03n02",
+                    "to": "r04n02",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r03n03",
+                    "to": "r04n03",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r04n01",
+                    "to": "r05n01",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r04n02",
+                    "to": "r05n01",
+                    "relation": "next_room"
+                },
+                {
+                    "from": "r04n03",
+                    "to": "r05n01",
+                    "relation": "next_room"
+                }
+            ]
+        },
+        "visible_text": [
+            "暗港",
+            "图例",
+            "未知",
+            "商人",
+            "宝箱",
+            "休息",
+            "敌人",
+            "精英",
+            "休息处",
+            "在这些房间可以回复一些生命或是升级一张卡牌。"
+        ],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            }
+        ],
+        "potions": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            }
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "No red downward arrow is visible above any map node, so current_node_id is null.",
+        "The yellow triangular cursor is ignored as instructed.",
+        "All visible room nodes and dashed connections are included.",
+        "Relics and potions read from the enlarged top inventory crop"
+    ]
+}

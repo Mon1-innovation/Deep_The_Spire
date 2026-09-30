@@ -1,0 +1,93 @@
+{
+    "page_type": "deck_view",
+    "confidence": 0.55,
+    "state": {
+        "floor": 10,
+        "turn": null,
+        "player": {
+            "entity_type": null,
+            "name": null,
+            "entity_id": null,
+            "visual_confidence": null,
+            "hp": 56,
+            "max_hp": 70,
+            "block": null,
+            "gold": 99
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            }
+        ],
+        "potions": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            }
+        ],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [],
+        "visible_text": [
+            "获得顺序",
+            "类型",
+            "费用",
+            "拼音顺序",
+            "打击",
+            "造成6点伤害。",
+            "防御",
+            "获得5点格挡。",
+            "中和",
+            "生存者"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Deck view grid of cards",
+        "Sort controls visible",
+        "Card names and descriptions visible",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop"
+    ]
+}

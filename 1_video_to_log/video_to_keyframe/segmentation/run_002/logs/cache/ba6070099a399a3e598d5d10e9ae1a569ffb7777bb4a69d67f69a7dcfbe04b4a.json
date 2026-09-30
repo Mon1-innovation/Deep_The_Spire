@@ -1,0 +1,107 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": 10,
+        "turn": 3,
+        "player": {
+            "entity_id": null,
+            "name": null,
+            "hp": 42,
+            "max_hp": 70,
+            "block": null,
+            "energy": 0,
+            "entity_type": null,
+            "visual_confidence": null,
+            "gold": 99
+        },
+        "enemies": [
+            {
+                "entity_id": null,
+                "name": null,
+                "hp": 18,
+                "max_hp": 41,
+                "block": null,
+                "intent": "attack",
+                "entity_type": null,
+                "visual_confidence": 0.6
+            }
+        ],
+        "hand": [],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            }
+        ],
+        "potions": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            }
+        ],
+        "draw_count": 5,
+        "discard_count": 5,
+        "exhaust_count": 0,
+        "options": [],
+        "visible_text": [
+            "玩家回合",
+            "第3回合",
+            "虚弱",
+            "效果结束",
+            "力量",
+            "42/70",
+            "18/41",
+            "0/3"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "玩家回合 text visible",
+        "第3回合 text visible",
+        "player HP 42/70",
+        "enemy HP 18/41",
+        "draw pile 5, discard pile 5",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop",
+        "Enemy identities and combat stats read from the focused combat crop"
+    ]
+}

@@ -1,0 +1,122 @@
+{
+    "page_type": "card_reward",
+    "confidence": 0.55,
+    "state": {
+        "floor": 10,
+        "turn": null,
+        "player": {
+            "entity_id": null,
+            "name": null,
+            "hp": 42,
+            "max_hp": 70,
+            "block": null,
+            "energy": null,
+            "entity_type": null,
+            "visual_confidence": null,
+            "gold": 114
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": 0.4
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": 0.4
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": 0.4
+            }
+        ],
+        "potions": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": 0.5
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": 0.5
+            }
+        ],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            {
+                "entity_id": null,
+                "name": "早有准备",
+                "cost": 0,
+                "card_type": "技能",
+                "description": "抽1张牌。丢弃1张牌。",
+                "entity_type": "cards",
+                "visual_confidence": 0.95
+            },
+            {
+                "entity_id": null,
+                "name": "闪躲翻滚",
+                "cost": 1,
+                "card_type": "技能",
+                "description": "获得4点格挡。在下一个回合，获得4点格挡。",
+                "entity_type": "cards",
+                "visual_confidence": 0.95
+            },
+            {
+                "entity_id": null,
+                "name": "预判",
+                "cost": 0,
+                "card_type": "技能",
+                "description": "在本回合获得3点敏捷。",
+                "entity_type": "cards",
+                "visual_confidence": 0.95
+            }
+        ],
+        "visible_text": [
+            "选择一张牌",
+            "跳过",
+            "42/70",
+            "114",
+            "01:30"
+        ]
+    },
+    "action": {
+        "type": "card_reward",
+        "description": "Choose one of three cards or skip."
+    },
+    "evidence": [
+        "Banner text 选择一张牌",
+        "Three reward cards displayed",
+        "Skip button 跳过",
+        "Player HP 42/70",
+        "Gold 114",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop"
+    ]
+}

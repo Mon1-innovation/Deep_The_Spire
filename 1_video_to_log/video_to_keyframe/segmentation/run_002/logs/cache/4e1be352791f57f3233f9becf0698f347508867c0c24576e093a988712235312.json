@@ -1,0 +1,162 @@
+{
+    "page_type": "combat",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": 4,
+        "player": {
+            "entity_id": null,
+            "name": null,
+            "hp": 42,
+            "max_hp": 70,
+            "block": null,
+            "energy": 3,
+            "max_energy": 3,
+            "entity_type": null,
+            "visual_confidence": null,
+            "gold": 99
+        },
+        "enemies": [
+            {
+                "entity_id": null,
+                "name": null,
+                "hp": 42,
+                "max_hp": 70,
+                "block": null,
+                "intent": "attack",
+                "entity_type": null,
+                "visual_confidence": 0.6
+            },
+            {
+                "entity_id": null,
+                "name": null,
+                "hp": null,
+                "max_hp": null,
+                "block": null,
+                "intent": "attack",
+                "entity_type": null,
+                "visual_confidence": 0.5
+            }
+        ],
+        "hand": [
+            {
+                "entity_id": null,
+                "name": "中和",
+                "cost": 0,
+                "type": "skill",
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "防御",
+                "cost": 1,
+                "type": "skill",
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "防御",
+                "cost": 1,
+                "type": "skill",
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "生存者",
+                "cost": 1,
+                "type": "skill",
+                "entity_type": "cards",
+                "visual_confidence": 0.8
+            },
+            {
+                "entity_id": null,
+                "name": "打击",
+                "cost": 1,
+                "type": "attack",
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            }
+        ],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            }
+        ],
+        "potions": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": 1,
+                "upgraded": false,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            }
+        ],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "结束第4回合"
+        ],
+        "visible_text": [
+            "42/70",
+            "99",
+            "3/3",
+            "中和",
+            "防御",
+            "生存者",
+            "打击",
+            "虚弱",
+            "结束第4回合"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Combat screen with enemies and hand of cards",
+        "Player HP 42/70 and energy 3/3 visible",
+        "Turn indicator shows 结束第4回合",
+        "Enemy HP 42/70 visible",
+        "Weak debuff tooltip visible",
+        "战斗能量来自左下角独立能量 ROI",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop",
+        "Enemy identities and combat stats read from the focused combat crop"
+    ]
+}

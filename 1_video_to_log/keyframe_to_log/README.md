@@ -66,6 +66,8 @@ python -m keyframe_to_log `
 
 ## Spire Codex 实体归一化
 
+版本说明：本节后续内容记录 2026-09-26 首轮接入时的流程，其 schema 7 / `observation-v8` 为当时版本；截至 2026-09-30，当前观测 schema 为 `8`、缓存版本为 `observation-v9`。
+
 使用 OpenAI-compatible VLM 时，程序分别加载卡牌、怪物、遗物和药水目录。战斗观测会对敌怪及顶部物品栏执行放大 ROI 复核；敌怪名称归一化到怪物目录，`state.relics` 和 `state.potions` 分别归一化到对应目录，手牌和奖励/商店选项按实体类型匹配规范 `entity_id`。VLM 不负责生成 ID；原始名称保存在 `raw_name`，无法识别或目录不可用时保留名称并写明匹配状态。
 
 可选参数：

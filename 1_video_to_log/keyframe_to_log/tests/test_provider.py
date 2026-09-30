@@ -120,3 +120,20 @@ def test_map_page_still_reads_inventory_crop(tmp_path: Path, monkeypatch):
 
     assert boxes == [(None, 1.0), ((281, 0, 793, 115), 2.0)]
     assert result["state"]["relics"][0]["name"] == "Old Coin"
+
+
+def test_focused_entity_merge_aligns_by_name_after_full_frame_omission():
+    existing = [
+        {"name": "Cultist", "hp": 39},
+        {"name": "Jaw Worm", "hp": 26},
+    ]
+    focused = [
+        {"name": "Jaw Worm", "hp": 24, "intent": "attack"},
+    ]
+
+    merged = OpenAICompatibleProvider._merge_entities(existing, focused)
+
+    assert merged == [
+        {"name": "Cultist", "hp": 39},
+        {"name": "Jaw Worm", "hp": 24, "intent": "attack"},
+    ]

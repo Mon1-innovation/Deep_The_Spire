@@ -1,0 +1,56 @@
+{
+    "page_type": "run_start",
+    "confidence": 0.9,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "entity_id": null,
+            "name": null,
+            "entity_type": null,
+            "hp": null,
+            "max_hp": null,
+            "block": null,
+            "gold": null,
+            "visual_confidence": null
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [
+            {
+                "entity_id": null,
+                "name": "蛇之戒指",
+                "entity_type": "relics",
+                "visual_confidence": 0.95
+            }
+        ],
+        "potions": [],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            "双重Boss"
+        ],
+        "visible_text": [
+            "静默猎手",
+            "70/70",
+            "99",
+            "一位来自尖塔之外的女猎手。",
+            "随时准备刀刺与毒杀任何拦路者。",
+            "蛇之戒指",
+            "在每场战斗开始时，额外抽2张牌。",
+            "双重Boss",
+            "在第3幕末尾与两名首领战斗。"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Character select screen for 静默猎手",
+        "HP 70/70 and gold 99 shown",
+        "Relic 蛇之戒指 listed",
+        "Modifier 双重Boss shown",
+        "No combat or map state visible",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop"
+    ]
+}

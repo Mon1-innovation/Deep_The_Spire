@@ -10,9 +10,9 @@ from .codex import CodexCatalog, enrich_state
 from .validate import validate_observation
 
 LOG_SCHEMA_VERSION = "2.0"
-OBSERVATION_SCHEMA_VERSION = "7"
+OBSERVATION_SCHEMA_VERSION = "8"
 MAP_SCHEMA_VERSION = "2"
-OBSERVATION_CACHE_VERSION = "observation-v8"
+OBSERVATION_CACHE_VERSION = "observation-v9"
 
 def _cache_key(frame: Keyframe, prompt_version: str, model_version: str) -> str:
     digest = hashlib.sha256(Path(frame.path).read_bytes()).hexdigest()

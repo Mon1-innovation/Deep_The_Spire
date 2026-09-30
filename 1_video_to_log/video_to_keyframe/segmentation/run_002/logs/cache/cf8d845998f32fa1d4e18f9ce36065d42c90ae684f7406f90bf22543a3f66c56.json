@@ -1,0 +1,193 @@
+{
+    "page_type": "shop",
+    "confidence": 0.55,
+    "state": {
+        "floor": null,
+        "turn": null,
+        "player": {
+            "entity_id": null,
+            "name": null,
+            "hp": 52,
+            "max_hp": 70,
+            "block": null,
+            "energy": null,
+            "entity_type": null,
+            "visual_confidence": null,
+            "gold": 127
+        },
+        "enemies": [],
+        "hand": [],
+        "relics": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "relic",
+                "visual_confidence": null
+            }
+        ],
+        "potions": [
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            },
+            {
+                "name": null,
+                "entity_id": null,
+                "amount": null,
+                "upgraded": null,
+                "cost": null,
+                "entity_type": "potion",
+                "visual_confidence": null
+            }
+        ],
+        "draw_count": null,
+        "discard_count": null,
+        "exhaust_count": null,
+        "options": [
+            {
+                "entity_id": null,
+                "name": "切割",
+                "price": 51,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "匕首雨",
+                "price": 50,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "刀刃之舞",
+                "price": 51,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "隐秘匕首",
+                "price": 73,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "精准",
+                "price": 36,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "拳击",
+                "price": 86,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": "秘密武器",
+                "price": 168,
+                "entity_type": "cards",
+                "visual_confidence": 0.9
+            },
+            {
+                "entity_id": null,
+                "name": null,
+                "price": 221,
+                "entity_type": "relics",
+                "visual_confidence": 0.6
+            },
+            {
+                "entity_id": null,
+                "name": null,
+                "price": 299,
+                "entity_type": "relics",
+                "visual_confidence": 0.6
+            },
+            {
+                "entity_id": null,
+                "name": null,
+                "price": 242,
+                "entity_type": "relics",
+                "visual_confidence": 0.6
+            },
+            {
+                "entity_id": null,
+                "name": null,
+                "price": 51,
+                "entity_type": "potions",
+                "visual_confidence": 0.6
+            },
+            {
+                "entity_id": null,
+                "name": null,
+                "price": 75,
+                "entity_type": "potions",
+                "visual_confidence": 0.6
+            },
+            {
+                "entity_id": null,
+                "name": null,
+                "price": 77,
+                "entity_type": "potions",
+                "visual_confidence": 0.6
+            },
+            {
+                "entity_id": null,
+                "name": null,
+                "price": 75,
+                "entity_type": "cards",
+                "visual_confidence": 0.5
+            }
+        ],
+        "visible_text": [
+            "游戏已保存",
+            "切割",
+            "匕首雨",
+            "刀刃之舞",
+            "隐秘匕首",
+            "精准",
+            "拳击",
+            "秘密武器"
+        ]
+    },
+    "action": null,
+    "evidence": [
+        "Shop screen with card, relic, and potion offers",
+        "Gold displayed as 127",
+        "Player HP 52/70",
+        "Card prices visible",
+        "Relic and potion prices visible",
+        "血量、金币等来自左上角独立 HUD ROI",
+        "Relics and potions read from the enlarged top inventory crop"
+    ]
+}
